@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import time  # <--- Añadido para controlar el ritmo de peticiones
 from datetime import datetime
 
 # ==========================================
@@ -28,7 +29,8 @@ def obtener_partidos_hoy():
         partidos =[]
         
         if data.get("events"):
-            for evento in data["events"][:3]:
+            # Aumentamos a 5 partidos para el fin de semana
+            for evento in data["events"][:5]:
                 partido = f"{evento['strEvent']} ({evento['strLeague']})"
                 partidos.append(partido)
             print(f"Partidos encontrados: {partidos}")
@@ -58,11 +60,11 @@ def analizar_con_ia(historial, partido):
     - Reflexión Breve:
     - Probabilidad Calculada: X%
     - Edge / Valor: Y%
-    - Veredicto Final:[APROBADO / DESCARTADO]
+    - Veredicto Final: [APROBADO / DESCARTADO]
     """
     
     payload = {
-        "model": "llama-3.3-70b-versatile", # <--- MODELO NUEVO Y ACTUALIZADO DE GROQ
+        "model": "llama-3.3-70b-versatile",
         "messages":[
             {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes."},
             {"role": "user", "content": prompt}
@@ -87,7 +89,6 @@ def enviar_telegram(mensaje):
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
         "text": mensaje
-        # <--- ELIMINAMOS EL PARSE_MODE PARA QUE NO FALLE NUNCA POR SÍMBOLOS RAROS
     }
     try:
         print("Intentando enviar mensaje a Telegram...")
@@ -113,6 +114,10 @@ def main():
         analisis = analizar_con_ia(historial, partido)
         mensaje_final = f"🤖 EDGE BOT PRO\n\n⚽ Partido: {partido}\n\n{analisis}"
         enviar_telegram(mensaje_final)
+        
+        # Pausa de 3 segundos para no saturar la API gratuita de Groq
+        print("Pausando 3 segundos para evitar Rate Limit...")
+        time.sleep(3)
         
     print("Proceso finalizado.")
 
