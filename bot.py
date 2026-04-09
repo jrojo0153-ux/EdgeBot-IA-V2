@@ -5,9 +5,8 @@ from datetime import datetime
 
 # ==========================================
 # CONFIGURACIÓN DE VARIABLES DE ENTORNO
-# (Debes configurar estos Secrets en GitHub)
 # ==========================================
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
@@ -31,7 +30,7 @@ def obtener_partidos_hoy():
         partidos =[]
         
         if data.get("events"):
-            # Tomamos solo los primeros 3 partidos para no saturar la API de OpenAI
+            # Tomamos solo los primeros 3 partidos para no saturar la API
             for evento in data["events"][:3]:
                 partido = f"{evento['strEvent']} ({evento['strLeague']})"
                 partidos.append(partido)
@@ -41,11 +40,12 @@ def obtener_partidos_hoy():
         return[]
 
 def analizar_con_ia(historial, partido):
-    """Envía el historial y el partido a GPT-4o-mini vía API REST directa."""
-    url = "https://api.openai.com/v1/chat/completions"
+    """Envía el historial y el partido a GROQ CLOUD vía API REST directa."""
+    # Endpoint compatible de Groq
+    url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {OPENAI_API_KEY}"
+        "Authorization": f"Bearer {GROQ_API_KEY}"
     }
     
     prompt = f"""[ROL Y OBJETIVO]
@@ -54,9 +54,7 @@ def analizar_con_ia(historial, partido):
     {historial}
     
     [NUEVO EVENTO A PREDECIR]
-    Analiza el siguiente partido: {partido}
-    
-    [FORMATO DE SALIDA ESTRICTO]
+    Analiza el siguiente partido: {partido}[FORMATO DE SALIDA ESTRICTO]
     - Reflexión Breve: (Qué aprendiste del historial que aplicas aquí)
     - Probabilidad Calculada: X%
     - Edge / Valor: Y%
@@ -64,9 +62,9 @@ def analizar_con_ia(historial, partido):
     """
     
     payload = {
-        "model": "gpt-4o-mini",
+        "model": "llama3-70b-8192", # Modelo de Meta optimizado en Groq
         "messages":[
-            {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes."},
+            {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes especializado en Value Betting."},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.6
@@ -77,9 +75,9 @@ def analizar_con_ia(historial, partido):
         if response.status_code == 200:
             return response.json()["choices"][0]["message"]["content"]
         else:
-            return f"Error OpenAI: {response.text}"
+            return f"Error Groq: {response.text}"
     except Exception as e:
-        return f"Error de conexión con OpenAI: {e}"
+        return f"Error de conexión con Groq: {e}"
 
 def enviar_telegram(mensaje):
     """Envía el resultado final a tu chat de Telegram."""
@@ -95,7 +93,7 @@ def enviar_telegram(mensaje):
         print(f"Error al enviar a Telegram: {e}")
 
 def main():
-    print("Iniciando Edge Bot Pro...")
+    print("Iniciando Edge Bot Pro (Powered by Groq)...")
     
     # 1. Leer aprendizaje
     historial = leer_aprendizaje()
@@ -112,7 +110,7 @@ def main():
         print(f"Analizando: {partido}")
         analisis = analizar_con_ia(historial, partido)
         
-        mensaje_final = f"🤖 *EDGE BOT PRO - PREDICCIÓN*\n\n⚽ *Partido:* {partido}\n\n{analisis}"
+        mensaje_final = f"🤖 *EDGE BOT PRO (Groq LLaMA3)*\n\n⚽ *Partido:* {partido}\n\n{analisis}"
         enviar_telegram(mensaje_final)
         
     print("Proceso finalizado con éxito.")
