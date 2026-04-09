@@ -11,37 +11,36 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 def leer_aprendizaje():
-    """Lee el archivo de texto con el historial de fallos/aciertos."""
     ruta = "data/aprendizaje.txt"
     if os.path.exists(ruta):
         with open(ruta, "r", encoding="utf-8") as file:
             return file.read()
-    return "No hay datos históricos previos. Inicia con análisis base."
+    return "No hay datos históricos previos."
 
 def obtener_partidos_hoy():
-    """Obtiene partidos del día desde TheSportsDB (Tier Gratuito)."""
     hoy = datetime.today().strftime('%Y-%m-%d')
-    # Endpoint gratuito para eventos del día (Fútbol)
     url = f"https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d={hoy}&s=Soccer"
+    print(f"Buscando partidos para la fecha: {hoy}")
     
     try:
         response = requests.get(url, timeout=10)
         data = response.json()
-        partidos =[]
+        partidos = []
         
         if data.get("events"):
-            # Tomamos solo los primeros 3 partidos para no saturar la API
             for evento in data["events"][:3]:
                 partido = f"{evento['strEvent']} ({evento['strLeague']})"
                 partidos.append(partido)
+            print(f"Partidos encontrados: {partidos}")
+        else:
+            print("La API no devolvió partidos para hoy.")
+            
         return partidos
     except Exception as e:
         print(f"Error al obtener partidos: {e}")
         return[]
 
 def analizar_con_ia(historial, partido):
-    """Envía el historial y el partido a GROQ CLOUD vía API REST directa."""
-    # Endpoint compatible de Groq
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
@@ -50,37 +49,40 @@ def analizar_con_ia(historial, partido):
     
     prompt = f"""[ROL Y OBJETIVO]
     Eres un Sistema de Análisis Predictivo Evolutivo (EDGE BOT PRO).
-    Aprende obligatoriamente de este historial de fallos y aciertos antes de predecir:[HISTORIAL RECIENTE PARA APRENDIZAJE]
+    Aprende de este historial:
     {historial}
     
-    [NUEVO EVENTO A PREDECIR]
-    Analiza el siguiente partido: {partido}[FORMATO DE SALIDA ESTRICTO]
-    - Reflexión Breve: (Qué aprendiste del historial que aplicas aquí)
+    Analiza el siguiente partido: {partido}
+    
+    [FORMATO DE SALIDA ESTRICTO]
+    - Reflexión Breve:
     - Probabilidad Calculada: X%
     - Edge / Valor: Y%
-    - Veredicto Final:[APROBADO / DESCARTADO]
+    - Veredicto Final: [APROBADO / DESCARTADO]
     """
     
     payload = {
-        "model": "llama3-70b-8192", # Modelo de Meta optimizado en Groq
+        "model": "llama3-70b-8192",
         "messages":[
-            {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes especializado en Value Betting."},
+            {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes."},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.6
     }
     
     try:
+        print(f"Enviando {partido} a Groq...")
         response = requests.post(url, headers=headers, json=payload, timeout=15)
         if response.status_code == 200:
             return response.json()["choices"][0]["message"]["content"]
         else:
+            print(f"Error Groq: {response.text}")
             return f"Error Groq: {response.text}"
     except Exception as e:
+        print(f"Excepción con Groq: {e}")
         return f"Error de conexión con Groq: {e}"
 
 def enviar_telegram(mensaje):
-    """Envía el resultado final a tu chat de Telegram."""
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
@@ -88,32 +90,32 @@ def enviar_telegram(mensaje):
         "parse_mode": "Markdown"
     }
     try:
-        requests.post(url, json=payload, timeout=10)
+        print("Intentando enviar mensaje a Telegram...")
+        response = requests.post(url, json=payload, timeout=10)
+        # ESTO ES CLAVE: Imprimir la respuesta de Telegram
+        if response.status_code != 200:
+            print(f"❌ ERROR DE TELEGRAM: {response.text}")
+        else:
+            print("✅ Mensaje enviado a Telegram con éxito.")
     except Exception as e:
-        print(f"Error al enviar a Telegram: {e}")
+        print(f"❌ Excepción al enviar a Telegram: {e}")
 
 def main():
-    print("Iniciando Edge Bot Pro (Powered by Groq)...")
+    print("Iniciando Edge Bot Pro...")
     
-    # 1. Leer aprendizaje
     historial = leer_aprendizaje()
-    
-    # 2. Obtener partidos
     partidos = obtener_partidos_hoy()
     
     if not partidos:
         enviar_telegram("⚠️ *EDGE BOT PRO*\nNo se encontraron partidos de fútbol para hoy en TheSportsDB.")
         return
         
-    # 3. Analizar y enviar
     for partido in partidos:
-        print(f"Analizando: {partido}")
         analisis = analizar_con_ia(historial, partido)
-        
-        mensaje_final = f"🤖 *EDGE BOT PRO (Groq LLaMA3)*\n\n⚽ *Partido:* {partido}\n\n{analisis}"
+        mensaje_final = f"🤖 *EDGE BOT PRO*\n\n⚽ *Partido:* {partido}\n\n{analisis}"
         enviar_telegram(mensaje_final)
         
-    print("Proceso finalizado con éxito.")
+    print("Proceso finalizado.")
 
 if __name__ == "__main__":
     main()
