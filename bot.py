@@ -25,7 +25,7 @@ def obtener_partidos_hoy():
     try:
         response = requests.get(url, timeout=10)
         data = response.json()
-        partidos = []
+        partidos =[]
         
         if data.get("events"):
             for evento in data["events"][:3]:
@@ -58,11 +58,11 @@ def analizar_con_ia(historial, partido):
     - Reflexión Breve:
     - Probabilidad Calculada: X%
     - Edge / Valor: Y%
-    - Veredicto Final: [APROBADO / DESCARTADO]
+    - Veredicto Final:[APROBADO / DESCARTADO]
     """
     
     payload = {
-        "model": "llama3-70b-8192",
+        "model": "llama-3.3-70b-versatile", # <--- MODELO NUEVO Y ACTUALIZADO DE GROQ
         "messages":[
             {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes."},
             {"role": "user", "content": prompt}
@@ -86,13 +86,12 @@ def enviar_telegram(mensaje):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": TELEGRAM_CHAT_ID,
-        "text": mensaje,
-        "parse_mode": "Markdown"
+        "text": mensaje
+        # <--- ELIMINAMOS EL PARSE_MODE PARA QUE NO FALLE NUNCA POR SÍMBOLOS RAROS
     }
     try:
         print("Intentando enviar mensaje a Telegram...")
         response = requests.post(url, json=payload, timeout=10)
-        # ESTO ES CLAVE: Imprimir la respuesta de Telegram
         if response.status_code != 200:
             print(f"❌ ERROR DE TELEGRAM: {response.text}")
         else:
@@ -107,12 +106,12 @@ def main():
     partidos = obtener_partidos_hoy()
     
     if not partidos:
-        enviar_telegram("⚠️ *EDGE BOT PRO*\nNo se encontraron partidos de fútbol para hoy en TheSportsDB.")
+        enviar_telegram("⚠️ EDGE BOT PRO\nNo se encontraron partidos de fútbol para hoy en TheSportsDB.")
         return
         
     for partido in partidos:
         analisis = analizar_con_ia(historial, partido)
-        mensaje_final = f"🤖 *EDGE BOT PRO*\n\n⚽ *Partido:* {partido}\n\n{analisis}"
+        mensaje_final = f"🤖 EDGE BOT PRO\n\n⚽ Partido: {partido}\n\n{analisis}"
         enviar_telegram(mensaje_final)
         
     print("Proceso finalizado.")
