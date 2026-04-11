@@ -28,3 +28,8 @@
 2026-04-11_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Jazz
 2026-04-11_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
 2026-04-11_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Kings
+2026-04-11_[Major League Baseball] LOCAL: Rays vs VISITANTE: Yankees
+2026-04-11_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Nationals
+2026-04-11_[Major League Baseball] LOCAL: Braves vs VISITANTE: Guardians
+2026-04-11_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Giants
+2026-04-11_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Red Sox
