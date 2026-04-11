@@ -21,12 +21,11 @@ def obtener_partidos_hoy():
     print("Buscando partidos reales en la API de ESPN...")
     partidos =[]
     
-    # Endpoints públicos de ESPN (100% gratuitos, sin API Key y en tiempo real)
     urls =[
-        "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",       # NBA
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",         # Liga MX
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",         # Premier League
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard" # Champions League
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard"
     ]
     
     for url in urls:
@@ -38,15 +37,11 @@ def obtener_partidos_hoy():
                     nombre = evento["name"]
                     estado = evento["status"]["type"]["state"]
                     
-                    # Solo tomar partidos que NO han comenzado ("pre")
                     if estado == "pre":
                         partidos.append(nombre)
         except Exception as e:
             print(f"Error al consultar ESPN: {e}")
             
-    print(f"Partidos encontrados hoy: {partidos}")
-    
-    # Devolver solo los primeros 5 para no saturar el bot ni tu Telegram
     return partidos[:5]
 
 def analizar_con_ia(historial, partido):
@@ -56,31 +51,33 @@ def analizar_con_ia(historial, partido):
         "Authorization": f"Bearer {GROQ_API_KEY}"
     }
     
+    # PROMPT EVOLUTIVO: OBLIGA A ESCANEAR TODAS LAS REGLAS
     prompt = f"""[ROL Y OBJETIVO]
-    Eres un Sistema de Análisis Predictivo Evolutivo (EDGE BOT PRO).
-    Aprende obligatoriamente de este historial de reglas matemáticas:
+    Eres un Analista Cuantitativo (EDGE BOT PRO).
+    Tu obligación ESTRICTA es escanear TODAS las reglas de este historial y aplicar TODAS las que coincidan con el contexto del partido:
     {historial}
     
-    Analiza el siguiente partido programado para hoy: {partido}
-    
-    [FORMATO DE SALIDA ESTRICTO]
-    - Reflexión Breve: (Aplica una regla del historial si encaja)
-    - Probabilidad Calculada: X%
-    - Edge / Valor: Y%
-    - Veredicto Final: [APROBADO / DESCARTADO]
+    Analiza este partido: {partido}[FORMATO DE SALIDA ESTRICTO]
+    PROHIBIDO escribir párrafos.
+    Responde EXACTAMENTE con esta estructura de 5 líneas:
+
+    🔍 REGLAS ACTIVADAS:[Nombra los corchetes de las reglas del historial que usaste, ej: [Anti-Underdog Trap], [Playoff Seeding]]
+    🧠 ANÁLISIS: [1 sola oración técnica explicando cómo interactúan esas reglas en este partido]
+    🎯 PROBABILIDAD:[X%]
+    📈 EDGE / VALOR: [+Y%]
+    ⚖️ VEREDICTO:[APROBADO o DESCARTADO]
     """
     
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages":[
-            {"role": "system", "content": "Eres un Analista Cuantitativo de Deportes. Eres directo, matemático y no das respuestas genéricas."},
+            {"role": "system", "content": "Eres un bot matemático. Eres frío, directo y escaneas bases de datos de reglas antes de responder."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.6
+        "temperature": 0.2 # Temperatura casi en 0 para que sea 100% analítico y no invente cosas
     }
     
     try:
-        print(f"Enviando {partido} a Groq...")
         response = requests.post(url, headers=headers, json=payload, timeout=15)
         if response.status_code == 200:
             return response.json()["choices"][0]["message"]["content"]
@@ -96,7 +93,6 @@ def enviar_telegram(mensaje):
         "text": mensaje
     }
     try:
-        print("Intentando enviar mensaje a Telegram...")
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code != 200:
             print(f"❌ ERROR DE TELEGRAM: {response.text}")
@@ -106,22 +102,30 @@ def enviar_telegram(mensaje):
         print(f"❌ Excepción al enviar a Telegram: {e}")
 
 def main():
-    print("Iniciando Edge Bot Pro (Conectado a ESPN)...")
+    print("Iniciando Edge Bot Pro...")
     
     historial = leer_aprendizaje()
     partidos = obtener_partidos_hoy()
     
     if not partidos:
-        enviar_telegram("⚠️ EDGE BOT PRO\nNo se encontraron partidos de NBA, Liga MX o Premier League programados para hoy.")
+        enviar_telegram("⚠️ EDGE BOT PRO\nNo hay partidos programados hoy en las ligas principales.")
         return
         
     for partido in partidos:
         analisis = analizar_con_ia(historial, partido)
-        mensaje_final = f"🤖 EDGE BOT PRO\n\n⚽ Partido: {partido}\n\n{analisis}"
-        enviar_telegram(mensaje_final)
         
-        # Pausa de 3 segundos para no saturar la API gratuita de Groq
-        print("Pausando 3 segundos para evitar Rate Limit...")
+        # ==========================================
+        # DISEÑO "PRO" CON REGLAS ACTIVADAS
+        # ==========================================
+        mensaje_final = f"""🤖 𝗘𝗗𝗚𝗘 𝗕𝗢𝗧 𝗣𝗥𝗢
+━━━━━━━━━━━━━━━━━━━━
+⚽ 𝗣𝗔𝗥𝗧𝗜𝗗𝗢:
+{partido}
+
+{analisis}
+━━━━━━━━━━━━━━━━━━━━"""
+        
+        enviar_telegram(mensaje_final)
         time.sleep(3)
         
     print("Proceso finalizado.")
