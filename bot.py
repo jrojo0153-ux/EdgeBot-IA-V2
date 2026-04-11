@@ -37,19 +37,14 @@ def obtener_partidos_hoy():
                     estado = evento["status"]["type"]["state"]
                     
                     if estado == "pre":
-                        # ====================================================
-                        # EXTRACCIÓN EXACTA DE LOCAL Y VISITANTE DESDE EL JSON
-                        # ====================================================
                         try:
                             competitors = evento["competitions"][0]["competitors"]
                             home_team = next(c["team"]["name"] for c in competitors if c["homeAway"] == "home")
                             away_team = next(c["team"]["name"] for c in competitors if c["homeAway"] == "away")
                             liga = data["leagues"][0]["name"]
                             
-                            # Formato a prueba de errores para la IA
                             partido_str = f"[{liga}] LOCAL: {home_team} vs VISITANTE: {away_team}"
                         except:
-                            # Fallback por si el JSON cambia
                             partido_str = evento["name"]
                             
                         partidos.append(partido_str)
@@ -65,36 +60,40 @@ def analizar_con_ia(historial, partido):
         "Authorization": f"Bearer {GROQ_API_KEY}"
     }
     
-    # PROMPT BLINDADO CONTRA ERRORES DE LOCALÍA
+    # PROMPT MATEMÁTICO ESTRICTO
     prompt = f"""[ROL Y OBJETIVO]
     Eres un Analista Cuantitativo (EDGE BOT PRO).
-    Tu obligación es leer el partido, identificar EXACTAMENTE quién es el LOCAL y quién el VISITANTE, y aplicar las reglas de este historial:
+    Lee este historial de reglas:
     {historial}
     
     Analiza este partido: {partido}
     
-    [REGLA VITAL]
-    El texto te dice explícitamente quién es LOCAL y quién es VISITANTE. NO LOS CONFUNDAS. Aplica las reglas de localía/visita correctamente.
+    [REGLAS VITALES DE CÁLCULO]
+    1. NO INVENTES EL EDGE. Como no tienes las cuotas de las casas de apuestas, es imposible calcular el Edge.
+    2. En su lugar, calcula la PROBABILIDAD REAL (X%) basándote en la calidad de los equipos y las reglas.
+    3. Calcula la CUOTA MÍNIMA RENTABLE dividiendo 100 entre tu Probabilidad (Ej: Si prob es 55%, Cuota Mínima = 1.81).
+    4. Si el equipo local juega en ciudades de altura (Pachuca, Toluca, Denver), DEBES activar la regla [Extreme Altitude].
+    5. PROHIBIDO repetir "58%" en todos los partidos. Evalúa cada equipo individualmente.
     
     [FORMATO DE SALIDA ESTRICTO]
     PROHIBIDO escribir párrafos.
     Responde EXACTAMENTE con esta estructura de 6 líneas:
 
-    🔍 REGLAS ACTIVADAS: [Nombra los corchetes de las reglas del historial que usaste]
-    🧠 ANÁLISIS:[1 sola oración técnica explicando por qué el Pick tiene valor basándote en quién es el local y el visitante]
-    📌 PICK SUGERIDO:[Dime EXACTAMENTE a qué apostar. Ej: Gana Local, Gana Visitante, Empate, Under de goles]
-    🎯 PROBABILIDAD:[X%]
-    📈 EDGE / VALOR: [+Y%]
-    ⚖️ VEREDICTO:[APROBADO o DESCARTADO]
+    🔍 REGLAS ACTIVADAS:[Nombra las reglas del historial que usaste]
+    🧠 ANÁLISIS: [1 sola oración técnica explicando el pick]
+    📌 PICK SUGERIDO:[Dime EXACTAMENTE a qué apostar. Ej: Gana Local, Gana Visitante, Empate, Under 2.5]
+    🎯 PROBABILIDAD REAL: [X%]
+    💰 CUOTA MÍNIMA (+EV): [Calcula: 100 / X] (Apuesta solo si tu casa paga más que esto)
+    ⚖️ VEREDICTO: [APROBADO o DESCARTADO]
     """
     
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages":[
-            {"role": "system", "content": "Eres un bot matemático. Eres frío, directo, NUNCA confundes local con visitante y escaneas bases de datos de reglas antes de responder."},
+            {"role": "system", "content": "Eres un bot matemático. Eres frío, directo, haces cálculos reales y nunca inventas porcentajes repetidos."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.1 # Temperatura casi en cero para máxima precisión lógica
+        "temperature": 0.3 # Subimos un poco para que varíe los porcentajes según el equipo, pero sin perder lógica
     }
     
     try:
