@@ -13,3 +13,8 @@
 2026-04-11_[Spanish LALIGA] LOCAL: Sevilla vs VISITANTE: Atlético Madrid
 2026-04-11_[Italian Serie A] LOCAL: AC Milan vs VISITANTE: Udinese
 2026-04-11_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Juventus
+2026-04-11_[National Basketball Association] LOCAL: Celtics vs VISITANTE: Magic
+2026-04-11_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Wizards
+2026-04-11_[National Basketball Association] LOCAL: Pacers vs VISITANTE: Pistons
+2026-04-11_[National Basketball Association] LOCAL: Heat vs VISITANTE: Hawks
+2026-04-11_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hornets
