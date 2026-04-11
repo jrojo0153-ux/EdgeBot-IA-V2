@@ -34,11 +34,25 @@ def obtener_partidos_hoy():
             data = response.json()
             if "events" in data:
                 for evento in data["events"]:
-                    nombre = evento["name"]
                     estado = evento["status"]["type"]["state"]
                     
                     if estado == "pre":
-                        partidos.append(nombre)
+                        # ====================================================
+                        # EXTRACCIÓN EXACTA DE LOCAL Y VISITANTE DESDE EL JSON
+                        # ====================================================
+                        try:
+                            competitors = evento["competitions"][0]["competitors"]
+                            home_team = next(c["team"]["name"] for c in competitors if c["homeAway"] == "home")
+                            away_team = next(c["team"]["name"] for c in competitors if c["homeAway"] == "away")
+                            liga = data["leagues"][0]["name"]
+                            
+                            # Formato a prueba de errores para la IA
+                            partido_str = f"[{liga}] LOCAL: {home_team} vs VISITANTE: {away_team}"
+                        except:
+                            # Fallback por si el JSON cambia
+                            partido_str = evento["name"]
+                            
+                        partidos.append(partido_str)
         except Exception as e:
             print(f"Error al consultar ESPN: {e}")
             
@@ -51,33 +65,36 @@ def analizar_con_ia(historial, partido):
         "Authorization": f"Bearer {GROQ_API_KEY}"
     }
     
-    # PROMPT CORREGIDO: AHORA EXIGE EL PICK SUGERIDO
+    # PROMPT BLINDADO CONTRA ERRORES DE LOCALÍA
     prompt = f"""[ROL Y OBJETIVO]
     Eres un Analista Cuantitativo (EDGE BOT PRO).
-    Tu obligación ESTRICTA es escanear TODAS las reglas de este historial y aplicar TODAS las que coincidan con el contexto del partido:
+    Tu obligación es leer el partido, identificar EXACTAMENTE quién es el LOCAL y quién el VISITANTE, y aplicar las reglas de este historial:
     {historial}
     
     Analiza este partido: {partido}
+    
+    [REGLA VITAL]
+    El texto te dice explícitamente quién es LOCAL y quién es VISITANTE. NO LOS CONFUNDAS. Aplica las reglas de localía/visita correctamente.
     
     [FORMATO DE SALIDA ESTRICTO]
     PROHIBIDO escribir párrafos.
     Responde EXACTAMENTE con esta estructura de 6 líneas:
 
     🔍 REGLAS ACTIVADAS: [Nombra los corchetes de las reglas del historial que usaste]
-    🧠 ANÁLISIS:[1 sola oración técnica explicando cómo interactúan esas reglas en este partido]
-    📌 PICK SUGERIDO:[Dime EXACTAMENTE a qué apostar. Ej: Local Gana, Visitante +0.5, Under 2.5 goles]
-    🎯 PROBABILIDAD: [X%]
+    🧠 ANÁLISIS:[1 sola oración técnica explicando por qué el Pick tiene valor basándote en quién es el local y el visitante]
+    📌 PICK SUGERIDO:[Dime EXACTAMENTE a qué apostar. Ej: Gana Local, Gana Visitante, Empate, Under de goles]
+    🎯 PROBABILIDAD:[X%]
     📈 EDGE / VALOR: [+Y%]
-    ⚖️ VEREDICTO: [APROBADO o DESCARTADO]
+    ⚖️ VEREDICTO:[APROBADO o DESCARTADO]
     """
     
     payload = {
         "model": "llama-3.3-70b-versatile",
         "messages":[
-            {"role": "system", "content": "Eres un bot matemático. Eres frío, directo y escaneas bases de datos de reglas antes de responder."},
+            {"role": "system", "content": "Eres un bot matemático. Eres frío, directo, NUNCA confundes local con visitante y escaneas bases de datos de reglas antes de responder."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.2
+        "temperature": 0.1 # Temperatura casi en cero para máxima precisión lógica
     }
     
     try:
