@@ -8,3 +8,8 @@
 2026-04-11_[English Premier League] LOCAL: Burnley vs VISITANTE: Brighton & Hove Albion
 2026-04-11_[English Premier League] LOCAL: Liverpool vs VISITANTE: Fulham
 2026-04-11_[Spanish LALIGA] LOCAL: Real Sociedad vs VISITANTE: Alavés
+2026-04-11_[Spanish LALIGA] LOCAL: Elche vs VISITANTE: Valencia
+2026-04-11_[Spanish LALIGA] LOCAL: Barcelona vs VISITANTE: Espanyol
+2026-04-11_[Spanish LALIGA] LOCAL: Sevilla vs VISITANTE: Atlético Madrid
+2026-04-11_[Italian Serie A] LOCAL: AC Milan vs VISITANTE: Udinese
+2026-04-11_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Juventus
