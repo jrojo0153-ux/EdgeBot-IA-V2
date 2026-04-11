@@ -19,7 +19,7 @@ def leer_aprendizaje():
 
 def obtener_partidos_hoy():
     print("Buscando partidos reales en la API de ESPN...")
-    partidos =[]
+    partidos = []
     
     urls =[
         "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
@@ -51,21 +51,24 @@ def analizar_con_ia(historial, partido):
         "Authorization": f"Bearer {GROQ_API_KEY}"
     }
     
-    # PROMPT EVOLUTIVO: OBLIGA A ESCANEAR TODAS LAS REGLAS
+    # PROMPT CORREGIDO: AHORA EXIGE EL PICK SUGERIDO
     prompt = f"""[ROL Y OBJETIVO]
     Eres un Analista Cuantitativo (EDGE BOT PRO).
     Tu obligación ESTRICTA es escanear TODAS las reglas de este historial y aplicar TODAS las que coincidan con el contexto del partido:
     {historial}
     
-    Analiza este partido: {partido}[FORMATO DE SALIDA ESTRICTO]
+    Analiza este partido: {partido}
+    
+    [FORMATO DE SALIDA ESTRICTO]
     PROHIBIDO escribir párrafos.
-    Responde EXACTAMENTE con esta estructura de 5 líneas:
+    Responde EXACTAMENTE con esta estructura de 6 líneas:
 
-    🔍 REGLAS ACTIVADAS:[Nombra los corchetes de las reglas del historial que usaste, ej: [Anti-Underdog Trap], [Playoff Seeding]]
-    🧠 ANÁLISIS: [1 sola oración técnica explicando cómo interactúan esas reglas en este partido]
-    🎯 PROBABILIDAD:[X%]
+    🔍 REGLAS ACTIVADAS: [Nombra los corchetes de las reglas del historial que usaste]
+    🧠 ANÁLISIS:[1 sola oración técnica explicando cómo interactúan esas reglas en este partido]
+    📌 PICK SUGERIDO:[Dime EXACTAMENTE a qué apostar. Ej: Local Gana, Visitante +0.5, Under 2.5 goles]
+    🎯 PROBABILIDAD: [X%]
     📈 EDGE / VALOR: [+Y%]
-    ⚖️ VEREDICTO:[APROBADO o DESCARTADO]
+    ⚖️ VEREDICTO: [APROBADO o DESCARTADO]
     """
     
     payload = {
@@ -74,7 +77,7 @@ def analizar_con_ia(historial, partido):
             {"role": "system", "content": "Eres un bot matemático. Eres frío, directo y escaneas bases de datos de reglas antes de responder."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.2 # Temperatura casi en 0 para que sea 100% analítico y no invente cosas
+        "temperature": 0.2
     }
     
     try:
@@ -114,9 +117,6 @@ def main():
     for partido in partidos:
         analisis = analizar_con_ia(historial, partido)
         
-        # ==========================================
-        # DISEÑO "PRO" CON REGLAS ACTIVADAS
-        # ==========================================
         mensaje_final = f"""🤖 𝗘𝗗𝗚𝗘 𝗕𝗢𝗧 𝗣𝗥𝗢
 ━━━━━━━━━━━━━━━━━━━━
 ⚽ 𝗣𝗔𝗥𝗧𝗜𝗗𝗢:
