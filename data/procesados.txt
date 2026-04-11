@@ -33,3 +33,6 @@
 2026-04-11_[Major League Baseball] LOCAL: Braves vs VISITANTE: Guardians
 2026-04-11_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Giants
 2026-04-11_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Red Sox
+2026-04-11_[Major League Baseball] LOCAL: Padres vs VISITANTE: Rockies
+2026-04-11_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Rangers
+2026-04-11_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
