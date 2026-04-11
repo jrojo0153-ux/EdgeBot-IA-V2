@@ -3,3 +3,8 @@
 2026-04-11_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Monterrey
 2026-04-11_[Mexican Liga BBVA MX] LOCAL: Pachuca vs VISITANTE: Santos
 2026-04-11_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Cruz Azul
+2026-04-11_[English Premier League] LOCAL: Arsenal vs VISITANTE: AFC Bournemouth
+2026-04-11_[English Premier League] LOCAL: Brentford vs VISITANTE: Everton
+2026-04-11_[English Premier League] LOCAL: Burnley vs VISITANTE: Brighton & Hove Albion
+2026-04-11_[English Premier League] LOCAL: Liverpool vs VISITANTE: Fulham
+2026-04-11_[Spanish LALIGA] LOCAL: Real Sociedad vs VISITANTE: Alavés
