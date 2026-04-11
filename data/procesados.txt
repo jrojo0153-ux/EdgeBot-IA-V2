@@ -23,3 +23,8 @@
 2026-04-11_[National Basketball Association] LOCAL: Mavericks vs VISITANTE: Bulls
 2026-04-11_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Grizzlies
 2026-04-11_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Pelicans
+2026-04-11_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-11_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Nuggets
+2026-04-11_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Jazz
+2026-04-11_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
+2026-04-11_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Kings
