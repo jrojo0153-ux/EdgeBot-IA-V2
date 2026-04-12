@@ -51,3 +51,8 @@
 2026-04-12_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Jazz
 2026-04-12_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
 2026-04-12_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Kings
+2026-04-12_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: Mazatlán FC
+2026-04-12_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Atlético de San Luis
+2026-04-12_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester City
+2026-04-12_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Rayo Vallecano
+2026-04-12_[Spanish LALIGA] LOCAL: Celta Vigo vs VISITANTE: Real Oviedo
