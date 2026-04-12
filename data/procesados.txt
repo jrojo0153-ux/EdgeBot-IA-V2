@@ -56,3 +56,8 @@
 2026-04-12_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester City
 2026-04-12_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Rayo Vallecano
 2026-04-12_[Spanish LALIGA] LOCAL: Celta Vigo vs VISITANTE: Real Oviedo
+2026-04-12_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Diamondbacks
+2026-04-12_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Giants
+2026-04-12_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Twins
+2026-04-12_[Major League Baseball] LOCAL: Reds vs VISITANTE: Angels
+2026-04-12_[Major League Baseball] LOCAL: Mets vs VISITANTE: Athletics
