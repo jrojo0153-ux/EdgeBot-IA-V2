@@ -65,3 +65,6 @@
 2026-04-12_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
 2026-04-12_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Rangers
 2026-04-12_[Major League Baseball] LOCAL: Braves vs VISITANTE: Guardians
+2026-04-13_[English Premier League] LOCAL: Manchester United vs VISITANTE: Leeds United
+2026-04-13_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Getafe
+2026-04-13_[Italian Serie A] LOCAL: Fiorentina vs VISITANTE: Lazio
