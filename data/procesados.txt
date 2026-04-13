@@ -68,3 +68,8 @@
 2026-04-13_[English Premier League] LOCAL: Manchester United vs VISITANTE: Leeds United
 2026-04-13_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Getafe
 2026-04-13_[Italian Serie A] LOCAL: Fiorentina vs VISITANTE: Lazio
+2026-04-13_[National Basketball Association] LOCAL: Hornets vs VISITANTE: Heat
+2026-04-13_[National Basketball Association] LOCAL: Suns vs VISITANTE: Trail Blazers
+2026-04-13_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
+2026-04-13_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Diamondbacks
+2026-04-13_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Cubs
