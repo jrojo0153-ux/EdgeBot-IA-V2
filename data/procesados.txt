@@ -80,3 +80,8 @@
 2026-04-13_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Guardians
 2026-04-13_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Rangers
 2026-04-13_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Mets
+2026-04-14_[National Basketball Association] LOCAL: Hornets vs VISITANTE: Heat
+2026-04-14_[National Basketball Association] LOCAL: Suns vs VISITANTE: Trail Blazers
+2026-04-14_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-14_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-14_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
