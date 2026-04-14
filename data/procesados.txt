@@ -85,3 +85,6 @@
 2026-04-14_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
 2026-04-14_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
 2026-04-14_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-14_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-14_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-14_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
