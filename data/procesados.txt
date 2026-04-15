@@ -108,3 +108,8 @@
 2026-04-15_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
 2026-04-15_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
 2026-04-15_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-15_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-15_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-15_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-15_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-15_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
