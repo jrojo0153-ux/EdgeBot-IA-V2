@@ -113,3 +113,4 @@
 2026-04-15_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
 2026-04-15_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
 2026-04-15_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-15_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
