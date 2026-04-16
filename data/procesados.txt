@@ -144,3 +144,5 @@
 2026-04-16_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
 2026-04-16_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Blue Jays
 2026-04-16_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
+2026-04-16_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
+2026-04-16_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
