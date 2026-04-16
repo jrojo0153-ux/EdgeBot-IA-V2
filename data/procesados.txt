@@ -139,3 +139,8 @@
 2026-04-16_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
 2026-04-16_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
 2026-04-16_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-16_[National Basketball Association] LOCAL: Magic vs VISITANTE: Hornets
+2026-04-16_[National Basketball Association] LOCAL: Suns vs VISITANTE: Warriors
+2026-04-16_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
+2026-04-16_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Blue Jays
+2026-04-16_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
