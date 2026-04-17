@@ -156,3 +156,8 @@
 2026-04-17_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
 2026-04-17_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
 2026-04-17_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-17_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-17_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-17_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-17_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-17_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
