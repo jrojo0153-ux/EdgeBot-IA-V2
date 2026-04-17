@@ -146,3 +146,8 @@
 2026-04-16_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
 2026-04-16_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
 2026-04-16_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
+2026-04-17_[National Basketball Association] LOCAL: Magic vs VISITANTE: Hornets
+2026-04-17_[National Basketball Association] LOCAL: Suns vs VISITANTE: Warriors
+2026-04-17_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-17_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-17_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
