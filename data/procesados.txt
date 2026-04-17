@@ -151,3 +151,8 @@
 2026-04-17_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
 2026-04-17_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
 2026-04-17_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-17_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-17_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-17_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-17_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-17_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
