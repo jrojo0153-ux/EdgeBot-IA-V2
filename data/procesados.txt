@@ -211,3 +211,4 @@
 2026-04-18_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
 2026-04-18_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
 2026-04-18_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-18_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
