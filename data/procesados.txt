@@ -191,3 +191,8 @@
 2026-04-18_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
 2026-04-18_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
 2026-04-18_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-18_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Lazio
+2026-04-18_[Italian Serie A] LOCAL: AS Roma vs VISITANTE: Atalanta
+2026-04-18_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: RB Leipzig
+2026-04-18_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Marseille
+2026-04-18_[French Ligue 1] LOCAL: Angers vs VISITANTE: Le Havre AC
