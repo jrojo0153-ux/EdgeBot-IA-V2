@@ -196,3 +196,8 @@
 2026-04-18_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: RB Leipzig
 2026-04-18_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Marseille
 2026-04-18_[French Ligue 1] LOCAL: Angers vs VISITANTE: Le Havre AC
+2026-04-18_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-18_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-18_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-18_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-18_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
