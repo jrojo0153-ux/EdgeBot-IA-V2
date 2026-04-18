@@ -181,3 +181,8 @@
 2026-04-18_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
 2026-04-18_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
 2026-04-18_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Tijuana
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Necaxa vs VISITANTE: Tigres UANL
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Pachuca
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Guadalajara vs VISITANTE: Puebla
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: FC Juarez
