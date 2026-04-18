@@ -201,3 +201,8 @@
 2026-04-18_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
 2026-04-18_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
 2026-04-18_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
+2026-04-18_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Giants
+2026-04-18_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
+2026-04-18_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
+2026-04-18_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Brewers
+2026-04-18_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
