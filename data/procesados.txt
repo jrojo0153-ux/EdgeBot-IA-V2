@@ -176,3 +176,8 @@
 2026-04-17_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
 2026-04-17_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
 2026-04-17_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-18_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-18_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-18_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-18_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-18_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
