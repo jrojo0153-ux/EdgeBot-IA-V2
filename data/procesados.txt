@@ -226,3 +226,8 @@
 2026-04-19_[Italian Serie A] LOCAL: Juventus vs VISITANTE: Bologna
 2026-04-19_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: 1. FC Heidenheim 1846
 2026-04-19_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: VfB Stuttgart
+2026-04-19_[German Bundesliga] LOCAL: Borussia Mönchengladbach vs VISITANTE: Mainz
+2026-04-19_[French Ligue 1] LOCAL: Metz vs VISITANTE: Paris FC
+2026-04-19_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Brest
+2026-04-19_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Stade Rennais
+2026-04-19_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lyon
