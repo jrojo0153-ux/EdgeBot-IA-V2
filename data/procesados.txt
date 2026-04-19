@@ -236,3 +236,8 @@
 2026-04-19_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
 2026-04-19_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
 2026-04-19_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
+2026-04-19_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
+2026-04-19_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
+2026-04-19_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
+2026-04-19_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-19_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
