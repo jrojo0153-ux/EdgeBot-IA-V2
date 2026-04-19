@@ -231,3 +231,8 @@
 2026-04-19_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Brest
 2026-04-19_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Stade Rennais
 2026-04-19_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lyon
+2026-04-19_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-19_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-19_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-04-19_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-19_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
