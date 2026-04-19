@@ -221,3 +221,8 @@
 2026-04-19_[English Premier League] LOCAL: Everton vs VISITANTE: Liverpool
 2026-04-19_[English Premier League] LOCAL: Nottingham Forest vs VISITANTE: Burnley
 2026-04-19_[English Premier League] LOCAL: Manchester City vs VISITANTE: Arsenal
+2026-04-19_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: AC Milan
+2026-04-19_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Genoa
+2026-04-19_[Italian Serie A] LOCAL: Juventus vs VISITANTE: Bologna
+2026-04-19_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: 1. FC Heidenheim 1846
+2026-04-19_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: VfB Stuttgart
