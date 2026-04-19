@@ -216,3 +216,8 @@
 2026-04-19_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
 2026-04-19_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
 2026-04-19_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-19_[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Atlas
+2026-04-19_[English Premier League] LOCAL: Aston Villa vs VISITANTE: Sunderland
+2026-04-19_[English Premier League] LOCAL: Everton vs VISITANTE: Liverpool
+2026-04-19_[English Premier League] LOCAL: Nottingham Forest vs VISITANTE: Burnley
+2026-04-19_[English Premier League] LOCAL: Manchester City vs VISITANTE: Arsenal
