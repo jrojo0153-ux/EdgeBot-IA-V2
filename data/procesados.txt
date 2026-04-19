@@ -212,3 +212,7 @@
 2026-04-18_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
 2026-04-18_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
 2026-04-18_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
+2026-04-19_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-19_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-19_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-19_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
