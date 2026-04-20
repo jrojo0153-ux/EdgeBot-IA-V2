@@ -252,3 +252,8 @@
 2026-04-20_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
 2026-04-20_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
 2026-04-20_[Italian Serie A] LOCAL: Lecce vs VISITANTE: Fiorentina
+2026-04-20_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-20_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-20_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-20_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Astros
+2026-04-20_[Major League Baseball] LOCAL: Rays vs VISITANTE: Reds
