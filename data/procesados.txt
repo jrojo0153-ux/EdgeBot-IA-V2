@@ -242,3 +242,8 @@
 2026-04-19_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
 2026-04-19_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
 2026-04-19_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Braves
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: FC Juarez
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Querétaro vs VISITANTE: Cruz Azul
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
+2026-04-20_[English Premier League] LOCAL: Crystal Palace vs VISITANTE: West Ham United
