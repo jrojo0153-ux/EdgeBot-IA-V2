@@ -262,3 +262,6 @@
 2026-04-20_[Major League Baseball] LOCAL: Royals vs VISITANTE: Orioles
 2026-04-20_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
 2026-04-20_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
+2026-04-20_[Major League Baseball] LOCAL: Angels vs VISITANTE: Blue Jays
+2026-04-20_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Athletics
+2026-04-20_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Nantes
