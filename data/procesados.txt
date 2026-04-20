@@ -247,3 +247,8 @@
 2026-04-20_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
 2026-04-20_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
 2026-04-20_[English Premier League] LOCAL: Crystal Palace vs VISITANTE: West Ham United
+2026-04-20_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-20_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-20_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-20_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-20_[Italian Serie A] LOCAL: Lecce vs VISITANTE: Fiorentina
