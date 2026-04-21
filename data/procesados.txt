@@ -270,3 +270,8 @@
 2026-04-21_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
 2026-04-21_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
 2026-04-21_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-21_[English Premier League] LOCAL: Brighton & Hove Albion vs VISITANTE: Chelsea
+2026-04-21_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-21_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-21_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-21_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
