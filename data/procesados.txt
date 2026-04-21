@@ -265,3 +265,8 @@
 2026-04-20_[Major League Baseball] LOCAL: Angels vs VISITANTE: Blue Jays
 2026-04-20_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Athletics
 2026-04-20_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Nantes
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: FC Juarez
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Querétaro vs VISITANTE: Cruz Azul
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
+2026-04-21_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
