@@ -275,3 +275,8 @@
 2026-04-21_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
 2026-04-21_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
 2026-04-21_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-21_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-21_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-21_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-21_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Astros
+2026-04-21_[Major League Baseball] LOCAL: Rays vs VISITANTE: Reds
