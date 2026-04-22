@@ -293,3 +293,8 @@
 2026-04-22_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
 2026-04-22_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
 2026-04-22_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Nantes
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Tigres UANL
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Santos
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Toluca
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Necaxa vs VISITANTE: Guadalajara
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Tijuana vs VISITANTE: Pachuca
