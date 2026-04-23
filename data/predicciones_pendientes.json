@@ -8,5 +8,20 @@
         "partido_str": "[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: El RB Leipzig tiene un ataque vertical que podría aprovecharse de la defensa adelantada del 1. FC Union Berlin, lo que podría ignorar la penalización al local.\n📌 PICK SUGERIDO: RB Leipzig\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-23"
+    },
+    "2026-04-23_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks": {
+        "partido_str": "[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Elite Roster Home Protection], [Playoff Seeding Motivation]\n🧠 ANÁLISIS: La motivación por playoffs y la profundidad de plantilla de los equipos influyen en la probabilidad de victoria.\n📌 PICK SUGERIDO: Hawks\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-23"
+    },
+    "2026-04-23_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers": {
+        "partido_str": "[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Elite Roster Home Protection], [Playoff Seeding Motivation]\n🧠 ANÁLISIS: La motivación por la posición de playoffs y la ventaja local sugieren un escenario favorable para los Raptors.\n📌 PICK SUGERIDO: Raptors\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-23"
+    },
+    "2026-04-23_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets": {
+        "partido_str": "[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Elite Roster Home Protection], [Playoff Seeding Motivation]\n🧠 ANÁLISIS: La motivación por playoffs y la profundidad de plantilla de los Nuggets pueden influir en el resultado, pero la ventaja local de los Timberwolves también es un factor clave.\n📌 PICK SUGERIDO: Timberwolves\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-23"
     }
 }

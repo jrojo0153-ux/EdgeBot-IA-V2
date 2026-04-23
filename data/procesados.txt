@@ -321,3 +321,8 @@
 2026-04-23_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
 2026-04-23_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
 2026-04-23_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens
+2026-04-23_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks
+2026-04-23_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-04-23_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-23_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Brewers
+2026-04-23_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
