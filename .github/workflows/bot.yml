@@ -2,11 +2,11 @@ name: "Edge Bot Pro Automatico"
 
 on:
   schedule:
-    - cron: '0 * * * *' # Se ejecuta en el minuto 0 de CADA HORA
+    - cron: '0 * * * *' # Se ejecuta cada hora
   workflow_dispatch:
 
 permissions:
-  contents: write # Permiso vital para que el bot pueda guardar su memoria
+  contents: write # Permiso vital para guardar la memoria
 
 jobs:
   run-bot:
@@ -24,18 +24,22 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Generar archivo de aprendizaje
+      - name: Analizar resultados pasados y Entrenar
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        # Este script ahora debe conectarse a Groq, analizar aciertos/errores y guardar el historial
         run: python data/aprendizaje.py
 
-      - name: Ejecutar Edge Bot Pro
+      - name: Ejecutar Edge Bot Pro (Nuevas predicciones)
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python bot.py
 
-      - name: Guardar memoria de partidos procesados
+      - name: Guardar memoria permanente en el repositorio
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Bot: Memoria de partidos actualizada"
-          file_pattern: data/procesados.txt
+          commit_message: "🤖 Aprendizaje: Historial de predicciones ganadoras y perdedoras actualizado"
+          # El asterisco asegura que guarde CUALQUIER archivo modificado en la carpeta data (ej. historial.json, procesados.txt)
+          file_pattern: "data/*" 
