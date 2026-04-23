@@ -1,46 +1,145 @@
 import os
+import requests
+import json
 
-def actualizar_historial_aprendizaje():
-    """
-    Genera y actualiza el archivo aprendizaje.txt con las últimas 
-    auditorías y reglas matemáticas (Regla 4) del modelo.
-    """
-    directorio = os.path.dirname(os.path.abspath(__file__))
-    os.makedirs(directorio, exist_ok=True)
-    ruta_txt = os.path.join(directorio, "aprendizaje.txt")
-    
-    contenido_aprendizaje = """[HISTORIAL RECIENTE PARA APRENDIZAJE Y CALIBRACIÓN]
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-### REGLAS BASE (CHAMPIONS Y CONCACAF)
+def crear_reglas_base_si_no_existen():
+    """Mantiene tus reglas base originales si el archivo es nuevo."""
+    os.makedirs("data", exist_ok=True)
+    ruta = "data/aprendizaje.txt"
+    if not os.path.exists(ruta):
+        contenido_base = """[HISTORIAL RECIENTE PARA APRENDIZAJE Y CALIBRACIÓN]
+### REGLAS BASE
 - [Away Elite Defense]: Reducir penalización a visitantes si son Top 5 europeo en PPDA.
-- [Home Advantage Decay]: En eliminatorias con alto xG (>3.0), el factor cancha pierde 15% de peso.
-- [Transition Speed]: Ignorar penalización al local si tiene ataque vertical vs defensa adelantada.
-- [Low-Block Away Decay]: Reducir xG del visitante 20% ante bloques bajos. Favorecer el Under.
+- [Home Advantage Decay]: En eliminatorias con alto xG (>3.0), el factor cancha pierde 15%.
 - [Extreme Altitude]: Multiplicar xGA del visitante por 1.35 en la 2da mitad en altitud.
-
-### NUEVAS REGLAS TRAS AUDITORÍA DEL 10 DE ABRIL (CRÍTICAS)
-
-### Evento A: Twente 4 - 0 Volendam / Besiktas 2 - 1 Antalyaspor (Fútbol Doméstico)
-- Lección Extraída: Colapso crítico del bot al recomendar visitantes "underdogs" en ligas con alta disparidad económica. La diferencia de xG es estructural, no varianza.
-- Regla a Aplicar[Anti-Underdog Trap]: PROHIBIDO recomendar victorias directas de visitantes con cuotas altas en ligas domésticas dispares (Holanda, Turquía, Japón) contra equipos del Top 4 histórico. La varianza no compensa la falta de calidad.
-
-### Evento B: Boston Celtics 114 - 110 Pelicans / LA Dodgers 6 - 2 Rangers (NBA/MLB)
-- Lección Extraída: Falsos positivos al intentar apostar contra los #1 de la liga en su propio estadio buscando "valor".
-- Regla a Aplicar[Elite Roster Home Protection]: El Edge calculado debe ser penalizado severamente si el pick sugiere apostar en contra de equipos de Súper Élite (ej. Celtics, Dodgers, Real Madrid) jugando en casa. Su profundidad de plantilla absorbe la varianza negativa.
-
-### Evento C: Washington Wizards 105 - 118 Miami Heat (NBA)
-- Lección Extraída: Apostar por un equipo local eliminado (Wizards) contra uno peleando por posición de playoffs (Heat) en el mes de abril es un error matemático.
-- Regla a Aplicar [Playoff Seeding Motivation]: En el último mes de temporada regular, multiplicar el ORtg/DRtg de los equipos que pelean por entrar a playoffs por 1.15 cuando enfrentan a equipos ya eliminados (Tanking).
-
-### Evento D: Éxito masivo en NBA (77% Win Rate)
-- Lección Extraída: El modelo es altamente preciso leyendo el "Pace" y el factor local en partidos igualados de baloncesto.
-- Regla a Aplicar: Mantener la confianza algorítmica en locales de NBA cuando la cuota está equilibrada y no hay disparidad de motivación.
+- [Elite Roster Home Protection]: El Edge es penalizado si el pick va contra equipos de Élite en casa.
 """
+        with open(ruta, "w", encoding="utf-8") as f:
+            f.write(contenido_base)
 
-    with open(ruta_txt, "w", encoding="utf-8") as file:
-        file.write(contenido_aprendizaje)
+def auditar_resultado_con_ia(partido_str, analisis_previo, marcador_real):
+    """Pide a Groq que evalúe por qué se ganó o se perdió la predicción."""
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {GROQ_API_KEY}"
+    }
+    
+    prompt = f"""[AUDITORÍA DE MODELO CUANTITATIVO]
+    Partido: {partido_str}
+    Marcador Real Final: {marcador_real}
+    Predicción que hizo el bot: {analisis_previo}
+    
+    Evalúa si la apuesta fue GANADA o PERDIDA según el marcador real.
+    Extrae una lección cuantitativa y genera una regla de 1 línea para el futuro.
+    
+    FORMATO ESTRICTO:
+    RESULTADO: [GANADA o PERDIDA]
+    LECCIÓN: [Breve análisis de la varianza o error]
+    REGLA: [Instrucción matemática corta para el bot]
+    """
+    
+    payload = {
+        "model": "llama-3.3-70b-versatile",
+        "messages": [
+            {"role": "system", "content": "Eres un auditor de datos. Analizas victorias y derrotas de modelos predictivos deportivos."},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.2
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=15)
+        if response.status_code == 200:
+            return response.json()["choices"][0]["message"]["content"]
+    except:
+        pass
+    return None
+
+def ejecutar_auditoria():
+    print("Iniciando auditoría de resultados pasados...")
+    crear_reglas_base_si_no_existen()
+    
+    ruta_pendientes = "data/predicciones_pendientes.json"
+    if not os.path.exists(ruta_pendientes):
+        print("No hay predicciones pendientes por auditar.")
+        return
         
-    print(f"✅ Archivo de aprendizaje actualizado exitosamente en: {ruta_txt}")
+    with open(ruta_pendientes, "r", encoding="utf-8") as f:
+        pendientes = json.load(f)
+        
+    if not pendientes:
+        print("El archivo de predicciones está vacío.")
+        return
+
+    urls = [
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard"
+    ]
+    
+    claves_a_borrar = []
+    nuevas_reglas = []
+    
+    # Buscar resultados en ESPN de partidos que ya terminaron
+    for url in urls:
+        try:
+            res = requests.get(url, timeout=10)
+            data = res.json()
+            if "events" in data:
+                for evento in data["events"]:
+                    if evento["status"]["type"]["state"] == "post": # PARTIDO TERMINADO
+                        comps = evento["competitions"][0]["competitors"]
+                        home = next(c["team"]["name"] for c in comps if c["homeAway"] == "home")
+                        away = next(c["team"]["name"] for c in comps if c["homeAway"] == "away")
+                        home_sc = next(c["score"] for c in comps if c["homeAway"] == "home")
+                        away_sc = next(c["score"] for c in comps if c["homeAway"] == "away")
+                        
+                        marcador = f"{home} {home_sc} - {away_sc} {away}"
+                        
+                        # Revisar si este partido lo predijimos
+                        for p_id, p_data in pendientes.items():
+                            if home in p_data["partido_str"] and away in p_data["partido_str"]:
+                                print(f"Auditando partido finalizado: {marcador}")
+                                auditoria = auditar_resultado_con_ia(p_data["partido_str"], p_data["analisis"], marcador)
+                                
+                                if auditoria:
+                                    # Guardar en el historial permanente (Ganadoras y Perdedoras)
+                                    with open("data/historial_resultados.txt", "a", encoding="utf-8") as f_hist:
+                                        f_hist.write(f"\n--- AUDITORÍA ---\nPartido: {marcador}\n{auditoria}\n")
+                                    
+                                    # Extraer solo la regla para inyectarla al cerebro del bot
+                                    for linea in auditoria.split("\n"):
+                                        if "REGLA:" in linea.upper():
+                                            nuevas_reglas.append(f"- {linea.replace('REGLA:', '').strip()}")
+                                
+                                claves_a_borrar.append(p_id)
+        except Exception as e:
+            pass
+
+    # Actualizar el JSON borrando los partidos ya auditados
+    for clave in claves_a_borrar:
+        del pendientes[clave]
+        
+    with open(ruta_pendientes, "w", encoding="utf-8") as f:
+        json.dump(pendientes, f, ensure_ascii=False, indent=4)
+        
+    # Inyectar las nuevas reglas al cerebro del bot (aprendizaje.txt)
+    if nuevas_reglas:
+        with open("data/aprendizaje.txt", "a", encoding="utf-8") as f_reglas:
+            f_reglas.write("\n### NUEVAS REGLAS AUTOMÁTICAS\n")
+            for regla in nuevas_reglas:
+                f_reglas.write(regla + "\n")
+        print("✅ Nuevas reglas inyectadas exitosamente al modelo.")
+    else:
+        print("No se generaron reglas nuevas en este ciclo.")
 
 if __name__ == "__main__":
-    actualizar_historial_aprendizaje()
+    ejecutar_auditoria()
