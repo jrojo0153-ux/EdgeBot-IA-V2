@@ -318,3 +318,6 @@
 2026-04-23_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Sevilla
 2026-04-23_[Spanish LALIGA] LOCAL: Rayo Vallecano vs VISITANTE: Espanyol
 2026-04-23_[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Villarreal
+2026-04-23_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-23_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
+2026-04-23_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens
