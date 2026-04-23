@@ -1,6 +1,7 @@
 import os
 import requests
 import time
+import json
 from datetime import datetime
 
 # ==========================================
@@ -18,33 +19,52 @@ def leer_aprendizaje():
     return "No hay datos históricos previos."
 
 def cargar_procesados():
-    """Carga la memoria de los partidos que ya se analizaron hoy."""
     ruta = "data/procesados.txt"
     if os.path.exists(ruta):
         with open(ruta, "r", encoding="utf-8") as file:
             return file.read().splitlines()
-    return[]
+    return []
 
 def guardar_procesado(partido_id):
-    """Guarda el partido en la memoria para no volver a analizarlo hoy."""
     os.makedirs("data", exist_ok=True)
     with open("data/procesados.txt", "a", encoding="utf-8") as file:
         file.write(partido_id + "\n")
 
+# NUEVA FUNCIÓN: Guarda el pick aprobado para que aprendizaje.py lo evalúe después
+def guardar_prediccion_pendiente(partido_id, partido_str, analisis):
+    os.makedirs("data", exist_ok=True)
+    ruta = "data/predicciones_pendientes.json"
+    pendientes = {}
+    
+    if os.path.exists(ruta):
+        try:
+            with open(ruta, "r", encoding="utf-8") as f:
+                pendientes = json.load(f)
+        except:
+            pass
+            
+    pendientes[partido_id] = {
+        "partido_str": partido_str,
+        "analisis": analisis,
+        "fecha": datetime.today().strftime('%Y-%m-%d')
+    }
+    
+    with open(ruta, "w", encoding="utf-8") as f:
+        json.dump(pendientes, f, ensure_ascii=False, indent=4)
+
 def obtener_partidos_hoy():
     print("Buscando partidos en las 8 ligas top (ESPN API)...")
-    partidos =[]
+    partidos = []
     
-    # LAS 8 LIGAS EXIGIDAS (100% Gratuitas y en tiempo real)
-    urls =[
-        "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard", # NBA
-        "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",    # MLB
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",    # Liga MX
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",    # Premier League
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",    # LaLiga (España)
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",    # Serie A (Italia)
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard",    # Bundesliga (Alemania)
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard"     # Ligue 1 (Francia)
+    urls = [
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard"
     ]
     
     hoy = datetime.today().strftime('%Y-%m-%d')
@@ -66,9 +86,8 @@ def obtener_partidos_hoy():
                             liga = data["leagues"][0]["name"]
                             
                             partido_str = f"[{liga}] LOCAL: {home_team} vs VISITANTE: {away_team}"
-                            partido_id = f"{hoy}_{partido_str}" # ID único por día
+                            partido_id = f"{hoy}_{partido_str}"
                             
-                            # Solo lo agregamos si NO lo hemos procesado hoy
                             if partido_id not in procesados:
                                 partidos.append((partido_id, partido_str))
                         except:
@@ -76,7 +95,6 @@ def obtener_partidos_hoy():
         except Exception as e:
             print(f"Error al consultar ESPN: {e}")
             
-    # Tomamos máximo 5 partidos NUEVOS por hora para no saturar Groq
     return partidos[:5]
 
 def analizar_con_ia(historial, partido):
@@ -152,13 +170,12 @@ def main():
         print(f"Analizando: {partido_str}")
         analisis = analizar_con_ia(historial, partido_str)
         
-        # Guardamos en memoria que YA procesamos este partido hoy
         guardar_procesado(partido_id)
         
-        # ==========================================
-        # FILTRO ESTRICTO: SOLO ENVIAR SI ES APROBADO
-        # ==========================================
         if "APROBADO" in analisis.upper():
+            # Guardamos la predicción en secreto para auditarla cuando termine el partido
+            guardar_prediccion_pendiente(partido_id, partido_str, analisis)
+            
             mensaje_final = f"""🤖 𝗘𝗗𝗚𝗘 𝗕𝗢𝗧 𝗣𝗥𝗢 (Alerta de Valor)
 ━━━━━━━━━━━━━━━━━━━━
 ⚽ 𝗣𝗔𝗥𝗧𝗜𝗗𝗢:
@@ -167,13 +184,13 @@ def main():
 {analisis}
 ━━━━━━━━━━━━━━━━━━━━"""
             enviar_telegram(mensaje_final)
-            print("✅ Pick APROBADO enviado a Telegram.")
+            print("✅ Pick APROBADO enviado a Telegram y guardado para auditoría.")
         else:
-            print("❌ Pick DESCARTADO por la IA. No se envía a Telegram.")
+            print("❌ Pick DESCARTADO por la IA.")
             
         time.sleep(3)
         
-    print("Escaneo de esta hora finalizado.")
+    print("Escaneo finalizado.")
 
 if __name__ == "__main__":
     main()
