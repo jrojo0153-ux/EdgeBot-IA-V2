@@ -28,3 +28,39 @@ Partido: Red Sox 2 - 4 Yankees
 RESULTADO: GANADA
 LECCIÓN: La evaluación de la profundidad de plantilla y la condición de equipo de Súper Élite fue efectiva en este caso, lo que sugiere que la ventaja de los Yankees fue correctamente identificada.
 REGLA: Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.
+
+--- AUDITORÍA ---
+Partido: Sunderland 0 - 5 Nottingham Forest
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia de xG no fue significativa, pero la regla de Home Advantage Decay no se aplicó efectivamente, lo que llevó a una subestimación del rendimiento del equipo visitante.
+REGLA: Revisar la regla de Home Advantage Decay para considerar también el rendimiento histórico del equipo visitante en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Real Betis 1 - 1 Real Madrid
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja del equipo visitante (Real Madrid) en este caso no se tradujo en una victoria, lo que sugiere que la importancia de la ventaja de localía y la capacidad de respuesta del equipo local (Real Betis) puede ser subestimada en el modelo actual.
+REGLA: Ajustar el peso de la variable "Ventaja de Localía" en un 15% para partidos en los que el equipo local tiene un rendimiento histórico similar al del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Napoli 4 - 0 Cremonese
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Napoli y la efectividad de su ataque frente a la defensa de Cremonese se reflejaron en el marcador final, lo que sugiere que el modelo predictivo subestimó la capacidad ofensiva de Napoli.
+REGLA: Si Home Advantage Decay > 0,5 y el equipo local tiene una media de goles anotados en casa mayor a 2, aumentar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Napoli 4 - 0 Cremonese
+RESULTADO: GANADA
+LECCIÓN: La disparidad de calidad entre los equipos y el ataque vertical del Napoli fueron factores clave para la victoria, lo que sugiere que la evaluación del bot sobre la ventaja del equipo local fue precisa.
+REGLA: Si [Home Advantage Decay] < 0,2 y [Transition Speed] > 1,5, entonces incrementar la probabilidad de victoria del equipo local en un 10%.
+
+--- AUDITORÍA ---
+Partido: RB Leipzig 3 - 1 1. FC Union Berlin
+RESULTADO: GANADA
+LECCIÓN: La efectividad del ataque vertical del RB Leipzig y la debilidad de la defensa adelantada del 1. FC Union Berlin se confirmaron, lo que sugiere que la penalización al local no fue un factor determinante en este partido.
+REGLA: Si (Home Advantage Decay) y (Transition Speed > 0,7) y (Ataque Vertical > 0,6), entonces incrementar probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: RB Leipzig 3 - 1 1. FC Union Berlin
+RESULTADO: GANADA
+LECCIÓN: La estrategia de ataque vertical del RB Leipzig se aprovechó efectivamente de la defensa adelantada del 1. FC Union Berlin, lo que validó la predicción del modelo y demostró que la regla de "Home Advantage Decay" no fue un factor determinante en este partido.
+REGLA: Si (Home_Team_Atack_Vertical == True) y (Visitante_Defensa_Adelantada == True), entonces incrementar_probabilidad_local(5%).

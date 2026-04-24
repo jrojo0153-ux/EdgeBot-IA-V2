@@ -31,3 +31,11 @@
 - Incrementar el peso de la variable "Ventaja Local" en un 15% cuando el diferencial de puntos por partido entre los equipos sea menor a 5.
 - Si el equipo local tiene un roster elite y juega en casa, asignar un peso adicional de 0,2 a la probabilidad de victoria del equipo local.
 - Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la regla de Home Advantage Decay para considerar también el rendimiento histórico del equipo visitante en partidos fuera de casa.
+- Ajustar el peso de la variable "Ventaja de Localía" en un 15% para partidos en los que el equipo local tiene un rendimiento histórico similar al del equipo visitante.
+- Si Home Advantage Decay > 0,5 y el equipo local tiene una media de goles anotados en casa mayor a 2, aumentar la probabilidad de victoria local en un 10%.
+- Si [Home Advantage Decay] < 0,2 y [Transition Speed] > 1,5, entonces incrementar la probabilidad de victoria del equipo local en un 10%.
+- Si (Home Advantage Decay) y (Transition Speed > 0,7) y (Ataque Vertical > 0,6), entonces incrementar probabilidad de victoria local en un 10%.
+- Si (Home_Team_Atack_Vertical == True) y (Visitante_Defensa_Adelantada == True), entonces incrementar_probabilidad_local(5%).
