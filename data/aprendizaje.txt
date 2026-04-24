@@ -24,3 +24,10 @@
 ### Evento D: Éxito masivo en NBA (77% Win Rate)
 - Lección Extraída: El modelo es altamente preciso leyendo el "Pace" y el factor local en partidos igualados de baloncesto.
 - Regla a Aplicar: Mantener la confianza algorítmica en locales de NBA cuando la cuota está equilibrada y no hay disparidad de motivación.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento reciente" en el cálculo de probabilidad para partidos con equipos con diferencias mínimas en la clasificación.
+- Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 10% cuando el equipo local tiene una ventaja de más de 5 puntos en su casa.
+- Incrementar el peso de la variable "Ventaja Local" en un 15% cuando el diferencial de puntos por partido entre los equipos sea menor a 5.
+- Si el equipo local tiene un roster elite y juega en casa, asignar un peso adicional de 0,2 a la probabilidad de victoria del equipo local.
+- Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.

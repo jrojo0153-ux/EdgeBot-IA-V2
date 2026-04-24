@@ -334,3 +334,5 @@
 2026-04-24_[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest
 2026-04-24_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
 2026-04-24_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
+2026-04-24_[Spanish LALIGA] LOCAL: Real Betis vs VISITANTE: Real Madrid
+2026-04-24_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens

@@ -1,0 +1,30 @@
+
+--- AUDITORÍA ---
+Partido: Hawks 109 - 108 Knicks
+RESULTADO: PERDIDA
+LECCIÓN: Aunque el modelo consideró la motivación por playoffs y la profundidad de plantilla, no logró capturar la variabilidad en el rendimiento de los equipos, lo que llevó a una predicción incorrecta a pesar de la alta probabilidad asignada.
+REGLA: Revisar la ponderación de la variable "rendimiento reciente" en el cálculo de probabilidad para partidos con equipos con diferencias mínimas en la clasificación.
+
+--- AUDITORÍA ---
+Partido: Raptors 126 - 104 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el equipo local y visitante fue mayor a la esperada, lo que sugiere que el modelo subestimó la ventaja de los Raptors en su casa.
+REGLA: Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 10% cuando el equipo local tiene una ventaja de más de 5 puntos en su casa.
+
+--- AUDITORÍA ---
+Partido: Timberwolves 113 - 96 Nuggets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la motivación de los Timberwolves fueron factores clave en el resultado, lo que sugiere que la ponderación de la ventaja local en el modelo debe ser mayor cuando se enfrentan equipos con similares habilidades.
+REGLA: Incrementar el peso de la variable "Ventaja Local" en un 15% cuando el diferencial de puntos por partido entre los equipos sea menor a 5.
+
+--- AUDITORÍA ---
+Partido: Timberwolves 113 - 96 Nuggets
+RESULTADO: PERDIDA
+LECCIÓN: La motivación por playoffs y la profundidad de plantilla no fueron suficientes para superar a los Timberwolves en su casa, lo que sugiere que la regla "Elite Roster Home Protection" puede tener más peso que la motivación por playoffs en algunos casos.
+REGLA: Si el equipo local tiene un roster elite y juega en casa, asignar un peso adicional de 0,2 a la probabilidad de victoria del equipo local.
+
+--- AUDITORÍA ---
+Partido: Red Sox 2 - 4 Yankees
+RESULTADO: GANADA
+LECCIÓN: La evaluación de la profundidad de plantilla y la condición de equipo de Súper Élite fue efectiva en este caso, lo que sugiere que la ventaja de los Yankees fue correctamente identificada.
+REGLA: Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.
