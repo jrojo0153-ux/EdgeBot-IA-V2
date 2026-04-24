@@ -329,3 +329,8 @@
 2026-04-23_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Yankees
 2026-04-23_[Major League Baseball] LOCAL: Mets vs VISITANTE: Twins
 2026-04-23_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Pirates
+2026-04-24_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-24_[Mexican Liga BBVA MX] LOCAL: Puebla vs VISITANTE: Querétaro
+2026-04-24_[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest
+2026-04-24_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-24_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin

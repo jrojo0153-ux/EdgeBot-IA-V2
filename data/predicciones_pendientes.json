@@ -28,5 +28,25 @@
         "partido_str": "[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Yankees",
         "analisis": "🔍 REGLAS ACTIVADAS: [Elite Roster Home Protection]\n🧠 ANÁLISIS: La profundidad de plantilla de los Yankees y su condición de equipo de Súper Élite sugiere una ventaja significativa en su visita a los Red Sox.\n📌 PICK SUGERIDO: Yankees\n🎯 PROBABILIDAD REAL: 55%\n💰 CUOTA MÍNIMA (+EV): 1.82\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-23"
+    },
+    "2026-04-24_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets": {
+        "partido_str": "[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Elite Roster Home Protection], [Playoff Seeding Motivation]\n🧠 ANÁLISIS: La motivación por playoffs y la profundidad de plantilla de los Nuggets sugiere una ventaja significativa sobre los Timberwolves.\n📌 PICK SUGERIDO: Nuggets\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-24"
+    },
+    "2026-04-24_[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest": {
+        "partido_str": "[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Home Advantage Decay], [Low-Block Away Decay]\n🧠 ANÁLISIS: La diferencia de xG entre Sunderland y Nottingham Forest no es significativa, pero la regla de Home Advantage Decay podría aplicarse si el xG es alto.\n📌 PICK SUGERIDO: Under 2.5\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-24"
+    },
+    "2026-04-24_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese": {
+        "partido_str": "[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Away Elite Defense], [Home Advantage Decay], [Transition Speed]\n🧠 ANÁLISIS: El Napoli tiene un ataque vertical que podría aprovecharse de la defensa adelantada del Cremonese, pero la disparidad de calidad entre ambos equipos sugiere una ventaja clara para el local.\n📌 PICK SUGERIDO: Napoli\n🎯 PROBABILIDAD REAL: 82%\n💰 CUOTA MÍNIMA (+EV): 1.22\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-24"
+    },
+    "2026-04-24_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin": {
+        "partido_str": "[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin",
+        "analisis": "🔍 REGLAS ACTIVADAS: [Home Advantage Decay], [Transition Speed]\n🧠 ANÁLISIS: El RB Leipzig tiene un ataque vertical que podría aprovecharse de la defensa adelantada del 1. FC Union Berlin, lo que podría ignorar la penalización al local.\n📌 PICK SUGERIDO: RB Leipzig\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-24"
     }
 }
