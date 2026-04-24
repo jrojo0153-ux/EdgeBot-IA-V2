@@ -336,3 +336,8 @@
 2026-04-24_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
 2026-04-24_[Spanish LALIGA] LOCAL: Real Betis vs VISITANTE: Real Madrid
 2026-04-24_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens
+2026-04-24_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics
+2026-04-24_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-04-24_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Spurs
+2026-04-24_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
+2026-04-24_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Red Sox
