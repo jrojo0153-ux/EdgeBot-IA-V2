@@ -53,3 +53,7 @@
 - Ajustar la ponderación de la ventaja local en un 10% y considerar la fuerza del equipo visitante en un 15% en partidos futuros.
 - Revisar la ponderación de la ventaja local y considerar un ajuste del 10% hacia abajo en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento reciente superior al promedio.
 - Revisar la ponderación de la ventaja local y la profundidad de plantilla en el modelo, incorporando un factor de ajuste para el rendimiento actual de los equipos y las lesiones de jugadores clave.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Home Advantage Decay > 0,5) y (Elite Roster Home Protection = True), entonces PROBABILIDAD REAL >= 60%.
+- Si (Home Advantage Decay) y (Ataque Vertical > 0,5), entonces incrementar Probabilidad Real en 5%.

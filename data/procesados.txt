@@ -368,3 +368,8 @@
 2026-04-25_[Italian Serie A] LOCAL: Bologna vs VISITANTE: AS Roma
 2026-04-25_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: Lecce
 2026-04-25_[German Bundesliga] LOCAL: Hamburg SV vs VISITANTE: TSG Hoffenheim
+2026-04-25_[National Basketball Association] LOCAL: Suns vs VISITANTE: Thunder
+2026-04-25_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks
+2026-04-25_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-25_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
+2026-04-25_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians

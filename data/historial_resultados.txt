@@ -136,3 +136,15 @@ Partido: Giants 4 - 9 Marlins
 RESULTADO: PERDIDA
 LECCIÓN: La sobrevaloración de la ventaja local y la profundidad de plantilla de los Giants no se tradujo en una victoria, lo que sugiere que otros factores como el rendimiento actual de los equipos y las lesiones de jugadores clave no fueron adecuadamente considerados.
 REGLA: Revisar la ponderación de la ventaja local y la profundidad de plantilla en el modelo, incorporando un factor de ajuste para el rendimiento actual de los equipos y las lesiones de jugadores clave.
+
+--- AUDITORÍA ---
+Partido: Liverpool 3 - 1 Crystal Palace
+RESULTADO: GANADA
+LECCIÓN: La ventaja de localía y la calidad del equipo de Liverpool se reflejaron en el marcador final, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente al considerar factores como la motivación y la calidad de los equipos.
+REGLA: Si (Home Advantage Decay > 0,5) y (Elite Roster Home Protection = True), entonces PROBABILIDAD REAL >= 60%.
+
+--- AUDITORÍA ---
+Partido: West Ham United 2 - 1 Everton
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de West Ham United para aprovechar la defensa adelantada de Everton, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se combina con un ataque vertical efectivo.
+REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,5), entonces incrementar Probabilidad Real en 5%.

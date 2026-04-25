@@ -29,16 +29,6 @@
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Elite Roster Home Protection\n🧠 ANÁLISIS: El América tiene una ventaja local significativa y un ataque vertical que puede aprovechar la defensa adelantada del Atlas.\n📌 PICK SUGERIDO: América\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-25"
     },
-    "2026-04-25_[English Premier League] LOCAL: Liverpool vs VISITANTE: Crystal Palace": {
-        "partido_str": "[English Premier League] LOCAL: Liverpool vs VISITANTE: Crystal Palace",
-        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Elite Roster Home Protection\n🧠 ANÁLISIS: La ventaja de localía de Liverpool y su ataque vertical pueden superar la defensa de Crystal Palace, considerando la motivación y la calidad de los equipos.\n📌 PICK SUGERIDO: Liverpool\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-25"
-    },
-    "2026-04-25_[English Premier League] LOCAL: West Ham United vs VISITANTE: Everton": {
-        "partido_str": "[English Premier League] LOCAL: West Ham United vs VISITANTE: Everton",
-        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Low-Block Away Decay\n🧠 ANÁLISIS: La ventaja local de West Ham United puede verse afectada por la regla de Home Advantage Decay, pero su ataque vertical puede aprovechar la defensa adelantada de Everton.\n📌 PICK SUGERIDO: West Ham United\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-25"
-    },
     "2026-04-25_[English Premier League] LOCAL: Arsenal vs VISITANTE: Newcastle United": {
         "partido_str": "[English Premier League] LOCAL: Arsenal vs VISITANTE: Newcastle United",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La probabilidad de victoria de Arsenal en casa se ve influenciada por su ventaja local y la calidad de su plantilla, pero también se considera la motivación de Newcastle por mejorar su posición en la tabla.\n📌 PICK SUGERIDO: Arsenal\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
@@ -57,6 +47,26 @@
     "2026-04-25_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: Lecce": {
         "partido_str": "[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: Lecce",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Low-Block Away Decay\n🧠 ANÁLISIS: La ventaja local de Hellas Verona puede verse afectada por la regla de Home Advantage Decay, pero su ataque vertical puede aprovechar la defensa adelantada de Lecce.\n📌 PICK SUGERIDO: Hellas Verona\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-25"
+    },
+    "2026-04-25_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks": {
+        "partido_str": "[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Hawks y la motivación por posiciones de playoffs sugieren una probabilidad real favorable.\n📌 PICK SUGERIDO: Hawks\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-25"
+    },
+    "2026-04-25_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets": {
+        "partido_str": "[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Playoff Seeding Motivation, Ventaja Local\n🧠 ANÁLISIS: La motivación por posiciones de playoffs y la ventaja local de los Timberwolves pueden ser clave contra los Nuggets, considerando la profundidad de plantilla y el rendimiento reciente.\n📌 PICK SUGERIDO: Timberwolves\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-25"
+    },
+    "2026-04-25_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners": {
+        "partido_str": "[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Ventaja Local, Home Advantage Decay\n🧠 ANÁLISIS: La profundidad de plantilla de los Cardinals y su ventaja local sugieren una mayor probabilidad de victoria en casa.\n📌 PICK SUGERIDO: Cardinals\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-25"
+    },
+    "2026-04-25_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians": {
+        "partido_str": "[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Ventaja Local, Home Advantage Decay\n🧠 ANÁLISIS: La profundidad de plantilla de los Blue Jays y su ventaja local sugieren una probabilidad alta de victoria en casa.\n📌 PICK SUGERIDO: Blue Jays\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-25"
     }
 }
