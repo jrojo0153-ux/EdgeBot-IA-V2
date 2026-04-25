@@ -184,3 +184,21 @@ Partido: Hellas Verona 0 - 0 Lecce
 RESULTADO: PERDIDA
 LECCIÓN: La predicción no consideró adecuadamente la capacidad defensiva de Lecce y la efectividad de su estrategia de low-block, lo que llevó a un empate inesperado.
 REGLA: Si el equipo visitante tiene un porcentaje de posesión del balón inferior a 40% y utiliza una estrategia de low-block, ajustar la probabilidad de victoria local en -10%.
+
+--- AUDITORÍA ---
+Partido: Giants 6 - 2 Marlins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Giants se reflejaron en el resultado, lo que sugiere que el modelo predictivo tiene una buena capacidad para identificar factores clave que influyen en el resultado de los partidos.
+REGLA: Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Rays 6 - 1 Twins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Rays se reflejaron en el marcador real, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente en este caso, con una probabilidad real del 58% que se tradujo en una victoria.
+REGLA: Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 3 - 6 Nationals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar la efectividad del equipo visitante, lo que sugiere que se subestimó la capacidad del equipo contrario.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de una variable adicional que evalúe la efectividad del equipo visitante en partidos fuera de casa.

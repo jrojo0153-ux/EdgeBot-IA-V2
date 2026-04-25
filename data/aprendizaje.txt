@@ -67,3 +67,8 @@
 - Si la probabilidad de victoria local es > 55% y el equipo local tiene una ventaja de roster, ajustar la cuota mínima (+EV) a 1.75 para reflejar la incertidumbre residual.
 - Si (Ventaja Local > 0,5) y (Calidad Equipo Local > 0,7) y (Penalización Apostar Contra Equipo Élite > 0,3), entonces Predicción = Equipo Local.
 - Si el equipo visitante tiene un porcentaje de posesión del balón inferior a 40% y utiliza una estrategia de low-block, ajustar la probabilidad de victoria local en -10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+- Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de una variable adicional que evalúe la efectividad del equipo visitante en partidos fuera de casa.
