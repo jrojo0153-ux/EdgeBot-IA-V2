@@ -353,3 +353,8 @@
 2026-04-24_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
 2026-04-24_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Cubs
 2026-04-24_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Pachuca vs VISITANTE: Pumas UNAM
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Mazatlán FC
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: León
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Guadalajara vs VISITANTE: Tijuana
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: FC Juarez vs VISITANTE: Atlético de San Luis
