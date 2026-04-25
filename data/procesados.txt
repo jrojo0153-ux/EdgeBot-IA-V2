@@ -363,3 +363,8 @@
 2026-04-25_[English Premier League] LOCAL: West Ham United vs VISITANTE: Everton
 2026-04-25_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Tottenham Hotspur
 2026-04-25_[English Premier League] LOCAL: Arsenal vs VISITANTE: Newcastle United
+2026-04-25_[Spanish LALIGA] LOCAL: Valencia vs VISITANTE: Girona
+2026-04-25_[Spanish LALIGA] LOCAL: Atlético Madrid vs VISITANTE: Athletic Club
+2026-04-25_[Italian Serie A] LOCAL: Bologna vs VISITANTE: AS Roma
+2026-04-25_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: Lecce
+2026-04-25_[German Bundesliga] LOCAL: Hamburg SV vs VISITANTE: TSG Hoffenheim
