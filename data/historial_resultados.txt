@@ -160,3 +160,27 @@ Partido: Valencia 2 - 1 Girona
 RESULTADO: GANADA
 LECCIÓN: La ventaja local de Valencia y su ataque vertical efectivo contra la defensa adelantada de Girona se tradujeron en una victoria, lo que sugiere que la regla de Home Advantage Decay puede ser menos relevante cuando el equipo local tiene una clara superioridad en ataque.
 REGLA: Si (VentajaLocal > 0,5) y (AtaqueVertical > 0,7), entonces ponderar menos la regla de Home Advantage Decay en la predicción.
+
+--- AUDITORÍA ---
+Partido: Cardinals 9 - 11 Mariners
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar la efectividad del equipo visitante, lo que sugiere que se subestimó la capacidad ofensiva de los Mariners.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tiene un desempeño ofensivo superior en la temporada.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 5 - 3 Guardians
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Blue Jays fueron factores clave en la victoria, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria (58% vs. resultado real).
+REGLA: Si la probabilidad de victoria local es > 55% y el equipo local tiene una ventaja de roster, ajustar la cuota mínima (+EV) a 1.75 para reflejar la incertidumbre residual.
+
+--- AUDITORÍA ---
+Partido: Atlético Madrid 3 - 2 Athletic Club
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Atlético Madrid y la regla de Elite Roster Home Protection fueron factores clave en la predicción correcta, lo que sugiere que la calidad del equipo local y la penalización por apostar en contra de un equipo de élite en su propio estadio son variables importantes a considerar.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Equipo Local > 0,7) y (Penalización Apostar Contra Equipo Élite > 0,3), entonces Predicción = Equipo Local.
+
+--- AUDITORÍA ---
+Partido: Hellas Verona 0 - 0 Lecce
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró adecuadamente la capacidad defensiva de Lecce y la efectividad de su estrategia de low-block, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene un porcentaje de posesión del balón inferior a 40% y utiliza una estrategia de low-block, ajustar la probabilidad de victoria local en -10%.
