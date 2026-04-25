@@ -358,3 +358,8 @@
 2026-04-25_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: León
 2026-04-25_[Mexican Liga BBVA MX] LOCAL: Guadalajara vs VISITANTE: Tijuana
 2026-04-25_[Mexican Liga BBVA MX] LOCAL: FC Juarez vs VISITANTE: Atlético de San Luis
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Atlas
+2026-04-25_[English Premier League] LOCAL: Liverpool vs VISITANTE: Crystal Palace
+2026-04-25_[English Premier League] LOCAL: West Ham United vs VISITANTE: Everton
+2026-04-25_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Tottenham Hotspur
+2026-04-25_[English Premier League] LOCAL: Arsenal vs VISITANTE: Newcastle United
