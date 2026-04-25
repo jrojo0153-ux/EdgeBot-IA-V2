@@ -39,3 +39,17 @@
 - Si [Home Advantage Decay] < 0,2 y [Transition Speed] > 1,5, entonces incrementar la probabilidad de victoria del equipo local en un 10%.
 - Si (Home Advantage Decay) y (Transition Speed > 0,7) y (Ataque Vertical > 0,6), entonces incrementar probabilidad de victoria local en un 10%.
 - Si (Home_Team_Atack_Vertical == True) y (Visitante_Defensa_Adelantada == True), entonces incrementar_probabilidad_local(5%).
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene una profundidad de plantilla superior y es considerado Súper Élite, aumentar la probabilidad de victoria en un 10% si el equipo local no tiene una ventaja significativa en su condición de local.
+- Si la probabilidad real es ≥ 55% y la cuota mínima es ≥ 1.70, considerar la apuesta como válida para partidos con equipos con alta motivación por posiciones de playoffs.
+- Revisar la efectividad del pitcher visitante en juegos anteriores y ajustar la probabilidad de victoria local en un 10% si el pitcher visitante tiene un rendimiento superior al promedio.
+- Revisar la efectividad del equipo visitante en partidos anteriores y considerar la influencia de factores externos como el clima y el estado del campo en la predicción.
+- Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria Local += 0.05.
+- Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.05.
+- Revisar la efectividad de los lanzadores y el rendimiento reciente de los equipos antes de aplicar la regla de "Elite Roster Home Protection" y ajustar la probabilidad real en consecuencia.
+- Si la probabilidad real es ≤ 60% y la ventaja local es ≤ 2 carreras, ajustar la cuota mínima (+EV) a 1.80 para reflejar la incertidumbre adicional.
+- Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un factor de "Desempeño Reciente del Equipo Visitante" para mejorar la precisión de las predicciones.
+- Ajustar la ponderación de la ventaja local en un 10% y considerar la fuerza del equipo visitante en un 15% en partidos futuros.
+- Revisar la ponderación de la ventaja local y considerar un ajuste del 10% hacia abajo en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento reciente superior al promedio.
+- Revisar la ponderación de la ventaja local y la profundidad de plantilla en el modelo, incorporando un factor de ajuste para el rendimiento actual de los equipos y las lesiones de jugadores clave.
