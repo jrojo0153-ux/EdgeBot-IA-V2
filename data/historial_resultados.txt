@@ -148,3 +148,15 @@ Partido: West Ham United 2 - 1 Everton
 RESULTADO: GANADA
 LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de West Ham United para aprovechar la defensa adelantada de Everton, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se combina con un ataque vertical efectivo.
 REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,5), entonces incrementar Probabilidad Real en 5%.
+
+--- AUDITORÍA ---
+Partido: Arsenal 1 - 0 Newcastle United
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad de la plantilla de Arsenal fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo funcionó correctamente al considerar estos factores.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Plantilla Local > 0,7), entonces Probabilidad Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: Valencia 2 - 1 Girona
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Valencia y su ataque vertical efectivo contra la defensa adelantada de Girona se tradujeron en una victoria, lo que sugiere que la regla de Home Advantage Decay puede ser menos relevante cuando el equipo local tiene una clara superioridad en ataque.
+REGLA: Si (VentajaLocal > 0,5) y (AtaqueVertical > 0,7), entonces ponderar menos la regla de Home Advantage Decay en la predicción.

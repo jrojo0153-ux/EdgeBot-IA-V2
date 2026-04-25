@@ -373,3 +373,8 @@
 2026-04-25_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
 2026-04-25_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
 2026-04-25_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians
+2026-04-25_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins
+2026-04-25_[Major League Baseball] LOCAL: Rays vs VISITANTE: Twins
+2026-04-25_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals
+2026-04-25_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres
+2026-04-25_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Athletics
