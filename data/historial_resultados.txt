@@ -316,3 +316,9 @@ Partido: Lorient 2 - 3 Strasbourg
 RESULTADO: PERDIDA
 LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la efectividad del ataque de Strasbourg, lo que sugiere que la evaluación de la ventaja local debe considerar también la calidad del equipo visitante.
 REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene un rendimiento histórico superior al 60% en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Real Oviedo 1 - 2 Elche
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la capacidad ofensiva de Real Oviedo llevó a una predicción incorrecta, lo que sugiere que la influencia de la regla de Elite Roster Home Protection y Home Advantage Decay puede ser menor de lo esperado en partidos con equipos con habilidades similares.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y Home Advantage Decay cuando la diferencia de habilidades entre los equipos sea menor a 10%.
