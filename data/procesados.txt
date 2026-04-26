@@ -399,3 +399,5 @@
 2026-04-26_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Strasbourg
 2026-04-26_[French Ligue 1] LOCAL: Le Havre AC vs VISITANTE: Metz
 2026-04-26_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Lille
+2026-04-26_[French Ligue 1] LOCAL: Stade Rennais vs VISITANTE: Nantes
+2026-04-26_[French Ligue 1] LOCAL: Marseille vs VISITANTE: Nice
