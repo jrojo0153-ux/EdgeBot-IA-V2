@@ -401,3 +401,8 @@
 2026-04-26_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Lille
 2026-04-26_[French Ligue 1] LOCAL: Stade Rennais vs VISITANTE: Nantes
 2026-04-26_[French Ligue 1] LOCAL: Marseille vs VISITANTE: Nice
+2026-04-26_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-04-26_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Spurs
+2026-04-26_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics
+2026-04-26_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-04-26_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Red Sox

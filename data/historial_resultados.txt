@@ -298,3 +298,21 @@ Partido: Fiorentina 0 - 0 Sassuolo
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot se basó en la ventaja local y el rendimiento histórico de la Fiorentina, pero no consideró la capacidad defensiva del Sassuolo, lo que resultó en un empate inesperado.
 REGLA: Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.
+
+--- AUDITORÍA ---
+Partido: Genoa 0 - 2 Como
+RESULTADO: GANADA
+LECCIÓN: La predicción de Under 2.5 se cumplió debido a la sólida defensa de Como y la incapacidad de Genoa para aprovechar su ventaja local, lo que resultó en un marcador final de 0-2.
+REGLA: Si la probabilidad de Under 2.5 es mayor a 55% y el equipo local tiene una ventaja decayendo, considerar la opción Under 2.5 con cuota mínima (+EV) mayor a 1.70.
+
+--- AUDITORÍA ---
+Partido: VfB Stuttgart 1 - 1 Werder Bremen
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot se basó en la ventaja local de VfB Stuttgart, pero no consideró suficientemente la capacidad de Werder Bremen para empatar el partido, lo que indica una subestimación de la fuerza del equipo visitante.
+REGLA: Ajustar la fórmula de Home Advantage Decay para incluir un factor de "Empate Probable" cuando el equipo visitante tenga un roster de calidad similar o superior al del equipo local.
+
+--- AUDITORÍA ---
+Partido: Lorient 2 - 3 Strasbourg
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la efectividad del ataque de Strasbourg, lo que sugiere que la evaluación de la ventaja local debe considerar también la calidad del equipo visitante.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene un rendimiento histórico superior al 60% en partidos fuera de casa.

@@ -92,3 +92,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la probabilidad de Under 2.5 es mayor a 55% y el equipo local tiene una ventaja decayendo, considerar la opción Under 2.5 con cuota mínima (+EV) mayor a 1.70.
+- Ajustar la fórmula de Home Advantage Decay para incluir un factor de "Empate Probable" cuando el equipo visitante tenga un roster de calidad similar o superior al del equipo local.
+- Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene un rendimiento histórico superior al 60% en partidos fuera de casa.
