@@ -383,3 +383,4 @@
 2026-04-25_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates
 2026-04-25_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
 2026-04-25_[Major League Baseball] LOCAL: Braves vs VISITANTE: Phillies
+2026-04-26_[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford
