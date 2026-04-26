@@ -394,3 +394,8 @@
 2026-04-26_[Italian Serie A] LOCAL: Genoa vs VISITANTE: Como
 2026-04-26_[Italian Serie A] LOCAL: Torino vs VISITANTE: Internazionale
 2026-04-26_[Italian Serie A] LOCAL: AC Milan vs VISITANTE: Juventus
+2026-04-26_[German Bundesliga] LOCAL: VfB Stuttgart vs VISITANTE: Werder Bremen
+2026-04-26_[German Bundesliga] LOCAL: Borussia Dortmund vs VISITANTE: SC Freiburg
+2026-04-26_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Strasbourg
+2026-04-26_[French Ligue 1] LOCAL: Le Havre AC vs VISITANTE: Metz
+2026-04-26_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Lille
