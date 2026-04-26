@@ -123,3 +123,6 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la ponderación de la variable "rendimiento reciente" en el modelo, aumentando su peso a 0,3 para reflejar mejor la influencia de los resultados recientes en la predicción.
 - Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Calidad Roster Local > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.

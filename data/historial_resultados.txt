@@ -412,3 +412,9 @@ Partido: Giants 6 - 3 Marlins
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y el análisis de roster fueron factores clave en la predicción correcta, lo que sugiere que el modelo puede confiar en la importancia de la ventaja local en partidos con equipos equilibrados.
 REGLA: Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.
+
+--- AUDITORÍA ---
+Partido: Diamondbacks 12 - 7 Padres
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Diamondbacks se reflejaron en el resultado final, lo que sugiere que la ponderación de estas variables en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Roster Local > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
