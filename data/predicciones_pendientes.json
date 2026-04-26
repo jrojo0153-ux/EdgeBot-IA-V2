@@ -3,5 +3,20 @@
         "partido_str": "[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Manchester United, combinada con su roster elite y la capacidad de ataque vertical, sugiere una mayor probabilidad de victoria en casa.\n📌 PICK SUGERIDO: Manchester United\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Monterrey": {
+        "partido_str": "[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Monterrey",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Elite Roster Home Protection\n🧠 ANÁLISIS: La ventaja local de Santos y la velocidad de transición en su ataque podrían ser clave contra un Monterrey con una defensa sólida pero que puede ser vulnerable a los contraataques rápidos.\n📌 PICK SUGERIDO: Santos\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Necaxa": {
+        "partido_str": "[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Necaxa",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Elite Roster Home Protection\n🧠 ANÁLISIS: La ventaja local de Cruz Azul y su ataque vertical pueden superar la defensa de Necaxa, considerando la regla de Transition Speed.\n📌 PICK SUGERIDO: Cruz Azul\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Elche": {
+        "partido_str": "[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Elche",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Real Oviedo y su capacidad ofensiva en casa sugieren una probabilidad alta de victoria, considerando la regla de Elite Roster Home Protection y la influencia de Home Advantage Decay.\n📌 PICK SUGERIDO: Real Oviedo\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
     }
 }

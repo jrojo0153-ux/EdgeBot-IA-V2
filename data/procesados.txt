@@ -384,3 +384,8 @@
 2026-04-25_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
 2026-04-25_[Major League Baseball] LOCAL: Braves vs VISITANTE: Phillies
 2026-04-26_[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford
+2026-04-26_[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Monterrey
+2026-04-26_[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Necaxa
+2026-04-26_[Spanish LALIGA] LOCAL: Rayo Vallecano vs VISITANTE: Real Sociedad
+2026-04-26_[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Elche
+2026-04-26_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Sevilla
