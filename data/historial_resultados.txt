@@ -400,3 +400,15 @@ Partido: Marseille 1 - 1 Nice
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot subestimó la capacidad defensiva de Nice y no consideró suficientemente la posibilidad de un empate, lo que llevó a una pérdida a pesar de la ventaja local de Marseille.
 REGLA: Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.
+
+--- AUDITORÍA ---
+Partido: Trail Blazers 93 - 114 Spurs
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia en el rendimiento real entre los equipos fue mayor de lo esperado, lo que sugiere que la evaluación de la calidad de los equipos y su rendimiento reciente no fue lo suficientemente precisa.
+REGLA: Revisar la ponderación de la variable "rendimiento reciente" en el modelo, aumentando su peso a 0,3 para reflejar mejor la influencia de los resultados recientes en la predicción.
+
+--- AUDITORÍA ---
+Partido: Giants 6 - 3 Marlins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de roster fueron factores clave en la predicción correcta, lo que sugiere que el modelo puede confiar en la importancia de la ventaja local en partidos con equipos equilibrados.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.

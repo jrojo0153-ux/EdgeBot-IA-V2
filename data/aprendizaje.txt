@@ -119,3 +119,7 @@
 - Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
 - Si (Ventaja Local > 0,5) y (Rendimiento Histórico en Casa > 0,6), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
 - Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento reciente" en el modelo, aumentando su peso a 0,3 para reflejar mejor la influencia de los resultados recientes en la predicción.
+- Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.
