@@ -112,3 +112,10 @@
 - Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
 - Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
 - Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+- Si (Ventaja Local > 0,5) y (Rendimiento Histórico en Casa > 0,6), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.

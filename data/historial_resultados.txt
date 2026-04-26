@@ -370,3 +370,33 @@ Partido: Mets 1 - 3 Rockies
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar a los Rockies, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como el rendimiento reciente y las estadísticas de los equipos.
 REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).
+
+--- AUDITORÍA ---
+Partido: Astros 7 - 4 Yankees
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Astros fueron factores clave en su victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: Brewers 5 - 0 Pirates
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite del equipo local fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 1 - 2 Nationals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar a los Nationals, lo que sugiere que la evaluación de la probabilidad real (58%) fue excesivamente optimista y no consideró adecuadamente la fuerza del equipo visitante.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+
+--- AUDITORÍA ---
+Partido: Villarreal 2 - 1 Celta Vigo
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el rendimiento histórico de Villarreal en casa fueron factores clave en la victoria, lo que sugiere que el modelo predictivo funcionó correctamente al considerar estas variables.
+REGLA: Si (Ventaja Local > 0,5) y (Rendimiento Histórico en Casa > 0,6), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Marseille 1 - 1 Nice
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad defensiva de Nice y no consideró suficientemente la posibilidad de un empate, lo que llevó a una pérdida a pesar de la ventaja local de Marseille.
+REGLA: Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.
