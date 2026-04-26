@@ -19,21 +19,6 @@
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Villarreal y su rendimiento histórico en casa sugieren una mayor probabilidad de victoria, aunque la calidad del equipo visitante y su capacidad ofensiva deben ser consideradas.\n📌 PICK SUGERIDO: Villarreal\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-26"
     },
-    "2026-04-26_[German Bundesliga] LOCAL: Borussia Dortmund vs VISITANTE: SC Freiburg": {
-        "partido_str": "[German Bundesliga] LOCAL: Borussia Dortmund vs VISITANTE: SC Freiburg",
-        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Borussia Dortmund y su ataque vertical pueden superar la defensa de SC Freiburg, considerando la regla de Transition Speed.\n📌 PICK SUGERIDO: Borussia Dortmund\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-26"
-    },
-    "2026-04-26_[French Ligue 1] LOCAL: Le Havre AC vs VISITANTE: Metz": {
-        "partido_str": "[French Ligue 1] LOCAL: Le Havre AC vs VISITANTE: Metz",
-        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Low-Block Away Decay\n🧠 ANÁLISIS: La ventaja local de Le Havre AC se ve afectada por la regla de Home Advantage Decay, pero su ataque vertical puede aprovechar la defensa adelantada de Metz.\n📌 PICK SUGERIDO: Le Havre AC\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-26"
-    },
-    "2026-04-26_[French Ligue 1] LOCAL: Stade Rennais vs VISITANTE: Nantes": {
-        "partido_str": "[French Ligue 1] LOCAL: Stade Rennais vs VISITANTE: Nantes",
-        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Transition Speed, Elite Roster Home Protection\n🧠 ANÁLISIS: La probabilidad de victoria de Stade Rennais se ve influenciada por su ventaja local y la capacidad ofensiva del equipo, mientras que Nantes tiene una defensa sólida que podría limitar las oportunidades de gol.\n📌 PICK SUGERIDO: Stade Rennais\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-26"
-    },
     "2026-04-26_[French Ligue 1] LOCAL: Marseille vs VISITANTE: Nice": {
         "partido_str": "[French Ligue 1] LOCAL: Marseille vs VISITANTE: Nice",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Marseille y su ataque vertical pueden superar la defensa de Nice, considerando la regla de Home Advantage Decay y la calidad del roster local.\n📌 PICK SUGERIDO: Marseille\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
@@ -72,6 +57,21 @@
     "2026-04-26_[Major League Baseball] LOCAL: Mets vs VISITANTE: Rockies": {
         "partido_str": "[Major League Baseball] LOCAL: Mets vs VISITANTE: Rockies",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Mets y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Rockies.\n📌 PICK SUGERIDO: Mets\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: Astros vs VISITANTE: Yankees": {
+        "partido_str": "[Major League Baseball] LOCAL: Astros vs VISITANTE: Yankees",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Astros y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Yankees.\n📌 PICK SUGERIDO: Astros\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates": {
+        "partido_str": "[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Brewers y su roster elite en comparación con los Pirates sugiere una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Brewers\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals": {
+        "partido_str": "[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los White Sox y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Nationals.\n📌 PICK SUGERIDO: White Sox\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-26"
     }
 }

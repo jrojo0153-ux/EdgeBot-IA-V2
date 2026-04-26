@@ -322,3 +322,21 @@ Partido: Real Oviedo 1 - 2 Elche
 RESULTADO: PERDIDA
 LECCIÓN: La sobrevaloración de la ventaja local y la capacidad ofensiva de Real Oviedo llevó a una predicción incorrecta, lo que sugiere que la influencia de la regla de Elite Roster Home Protection y Home Advantage Decay puede ser menor de lo esperado en partidos con equipos con habilidades similares.
 REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y Home Advantage Decay cuando la diferencia de habilidades entre los equipos sea menor a 10%.
+
+--- AUDITORÍA ---
+Partido: Borussia Dortmund 4 - 0 SC Freiburg
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la ventaja local y la velocidad de transición en el ataque de Borussia Dortmund superó las expectativas, lo que sugiere que el modelo subestimó la diferencia de habilidades entre los equipos.
+REGLA: Incrementar el peso de la regla "Home Advantage Decay" en un 15% cuando el equipo local tenga una diferencia de 10 o más puestos en la tabla de clasificación con respecto al visitante.
+
+--- AUDITORÍA ---
+Partido: Le Havre AC 4 - 4 Metz
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró adecuadamente la capacidad de Metz para anotar goles a pesar de la ventaja local de Le Havre AC, lo que resultó en un empate inesperado.
+REGLA: Incorporar un factor de "Goles Esperados del Visitante" (GEV) en la fórmula de predicción para partidos con equipos con alta capacidad ofensiva en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: Stade Rennais 2 - 1 Nantes
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la capacidad ofensiva de Stade Rennais fueron claves para su victoria, lo que sugiere que el modelo predictivo sobrestimó ligeramente la defensa de Nantes.
+REGLA: Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.

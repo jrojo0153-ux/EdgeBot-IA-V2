@@ -100,3 +100,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la ponderación de la regla de Elite Roster Home Protection y Home Advantage Decay cuando la diferencia de habilidades entre los equipos sea menor a 10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incrementar el peso de la regla "Home Advantage Decay" en un 15% cuando el equipo local tenga una diferencia de 10 o más puestos en la tabla de clasificación con respecto al visitante.
+- Incorporar un factor de "Goles Esperados del Visitante" (GEV) en la fórmula de predicción para partidos con equipos con alta capacidad ofensiva en condición de visitante.
+- Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.
