@@ -73,5 +73,20 @@
         "partido_str": "[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los White Sox y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Nationals.\n📌 PICK SUGERIDO: White Sox\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins": {
+        "partido_str": "[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Giants y su histórico en casa sugieren una ligera ventaja, pero la calidad del roster de los Marlins y su capacidad ofensiva en condición de visitante equilibran el partido.\n📌 PICK SUGERIDO: Giants\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres": {
+        "partido_str": "[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Diamondbacks y la calidad de su roster sugieren una probabilidad de victoria local, pero la presencia de los Padres como un equipo sólido requiere considerar la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: Diamondbacks\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
+    },
+    "2026-04-26_[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels": {
+        "partido_str": "[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Royals y la calidad de su roster sugieren una probabilidad de victoria local, pero la presencia de los Angels con una plantilla sólida requiere ajustar la probabilidad real.\n📌 PICK SUGERIDO: Royals\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-26"
     }
 }
