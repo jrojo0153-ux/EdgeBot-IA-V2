@@ -340,3 +340,33 @@ Partido: Stade Rennais 2 - 1 Nantes
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y la capacidad ofensiva de Stade Rennais fueron claves para su victoria, lo que sugiere que el modelo predictivo sobrestimó ligeramente la defensa de Nantes.
 REGLA: Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.
+
+--- AUDITORÍA ---
+Partido: Raptors 93 - 89 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue menor de lo esperado, lo que sugiere que la ventaja local y la motivación por posiciones de playoffs pueden no ser tan determinantes en partidos con equipos de similar nivel.
+REGLA: Si la diferencia de puntos en un partido es menor a 5, ajustar la probabilidad de victoria del equipo local en un 10% hacia abajo.
+
+--- AUDITORÍA ---
+Partido: Orioles 3 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster de los Orioles no fue suficiente para contrarrestar el rendimiento histórico superior de los Red Sox, lo que indica una posible subestimación de la fuerza del equipo visitante.
+REGLA: Ajustar la probabilidad de victoria local con un factor de corrección del 10% cuando el equipo visitante tenga un rendimiento histórico superior al del equipo local.
+
+--- AUDITORÍA ---
+Partido: Braves 6 - 2 Phillies
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Braves se tradujeron en una victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada, aunque la probabilidad real del 58% indica una certeza moderada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 4 - 2 Guardians
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Blue Jays fueron factores clave en la victoria, lo que sugiere que el modelo predictivo tiene una buena capacidad para identificar equipos con ventajas significativas en casa.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Mets 1 - 3 Rockies
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar a los Rockies, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como el rendimiento reciente y las estadísticas de los equipos.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).

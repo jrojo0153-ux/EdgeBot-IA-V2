@@ -105,3 +105,10 @@
 - Incrementar el peso de la regla "Home Advantage Decay" en un 15% cuando el equipo local tenga una diferencia de 10 o más puestos en la tabla de clasificación con respecto al visitante.
 - Incorporar un factor de "Goles Esperados del Visitante" (GEV) en la fórmula de predicción para partidos con equipos con alta capacidad ofensiva en condición de visitante.
 - Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la diferencia de puntos en un partido es menor a 5, ajustar la probabilidad de victoria del equipo local en un 10% hacia abajo.
+- Ajustar la probabilidad de victoria local con un factor de corrección del 10% cuando el equipo visitante tenga un rendimiento histórico superior al del equipo local.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).
