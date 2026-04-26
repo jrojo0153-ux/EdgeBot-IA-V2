@@ -89,3 +89,6 @@
 - Incorporar un umbral de probabilidad para empates (p. ej., > 20%) y ajustar la predicción según sea necesario para evitar sobrevalorar la ventaja local.
 - Si Home Advantage Decay y Low-Block Away Decay están activadas, considerar un ajuste en la predicción de Under/Over según la potencia ofensiva del equipo local.
 - Ajustar el peso de la defensa visitante en la fórmula de predicción, considerando un factor de al menos 0,2 para partidos con equipos con defensas sólidas como el Atlas.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.

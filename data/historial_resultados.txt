@@ -292,3 +292,9 @@ Partido: América 0 - 1 Atlas
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el ataque vertical del América no fueron suficientes para superar la defensa del Atlas, lo que sugiere que la importancia de la defensa visitante fue subestimada en el análisis.
 REGLA: Ajustar el peso de la defensa visitante en la fórmula de predicción, considerando un factor de al menos 0,2 para partidos con equipos con defensas sólidas como el Atlas.
+
+--- AUDITORÍA ---
+Partido: Fiorentina 0 - 0 Sassuolo
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot se basó en la ventaja local y el rendimiento histórico de la Fiorentina, pero no consideró la capacidad defensiva del Sassuolo, lo que resultó en un empate inesperado.
+REGLA: Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.
