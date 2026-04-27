@@ -436,3 +436,9 @@ Partido: Santos 3 - 0 Monterrey
 RESULTADO: GANADA
 LECCIÓN: La efectividad de la ventaja local y la velocidad de transición en el ataque de Santos se reflejó en el marcador final, lo que sugiere que el modelo cuantitativo capturó correctamente las dinámicas del partido.
 REGLA: Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Cruz Azul 4 - 1 Necaxa
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay y Transition Speed en partidos con equipos con diferencias significativas en su rendimiento histórico y actual, como Cruz Azul y Necaxa, puede ser un indicador sólido para predecir resultados.
+REGLA: Si (Home Advantage Decay > 0,5) y (Transition Speed > 1,2), entonces PROBABILIDAD REAL >= 55% para el equipo local.
