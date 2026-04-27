@@ -434,3 +434,4 @@
 2026-04-27_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
 2026-04-27_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Yankees
 2026-04-27_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
+2026-04-27_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
