@@ -139,3 +139,6 @@
 - Ajustar la probabilidad de victoria en casa por un factor de 0.05 cuando el equipo visitante tenga un rendimiento histórico de más de 30% de victorias en condición de visitante.
 - Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
 - Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.

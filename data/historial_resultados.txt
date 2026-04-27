@@ -460,3 +460,9 @@ Partido: Lazio 3 - 3 Udinese
 RESULTADO: PERDIDA
 LECCIÓN: La predicción no consideró la capacidad de Udinese para anotar goles a pesar de la ventaja local de Lazio, lo que llevó a un empate inesperado.
 REGLA: Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.
+
+--- AUDITORÍA ---
+Partido: Espanyol 0 - 0 Levante
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de Levante para lograr un empate, lo que sugiere una subestimación de la resistencia del equipo visitante.
+REGLA: Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.
