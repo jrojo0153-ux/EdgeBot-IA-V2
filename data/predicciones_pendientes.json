@@ -33,5 +33,20 @@
         "partido_str": "[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Blue Jays y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Red Sox.\n📌 PICK SUGERIDO: Blue Jays\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-27"
+    },
+    "2026-04-27_[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons": {
+        "partido_str": "[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local y la calidad del roster de los Magic, combinadas con la regla de Elite Roster Home Protection, sugieren una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Magic\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
+    },
+    "2026-04-27_[National Basketball Association] LOCAL: Suns vs VISITANTE: Thunder": {
+        "partido_str": "[National Basketball Association] LOCAL: Suns vs VISITANTE: Thunder",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Suns, combinada con su ataque vertical y la posible debilidad defensiva de los Thunder, sugiere una ventaja significativa para el equipo local.\n📌 PICK SUGERIDO: Suns\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
+    },
+    "2026-04-27_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves": {
+        "partido_str": "[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Nuggets, combinada con su ataque vertical y la posible debilidad defensiva de los Timberwolves, sugiere una ventaja significativa para el equipo local.\n📌 PICK SUGERIDO: Nuggets\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
     }
 }
