@@ -420,3 +420,4 @@
 2026-04-26_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres
 2026-04-26_[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels
 2026-04-26_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Cubs
+2026-04-27_[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford

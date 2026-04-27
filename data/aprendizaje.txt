@@ -126,3 +126,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si (Ventaja Local > 0,5) y (Calidad Roster Local > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Elite Roster Home Protection" cuando el equipo visitante tiene una ventaja significativa en la clasificación de playoffs.
+- Si la ventaja local y la calidad del roster superan un umbral de 0,5 en la escala de evaluación, aumentar la probabilidad real en un 5% para partidos con marcadores esperados ajustados.
+- Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar la probabilidad de victoria local en un 10%.
