@@ -424,3 +424,8 @@
 2026-04-27_[Spanish LALIGA] LOCAL: Espanyol vs VISITANTE: Levante
 2026-04-27_[Italian Serie A] LOCAL: Cagliari vs VISITANTE: Atalanta
 2026-04-27_[Italian Serie A] LOCAL: Lazio vs VISITANTE: Udinese
+2026-04-27_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-27_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-27_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
+2026-04-27_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels
+2026-04-27_[Major League Baseball] LOCAL: Twins vs VISITANTE: Mariners

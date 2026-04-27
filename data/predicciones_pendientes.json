@@ -18,5 +18,20 @@
         "partido_str": "[Italian Serie A] LOCAL: Lazio vs VISITANTE: Udinese",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La Lazio tiene una ventaja local significativa y un roster de calidad, lo que sugiere una mayor probabilidad de victoria en casa.\n📌 PICK SUGERIDO: Lazio\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-27"
+    },
+    "2026-04-27_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays": {
+        "partido_str": "[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Guardians y su roster competitivo sugieren una probabilidad de victoria local, considerando la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: Guardians\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
+    },
+    "2026-04-27_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals": {
+        "partido_str": "[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Pirates y la calidad de su roster en comparación con los Cardinals sugiere una ligera ventaja para el equipo local.\n📌 PICK SUGERIDO: Pirates\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
+    },
+    "2026-04-27_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox": {
+        "partido_str": "[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Blue Jays y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Red Sox.\n📌 PICK SUGERIDO: Blue Jays\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-27"
     }
 }
