@@ -134,3 +134,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si (Home Advantage Decay > 0,5) y (Transition Speed > 1,2), entonces PROBABILIDAD REAL >= 55% para el equipo local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la probabilidad de victoria en casa por un factor de 0.05 cuando el equipo visitante tenga un rendimiento histórico de más de 30% de victorias en condición de visitante.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.

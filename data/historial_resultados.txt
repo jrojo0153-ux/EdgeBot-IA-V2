@@ -442,3 +442,21 @@ Partido: Cruz Azul 4 - 1 Necaxa
 RESULTADO: GANADA
 LECCIÓN: La efectividad de la regla de Home Advantage Decay y Transition Speed en partidos con equipos con diferencias significativas en su rendimiento histórico y actual, como Cruz Azul y Necaxa, puede ser un indicador sólido para predecir resultados.
 REGLA: Si (Home Advantage Decay > 0,5) y (Transition Speed > 1,2), entonces PROBABILIDAD REAL >= 55% para el equipo local.
+
+--- AUDITORÍA ---
+Partido: Manchester United 2 - 1 Brentford
+RESULTADO: GANADA
+LECCIÓN: La diferencia de solo un gol en el marcador real (2-1) sugiere que, aunque la predicción fue correcta, la ventaja de Manchester United no fue tan abrumadora como se esperaba, lo que indica una posible subestimación de la capacidad de respuesta del equipo visitante.
+REGLA: Ajustar la probabilidad de victoria en casa por un factor de 0.05 cuando el equipo visitante tenga un rendimiento histórico de más de 30% de victorias en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: Manchester United 2 - 1 Brentford
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Manchester United fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo funcionó correctamente al considerar estos factores.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Lazio 3 - 3 Udinese
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró la capacidad de Udinese para anotar goles a pesar de la ventaja local de Lazio, lo que llevó a un empate inesperado.
+REGLA: Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.
