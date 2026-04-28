@@ -444,3 +444,8 @@
 2026-04-28_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
 2026-04-28_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
 2026-04-28_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Astros
+2026-04-28_[Major League Baseball] LOCAL: Reds vs VISITANTE: Rockies
+2026-04-28_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-28_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-28_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
+2026-04-28_[Major League Baseball] LOCAL: Mets vs VISITANTE: Nationals
