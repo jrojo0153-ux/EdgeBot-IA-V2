@@ -147,3 +147,10 @@
 - Revisar la efectividad del pitcheo visitante y el desempeño del bullpen local antes de aplicar la regla de Elite Roster Home Protection.
 - Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento histórico superior en la liga.
 - Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 5) y (Calidad Roster Local > 0.7), entonces Probabilidad de Victoria Local += 0.1.
+- Revisar la ponderación de la regla "Home Advantage Decay" y ajustarla para considerar la fuerza ofensiva del equipo visitante en partidos con equipos con alto potencial anotador.
+- Si la probabilidad real es mayor a 60% y la cuota mínima es mayor a 1.60, considerar un margen de victoria de al menos 10 puntos para el equipo local.
+- Si (VentajaLocal > 5) y (AtaqueVertical > 0.6) y (DefensaAdelantadaOponente > 0.4), entonces ProbabilidadVictoriaLocal += 0.1.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.

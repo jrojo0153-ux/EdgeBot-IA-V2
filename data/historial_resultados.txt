@@ -484,3 +484,33 @@ Partido: Blue Jays 0 - 5 Red Sox
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real del partido, lo que sugiere que otros factores como la forma actual de los equipos, lesiones clave o estrategias de juego pueden tener un impacto significativo en el resultado.
 REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.
+
+--- AUDITORÍA ---
+Partido: Magic 94 - 88 Pistons
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Magic fueron factores clave en la victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con rosters fuertes jugando en casa.
+REGLA: Si (Ventaja Local > 5) y (Calidad Roster Local > 0.7), entonces Probabilidad de Victoria Local += 0.1.
+
+--- AUDITORÍA ---
+Partido: Suns 122 - 131 Thunder
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad ofensiva de los Thunder y no consideró adecuadamente la posibilidad de que el equipo visitante superara la ventaja local de los Suns.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" y ajustarla para considerar la fuerza ofensiva del equipo visitante en partidos con equipos con alto potencial anotador.
+
+--- AUDITORÍA ---
+Partido: Nuggets 125 - 113 Timberwolves
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el equipo local y el visitante fue de 12 puntos, lo que sugiere que el modelo predictivo subestimó la ventaja de los Nuggets, pero aún así logró predecir el resultado correcto.
+REGLA: Si la probabilidad real es mayor a 60% y la cuota mínima es mayor a 1.60, considerar un margen de victoria de al menos 10 puntos para el equipo local.
+
+--- AUDITORÍA ---
+Partido: Nuggets 125 - 113 Timberwolves
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de estilo de juego de los equipos permitieron una predicción precisa, lo que sugiere que la consideración de factores como la defensa adelantada y la velocidad de transición puede ser crucial en partidos con equipos de habilidades similares.
+REGLA: Si (VentajaLocal > 5) y (AtaqueVertical > 0.6) y (DefensaAdelantadaOponente > 0.4), entonces ProbabilidadVictoriaLocal += 0.1.
+
+--- AUDITORÍA ---
+Partido: Dodgers 5 - 4 Marlins
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que la probabilidad real puede haber sido sobreestimada.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.
