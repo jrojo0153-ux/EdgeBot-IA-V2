@@ -142,3 +142,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la efectividad del pitcheo visitante y el desempeño del bullpen local antes de aplicar la regla de Elite Roster Home Protection.
+- Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento histórico superior en la liga.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.

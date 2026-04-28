@@ -466,3 +466,21 @@ Partido: Espanyol 0 - 0 Levante
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de Levante para lograr un empate, lo que sugiere una subestimación de la resistencia del equipo visitante.
 REGLA: Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.
+
+--- AUDITORÍA ---
+Partido: Guardians 2 - 3 Rays
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y el roster competitivo de los Guardians no se tradujo en una victoria, lo que sugiere que otros factores como la efectividad del pitcheo visitante o la debilidad en el bullpen local pueden haber influido en el resultado.
+REGLA: Revisar la efectividad del pitcheo visitante y el desempeño del bullpen local antes de aplicar la regla de Elite Roster Home Protection.
+
+--- AUDITORÍA ---
+Partido: Pirates 2 - 4 Cardinals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para superar a los Cardinals, lo que sugiere que se subestimó la capacidad del equipo visitante.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento histórico superior en la liga.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 0 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real del partido, lo que sugiere que otros factores como la forma actual de los equipos, lesiones clave o estrategias de juego pueden tener un impacto significativo en el resultado.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.
