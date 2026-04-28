@@ -439,3 +439,8 @@
 2026-04-28_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
 2026-04-28_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
 2026-04-28_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-04-28_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-28_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-28_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-28_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-28_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Astros
