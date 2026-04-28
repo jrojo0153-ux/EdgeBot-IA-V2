@@ -28,5 +28,15 @@
         "partido_str": "[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Phillies, combinada con su roster elite y la consideración de la regla de Elite Roster Home Protection, sugiere una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Phillies\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-28"
+    },
+    "2026-04-28_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers": {
+        "partido_str": "[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Braves, combinada con su roster elite y la consideración de la regla de Elite Roster Home Protection, sugiere una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Braves\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-28"
+    },
+    "2026-04-28_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels": {
+        "partido_str": "[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los White Sox y su roster elite sugieren una mayor probabilidad de victoria en casa, considerando la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: White Sox\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-28"
     }
 }
