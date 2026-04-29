@@ -514,3 +514,33 @@ Partido: Dodgers 5 - 4 Marlins
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que la probabilidad real puede haber sido sobreestimada.
 REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.
+
+--- AUDITORÍA ---
+Partido: Celtics 97 - 113 76ers
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la fuerza y el rendimiento de los 76ers, lo que sugiere que la motivación por posiciones de playoffs y la ventaja local no siempre son suficientes para garantizar la victoria.
+REGLA: Revisar la ponderación de la variable "motivación por posiciones de playoffs" cuando el equipo visitante también tiene una alta motivación y un rendimiento reciente sólido.
+
+--- AUDITORÍA ---
+Partido: Reds 7 - 2 Rockies
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de ataque y defensa de los equipos fueron factores clave en la predicción correcta, lo que sugiere que el modelo puede confiar en la importancia de la ventaja local en partidos de béisbol.
+REGLA: Si (Ventaja Local > 0,5) y (Ataque Local > Defensa Visitante), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Phillies 7 - 0 Giants
+RESULTADO: GANADA
+LECCIÓN: La precisión del modelo se vio favorecida por la ventaja local y el roster elite de los Phillies, lo que sugiere que la ponderación de estos factores en el análisis fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0.1.
+
+--- AUDITORÍA ---
+Partido: Braves 5 - 2 Tigers
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Braves se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con diferencias significativas en su calidad.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 5 - 2 Angels
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los White Sox se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con diferencias significativas en su plantilla.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia de Roster > 10%), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.

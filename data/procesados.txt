@@ -457,3 +457,6 @@
 2026-04-28_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
 2026-04-28_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
 2026-04-28_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
+2026-04-29_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-04-29_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-04-29_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce

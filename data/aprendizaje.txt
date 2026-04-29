@@ -154,3 +154,10 @@
 - Si la probabilidad real es mayor a 60% y la cuota mínima es mayor a 1.60, considerar un margen de victoria de al menos 10 puntos para el equipo local.
 - Si (VentajaLocal > 5) y (AtaqueVertical > 0.6) y (DefensaAdelantadaOponente > 0.4), entonces ProbabilidadVictoriaLocal += 0.1.
 - Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "motivación por posiciones de playoffs" cuando el equipo visitante también tiene una alta motivación y un rendimiento reciente sólido.
+- Si (Ventaja Local > 0,5) y (Ataque Local > Defensa Visitante), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0.1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+- Si (Ventaja Local > 0,5) y (Diferencia de Roster > 10%), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
