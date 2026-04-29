@@ -460,3 +460,8 @@
 2026-04-29_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
 2026-04-29_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
 2026-04-29_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-04-29_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-04-29_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-04-29_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-04-29_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-04-29_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV

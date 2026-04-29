@@ -9,21 +9,6 @@
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Girona y su capacidad para aprovechar el factor cancha pueden ser clave contra un Mallorca que no cuenta con un roster tan fuerte.\n📌 PICK SUGERIDO: Girona\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-28"
     },
-    "2026-04-28_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks": {
-        "partido_str": "[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks",
-        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Playoff Seeding Motivation, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Knicks y su motivación por posiciones de playoffs, combinada con la capacidad ofensiva de ambos equipos, sugiere un partido igualado.\n📌 PICK SUGERIDO: Knicks\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-28"
-    },
-    "2026-04-28_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs": {
-        "partido_str": "[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs",
-        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Padres, combinada con su roster elite y la consideración de la regla de Elite Roster Home Protection, sugiere una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Padres\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-28"
-    },
-    "2026-04-28_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals": {
-        "partido_str": "[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals",
-        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de los Athletics y su roster en comparación con los Royals sugiere una mayor probabilidad de victoria para el equipo local.\n📌 PICK SUGERIDO: Athletics\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
-        "fecha": "2026-04-28"
-    },
     "2026-04-29_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley": {
         "partido_str": "[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Leeds United se ve afectada por la calidad del roster de Burnley, pero la velocidad de transición de Leeds puede ser un factor clave en el partido.\n📌 PICK SUGERIDO: Leeds United\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
@@ -32,6 +17,16 @@
     "2026-04-29_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca": {
         "partido_str": "[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Girona y su rendimiento histórico en casa sugieren una mayor probabilidad de victoria, aunque la calidad del roster de Mallorca puede influir en el resultado.\n📌 PICK SUGERIDO: Girona\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-29"
+    },
+    "2026-04-29_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara": {
+        "partido_str": "[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Tigres UANL y su roster elite sugieren una mayor probabilidad de victoria en casa, considerando también la motivación por posiciones de playoffs.\n📌 PICK SUGERIDO: Tigres UANL\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-29"
+    },
+    "2026-04-29_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul": {
+        "partido_str": "[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Low-Block Away Decay\n🧠 ANÁLISIS: La ventaja local del Atlas y la calidad de su roster, combinadas con la estrategia defensiva de Cruz Azul, sugieren una probabilidad de victoria local moderada.\n📌 PICK SUGERIDO: Atlas\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-29"
     }
 }
