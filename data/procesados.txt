@@ -470,3 +470,5 @@
 2026-04-29_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
 2026-04-29_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
 2026-04-29_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-04-29_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-04-29_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens

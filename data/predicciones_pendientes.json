@@ -38,5 +38,10 @@
         "partido_str": "[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Werder Bremen y su rendimiento histórico en casa sugieren una ligera ventaja, pero la calidad del roster de ambos equipos es similar, lo que reduce la probabilidad de una victoria clara.\n📌 PICK SUGERIDO: Werder Bremen\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-29"
+    },
+    "2026-04-29_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens": {
+        "partido_str": "[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La probabilidad de victoria de Nice en casa se ve afectada por la regla de Home Advantage Decay, pero su ventaja local y la calidad de su roster la hacen una opción sólida contra Lens.\n📌 PICK SUGERIDO: Nice\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-29"
     }
 }
