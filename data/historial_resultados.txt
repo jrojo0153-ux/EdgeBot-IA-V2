@@ -568,3 +568,15 @@ Partido: Twins 3 - 5 Mariners
 RESULTADO: PERDIDA
 LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para superar la ventaja de los Mariners, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como la tendencia reciente y la efectividad del equipo visitante.
 REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y considerar la inclusión de un factor de tendencia reciente del equipo visitante en la fórmula de predicción.
+
+--- AUDITORÍA ---
+Partido: Rangers 3 - 0 Yankees
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local de los Rangers fue subestimada, lo que sugiere que la calidad del roster visitante no siempre supera la ventaja de jugar en casa.
+REGLA: Ajustar el peso de la ventaja local en un 15% para partidos con equipos con roster de similar calidad.
+
+--- AUDITORÍA ---
+Partido: Phillies 0 - 0 Giants
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del modelo no consideró la posibilidad de un empate, lo que sugiere una falta de diversidad en los escenarios de resultado.
+REGLA: Incorporar un factor de empate (E) en la fórmula de predicción, como: P(Ganar) + P(Perder) + P(Empate) = 1.
