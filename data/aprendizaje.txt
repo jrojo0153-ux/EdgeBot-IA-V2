@@ -166,3 +166,6 @@
 - Aumentar el peso de la variable "Ventaja Local" en un 15% cuando se enfrentan equipos con diferencias significativas en porcentaje de victorias en casa.
 - Revisar la ponderación de la ventaja local y considerar la fuerza relativa de los equipos visitantes en la fórmula de predicción, ajustando la probabilidad de victoria según la diferencia de habilidades entre los equipos.
 - Revisar la ponderación de la ventaja local y la comparación de roster en la fórmula de predicción, considerando también factores como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla de Elite Roster Home Protection y considerar la inclusión de un factor de tendencia reciente del equipo visitante en la fórmula de predicción.

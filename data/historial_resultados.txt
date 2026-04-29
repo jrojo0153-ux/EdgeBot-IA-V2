@@ -562,3 +562,9 @@ Partido: Athletics 1 - 4 Royals
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el roster de los Athletics no fueron suficientes para superar a los Royals, lo que sugiere que la evaluación de la ventaja local y la comparación de roster puede no ser lo suficientemente precisa en ciertos casos.
 REGLA: Revisar la ponderación de la ventaja local y la comparación de roster en la fórmula de predicción, considerando también factores como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+--- AUDITORÍA ---
+Partido: Twins 3 - 5 Mariners
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para superar la ventaja de los Mariners, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como la tendencia reciente y la efectividad del equipo visitante.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y considerar la inclusión de un factor de tendencia reciente del equipo visitante en la fórmula de predicción.
