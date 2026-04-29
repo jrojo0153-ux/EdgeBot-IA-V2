@@ -482,3 +482,8 @@
 2026-04-29_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
 2026-04-29_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
 2026-04-29_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
+2026-04-29_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-29_[Major League Baseball] LOCAL: Reds vs VISITANTE: Rockies
+2026-04-29_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-29_[Major League Baseball] LOCAL: Mets vs VISITANTE: Nationals
+2026-04-29_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers
