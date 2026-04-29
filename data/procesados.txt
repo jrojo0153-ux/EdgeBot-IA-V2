@@ -472,3 +472,8 @@
 2026-04-29_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
 2026-04-29_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
 2026-04-29_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-04-29_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-04-29_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-29_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-29_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-29_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels

@@ -43,5 +43,15 @@
         "partido_str": "[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La probabilidad de victoria de Nice en casa se ve afectada por la regla de Home Advantage Decay, pero su ventaja local y la calidad de su roster la hacen una opción sólida contra Lens.\n📌 PICK SUGERIDO: Nice\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-29"
+    },
+    "2026-04-29_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic": {
+        "partido_str": "[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Playoff Seeding Motivation, Home Advantage Decay\n🧠 ANÁLISIS: La motivación por posiciones de playoffs y la ventaja local pueden influir en el resultado, pero la calidad del roster y la profundidad de plantilla de ambos equipos deben ser consideradas.\n📌 PICK SUGERIDO: Pistons\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-29"
+    },
+    "2026-04-29_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors": {
+        "partido_str": "[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Playoff Seeding Motivation, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Cavaliers y la motivación por posiciones de playoffs de los Raptors influyen en la predicción, considerando también la calidad de los roster y el rendimiento reciente de ambos equipos.\n📌 PICK SUGERIDO: Cavaliers\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-29"
     }
 }
