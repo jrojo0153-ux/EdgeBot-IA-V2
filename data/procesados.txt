@@ -499,3 +499,8 @@
 2026-04-30_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
 2026-04-30_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
 2026-04-30_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
+2026-04-30_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
+2026-04-30_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
+2026-04-30_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-04-30_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-04-30_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
