@@ -509,3 +509,7 @@
 2026-04-30_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
 2026-04-30_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers
 2026-04-30_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Astros
+2026-04-30_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Diamondbacks
+2026-04-30_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
+2026-04-30_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-30_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
