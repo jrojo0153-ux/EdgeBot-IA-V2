@@ -178,3 +178,7 @@
 - Ajustar la ponderación de la ventaja local en un 10% cuando el equipo local tiene una diferencia de victorias en la temporada regular mayor a 5 juegos respecto al equipo visitante.
 - Si (VentajaLocal > 0.5) y (MotivaciónPlayoffs > 0.3), entonces IncrementarProbabilidadLocal(0.1)
 - Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de factores adicionales como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+- Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
