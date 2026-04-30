@@ -580,3 +580,21 @@ Partido: Phillies 0 - 0 Giants
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del modelo no consideró la posibilidad de un empate, lo que sugiere una falta de diversidad en los escenarios de resultado.
 REGLA: Incorporar un factor de empate (E) en la fórmula de predicción, como: P(Ganar) + P(Perder) + P(Empate) = 1.
+
+--- AUDITORÍA ---
+Partido: Pistons 116 - 109 Magic
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre los equipos fue de 7, lo que sugiere que la ventaja local y la motivación por posiciones de playoffs tuvieron un impacto significativo en el resultado, aunque la probabilidad real del 58% indica que el modelo podría haber subestimado la capacidad del equipo local.
+REGLA: Ajustar la ponderación de la ventaja local en un 10% cuando el equipo local tiene una diferencia de victorias en la temporada regular mayor a 5 juegos respecto al equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Cavaliers 125 - 120 Raptors
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la motivación por posiciones de playoffs influyeron positivamente en el resultado, lo que sugiere que el modelo cuantitativo capturó adecuadamente los factores clave que afectan el desempeño de los equipos en partidos importantes.
+REGLA: Si (VentajaLocal > 0.5) y (MotivaciónPlayoffs > 0.3), entonces IncrementarProbabilidadLocal(0.1)
+
+--- AUDITORÍA ---
+Partido: Reds 2 - 13 Rockies
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó significativamente el rendimiento de los Rockies, lo que sugiere que la ventaja local y la fuerza del roster no fueron suficientes para garantizar la victoria de los Reds.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de factores adicionales como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.

@@ -173,3 +173,8 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar el peso de la ventaja local en un 15% para partidos con equipos con roster de similar calidad.
 - Incorporar un factor de empate (E) en la fórmula de predicción, como: P(Ganar) + P(Perder) + P(Empate) = 1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la ventaja local en un 10% cuando el equipo local tiene una diferencia de victorias en la temporada regular mayor a 5 juegos respecto al equipo visitante.
+- Si (VentajaLocal > 0.5) y (MotivaciónPlayoffs > 0.3), entonces IncrementarProbabilidadLocal(0.1)
+- Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de factores adicionales como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
