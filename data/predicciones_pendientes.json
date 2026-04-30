@@ -73,5 +73,15 @@
         "partido_str": "[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Nantes se ve afectada por la calidad del roster de Marseille, pero la capacidad ofensiva de Nantes en casa puede ser clave.\n📌 PICK SUGERIDO: Nantes o Empate\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-04-30"
+    },
+    "2026-04-30_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks": {
+        "partido_str": "[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Hawks y su roster elite sugieren una mayor probabilidad de victoria en casa, considerando la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: Hawks\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-30"
+    },
+    "2026-04-30_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics": {
+        "partido_str": "[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Playoff Seeding Motivation\n🧠 ANÁLISIS: La ventaja local de los 76ers se ve afectada por la motivación de los Celtics por posiciones de playoffs y su profundidad de plantilla.\n📌 PICK SUGERIDO: Apostar en contra de los 76ers\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-04-30"
     }
 }
