@@ -185,3 +185,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar la fórmula de probabilidad de victoria local para que refleje una mayor influencia de la ventaja local cuando el equipo local tiene un roster elite.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
