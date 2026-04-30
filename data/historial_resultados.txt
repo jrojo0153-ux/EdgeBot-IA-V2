@@ -610,3 +610,9 @@ Partido: Athletics 5 - 2 Royals
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y la diferencia en la calidad del roster entre los Athletics y los Royals se reflejó en el resultado final, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente en este caso, con una probabilidad real del 58% que se tradujo en una victoria para el equipo local.
 REGLA: Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Brewers 13 - 1 Diamondbacks
+RESULTADO: GANADA
+LECCIÓN: La gran diferencia en el marcador real (13-1) sugiere que el modelo subestimó la ventaja local de los Brewers, lo que indica una posible mejora en la calibración de la probabilidad de victoria.
+REGLA: Ajustar la fórmula de probabilidad de victoria local para que refleje una mayor influencia de la ventaja local cuando el equipo local tiene un roster elite.

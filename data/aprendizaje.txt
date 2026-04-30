@@ -182,3 +182,6 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
 - Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la fórmula de probabilidad de victoria local para que refleje una mayor influencia de la ventaja local cuando el equipo local tiene un roster elite.
