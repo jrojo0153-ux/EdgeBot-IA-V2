@@ -118,5 +118,15 @@
         "partido_str": "[Major League Baseball] LOCAL: Nationals vs VISITANTE: Brewers",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Nationals y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Brewers.\n📌 PICK SUGERIDO: Nationals\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-01"
+    },
+    "2026-05-01_[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants": {
+        "partido_str": "[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Rays y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Giants.\n📌 PICK SUGERIDO: Rays\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
+    },
+    "2026-05-01_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays": {
+        "partido_str": "[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Twins y la calidad de su roster sugieren una mayor probabilidad de victoria en casa contra los Blue Jays.\n📌 PICK SUGERIDO: Twins\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
     }
 }
