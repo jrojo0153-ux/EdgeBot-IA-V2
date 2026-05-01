@@ -518,3 +518,8 @@
 2026-05-01_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
 2026-05-01_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
 2026-05-01_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-05-01_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-05-01_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-05-01_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
+2026-05-01_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
+2026-05-01_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
