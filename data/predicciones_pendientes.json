@@ -93,5 +93,15 @@
         "partido_str": "[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: El Bayern Munich, con su roster elite y ventaja local, tiene una alta probabilidad de victoria contra el 1. FC Heidenheim 1846, considerando la gran diferencia en calidad y rendimiento entre ambos equipos.\n📌 PICK SUGERIDO: Bayern Munich\n🎯 PROBABILIDAD REAL: 85%\n💰 CUOTA MÍNIMA (+EV): 1.18\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-01"
+    },
+    "2026-05-01_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig": {
+        "partido_str": "[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Bayer Leverkusen se ve afectada por la calidad del roster de RB Leipzig, pero la capacidad ofensiva de Leverkusen y la velocidad de transición pueden influir en el resultado.\n📌 PICK SUGERIDO: Bayer Leverkusen\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
+    },
+    "2026-05-01_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille": {
+        "partido_str": "[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Nantes se ve afectada por la calidad del roster de Marseille, pero la regla de Home Advantage Decay reduce su impacto debido al alto xG esperado en el partido.\n📌 PICK SUGERIDO: Nantes o Empate\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
     }
 }
