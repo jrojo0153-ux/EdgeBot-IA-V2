@@ -188,3 +188,7 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la regla de Elite Roster Home Protection para incluir un factor de corrección por la fuerza ofensiva del equipo visitante (FV > 120 puntos en los últimos 3 partidos).
+- Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.

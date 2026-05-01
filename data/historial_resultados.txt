@@ -622,3 +622,15 @@ Partido: Athletics 6 - 3 Royals
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y la diferencia en la calidad del roster entre los Athletics y los Royals se reflejó en el resultado final, lo que sugiere que el modelo predictivo funcionó correctamente al considerar estos factores.
 REGLA: Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Hawks 89 - 140 Knicks
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia de puntos en el marcador real (51 puntos) sugiere que la ventaja local y el roster elite de los Hawks no fueron suficientes para contrarrestar la fuerza ofensiva de los Knicks, lo que indica una posible subestimación de la capacidad del equipo visitante.
+REGLA: Revisar la regla de Elite Roster Home Protection para incluir un factor de corrección por la fuerza ofensiva del equipo visitante (FV > 120 puntos en los últimos 3 partidos).
+
+--- AUDITORÍA ---
+Partido: 76ers 106 - 93 Celtics
+RESULTADO: PERDIDA
+LECCIÓN: La motivación de los Celtics por posiciones de playoffs no fue suficiente para superar la ventaja local de los 76ers, lo que sugiere que la importancia de la ventaja local puede ser mayor de lo estimado en este modelo.
+REGLA: Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.

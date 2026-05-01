@@ -513,3 +513,8 @@
 2026-04-30_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
 2026-04-30_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
 2026-04-30_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-01_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-05-01_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-01_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-05-01_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-05-01_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
