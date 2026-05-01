@@ -103,5 +103,15 @@
         "partido_str": "[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Nantes se ve afectada por la calidad del roster de Marseille, pero la regla de Home Advantage Decay reduce su impacto debido al alto xG esperado en el partido.\n📌 PICK SUGERIDO: Nantes o Empate\n🎯 PROBABILIDAD REAL: 52%\n💰 CUOTA MÍNIMA (+EV): 1.92\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-01"
+    },
+    "2026-05-01_[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons": {
+        "partido_str": "[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Magic y su capacidad ofensiva sugieren una probabilidad alta de victoria, considerando la regla de Elite Roster Home Protection y la tendencia de Pistons en partidos fuera de casa.\n📌 PICK SUGERIDO: Magic\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
+    },
+    "2026-05-01_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers": {
+        "partido_str": "[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay, Transition Speed\n🧠 ANÁLISIS: La ventaja local de los Raptors, combinada con su roster elite y la motivación por posiciones de playoffs, sugiere una probabilidad alta de victoria en casa.\n📌 PICK SUGERIDO: Raptors\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-01"
     }
 }

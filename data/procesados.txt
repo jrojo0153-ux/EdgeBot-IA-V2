@@ -528,3 +528,8 @@
 2026-05-01_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
 2026-05-01_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
 2026-05-01_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-05-01_[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons
+2026-05-01_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-05-01_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-05-01_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Diamondbacks
+2026-05-01_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Rangers
