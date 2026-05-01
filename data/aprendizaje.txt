@@ -192,3 +192,9 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la regla de Elite Roster Home Protection para incluir un factor de corrección por la fuerza ofensiva del equipo visitante (FV > 120 puntos en los últimos 3 partidos).
 - Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la variable "velocidad de transición" en un 10% para partidos en casa con equipos con alto rendimiento ofensivo.
+- Si (Home Advantage Decay < 0,2) y (Transition Speed > 1,5), entonces incrementar la probabilidad de victoria local en un 10%.
+- Revisar la ponderación de la variable "Transition Speed" y considerar la inclusión de una variable adicional que evalúe la solidez defensiva del equipo visitante.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.

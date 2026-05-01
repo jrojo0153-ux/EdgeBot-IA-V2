@@ -634,3 +634,27 @@ Partido: 76ers 106 - 93 Celtics
 RESULTADO: PERDIDA
 LECCIÓN: La motivación de los Celtics por posiciones de playoffs no fue suficiente para superar la ventaja local de los 76ers, lo que sugiere que la importancia de la ventaja local puede ser mayor de lo estimado en este modelo.
 REGLA: Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.
+
+--- AUDITORÍA ---
+Partido: Leeds United 3 - 1 Burnley
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Leeds United y su velocidad de transición fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo sobrestimó la capacidad defensiva de Burnley.
+REGLA: Ajustar el peso de la variable "velocidad de transición" en un 10% para partidos en casa con equipos con alto rendimiento ofensivo.
+
+--- AUDITORÍA ---
+Partido: Leeds United 3 - 1 Burnley
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Leeds United y su velocidad de transición fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo fue efectivo en este caso, ya que la probabilidad real de 58% se tradujo en una victoria.
+REGLA: Si (Home Advantage Decay < 0,2) y (Transition Speed > 1,5), entonces incrementar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Girona 0 - 1 Mallorca
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de Mallorca para contrarrestar la ventaja local de Girona, lo que sugiere que la variable "Elite Roster Home Protection" puede no ser tan efectiva contra equipos con una buena estrategia defensiva.
+REGLA: Revisar la ponderación de la variable "Transition Speed" y considerar la inclusión de una variable adicional que evalúe la solidez defensiva del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Girona 0 - 1 Mallorca
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster de Girona llevó a una predicción incorrecta, lo que sugiere que se debe considerar más a fondo la capacidad de contrarrestar de los equipos visitantes como Mallorca.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.
