@@ -221,3 +221,7 @@
 - Revisar la ponderación de la ventaja local cuando el equipo visitante tiene un rendimiento histórico similar o superior en partidos fuera de casa.
 - Ajustar la ponderación de "Home Advantage Decay" a 0,8 cuando el equipo local tiene una ventaja ofensiva significativa en casa.
 - Si el xG esperado es alto y la regla de Home Advantage Decay se activa, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene una ventaja de al menos 0.5 goles en el promedio de xG de los últimos 5 partidos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Elite Roster Home Protection" a 0,8 cuando el equipo local tiene una ventaja de transición superior a 10%.
+- Ajustar la probabilidad real cuando la diferencia de calidad entre los equipos sea menor a 10%, considerando la capacidad de contrarrestar la ventaja local.

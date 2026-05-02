@@ -760,3 +760,15 @@ Partido: Nantes 3 - 0 Marseille
 RESULTADO: GANADA
 LECCIÓN: La ventaja local de Nantes se tradujo en una victoria contundente, lo que sugiere que la regla de Home Advantage Decay funcionó correctamente al reducir el impacto de la calidad del roster de Marseille.
 REGLA: Si el xG esperado es alto y la regla de Home Advantage Decay se activa, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene una ventaja de al menos 0.5 goles en el promedio de xG de los últimos 5 partidos.
+
+--- AUDITORÍA ---
+Partido: Brentford 3 - 0 West Ham United
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Brentford y su velocidad de transición fueron factores clave para su victoria, lo que sugiere que el modelo cuantitativo sobrestimó la calidad del roster de West Ham United.
+REGLA: Ajustar el peso de la regla "Elite Roster Home Protection" a 0,8 cuando el equipo local tiene una ventaja de transición superior a 10%.
+
+--- AUDITORÍA ---
+Partido: Wolverhampton Wanderers 1 - 1 Sunderland
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para garantizar la victoria de Wolverhampton Wanderers, lo que sugiere que la probabilidad real (58%) subestimó la capacidad de Sunderland para empatar el partido.
+REGLA: Ajustar la probabilidad real cuando la diferencia de calidad entre los equipos sea menor a 10%, considerando la capacidad de contrarrestar la ventaja local.
