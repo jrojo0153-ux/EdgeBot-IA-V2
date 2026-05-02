@@ -229,3 +229,9 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Incrementar el peso de "Home Advantage" en un 15% cuando el equipo local tenga un rendimiento histórico superior al 60% en casa contra equipos de la misma categoría.
 - Si (Home Advantage Decay < 0,3) y (Capacidad Ofensiva Local > 1,5), entonces ponderar "Home Advantage Decay" con un factor de 0,8.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene un roster de elite, ajustar la probabilidad de victoria local en un 15% hacia abajo.
+- Incorporar un umbral de probabilidad de empate (≥ 20%) para reconsiderar la predicción cuando la ventaja local no sea abrumadora.
+- Si el equipo visitante tiene un rendimiento histórico superior al 50% en partidos fuera de casa, ajustar la probabilidad de victoria del equipo local en un 10%.
+- Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.

@@ -784,3 +784,27 @@ Partido: Bayer Leverkusen 4 - 1 RB Leipzig
 RESULTADO: GANADA
 LECCIÓN: La ventaja local de Bayer Leverkusen y su capacidad ofensiva fueron clave para el resultado, lo que sugiere que la ponderación de la regla "Home Advantage Decay" podría ser ajustada para partidos con equipos con alta capacidad ofensiva.
 REGLA: Si (Home Advantage Decay < 0,3) y (Capacidad Ofensiva Local > 1,5), entonces ponderar "Home Advantage Decay" con un factor de 0,8.
+
+--- AUDITORÍA ---
+Partido: Osasuna 1 - 2 Barcelona
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Osasuna fue superada por la calidad del roster de Barcelona, lo que confirma la efectividad de la regla "Elite Roster Home Protection" en la predicción.
+REGLA: Si el equipo visitante tiene un roster de elite, ajustar la probabilidad de victoria local en un 15% hacia abajo.
+
+--- AUDITORÍA ---
+Partido: Atalanta 0 - 0 Genoa
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local y el roster elite de Atalanta.
+REGLA: Incorporar un umbral de probabilidad de empate (≥ 20%) para reconsiderar la predicción cuando la ventaja local no sea abrumadora.
+
+--- AUDITORÍA ---
+Partido: Nice 1 - 1 Lens
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la calidad del equipo visitante, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene un rendimiento histórico superior al 50% en partidos fuera de casa, ajustar la probabilidad de victoria del equipo local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Nice 1 - 1 Lens
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad defensiva de Lens y no consideró adecuadamente la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local de Nice.
+REGLA: Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.
