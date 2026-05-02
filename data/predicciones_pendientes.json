@@ -108,5 +108,10 @@
         "partido_str": "[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Sunderland",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Wolverhampton Wanderers se ve afectada por la calidad del roster de Sunderland, pero la capacidad ofensiva de los locales y su ventaja en casa pueden ser decisivas.\n📌 PICK SUGERIDO: Wolverhampton Wanderers\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-02"
+    },
+    "2026-05-02_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona": {
+        "partido_str": "[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Osasuna se ve afectada por la calidad del roster de Barcelona, lo que reduce su probabilidad de victoria.\n📌 PICK SUGERIDO: Barcelona\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-02"
     }
 }

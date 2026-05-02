@@ -561,3 +561,8 @@
 2026-05-02_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Sunderland
 2026-05-02_[English Premier League] LOCAL: Arsenal vs VISITANTE: Fulham
 2026-05-02_[Spanish LALIGA] LOCAL: Villarreal vs VISITANTE: Levante
+2026-05-02_[Spanish LALIGA] LOCAL: Valencia vs VISITANTE: Atlético Madrid
+2026-05-02_[Spanish LALIGA] LOCAL: Alavés vs VISITANTE: Athletic Club
+2026-05-02_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona
+2026-05-02_[Italian Serie A] LOCAL: Udinese vs VISITANTE: Torino
+2026-05-02_[Italian Serie A] LOCAL: Como vs VISITANTE: Napoli
