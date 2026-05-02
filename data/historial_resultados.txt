@@ -658,3 +658,21 @@ Partido: Girona 0 - 1 Mallorca
 RESULTADO: PERDIDA
 LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster de Girona llevó a una predicción incorrecta, lo que sugiere que se debe considerar más a fondo la capacidad de contrarrestar de los equipos visitantes como Mallorca.
 REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.
+
+--- AUDITORÍA ---
+Partido: Magic 79 - 93 Pistons
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad defensiva de los Pistons y no consideró adecuadamente la tendencia de los Magic en partidos con equipos con fuerte defensa, lo que llevó a un error en la evaluación de la probabilidad de victoria.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" y considerar la incorporación de una regla adicional que evalúe la capacidad defensiva del equipo visitante en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Nationals 1 - 6 Brewers
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real del partido, lo que sugiere que otros factores como la forma actual de los equipos, lesiones clave o estrategias de juego no fueron adecuadamente considerados en el modelo.
+REGLA: Revisar y ajustar el peso de la ventaja local y el roster elite en la fórmula de predicción, incorporando variables adicionales como la tendencia reciente de los equipos y lesiones clave.
+
+--- AUDITORÍA ---
+Partido: Rays 3 - 0 Giants
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1

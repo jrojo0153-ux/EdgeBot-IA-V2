@@ -198,3 +198,8 @@
 - Si (Home Advantage Decay < 0,2) y (Transition Speed > 1,5), entonces incrementar la probabilidad de victoria local en un 10%.
 - Revisar la ponderación de la variable "Transition Speed" y considerar la inclusión de una variable adicional que evalúe la solidez defensiva del equipo visitante.
 - Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla "Home Advantage Decay" y considerar la incorporación de una regla adicional que evalúe la capacidad defensiva del equipo visitante en partidos fuera de casa.
+- Revisar y ajustar el peso de la ventaja local y el roster elite en la fórmula de predicción, incorporando variables adicionales como la tendencia reciente de los equipos y lesiones clave.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1

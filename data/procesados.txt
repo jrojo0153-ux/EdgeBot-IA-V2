@@ -546,3 +546,8 @@
 2026-05-01_[Major League Baseball] LOCAL: Padres vs VISITANTE: White Sox
 2026-05-01_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Guardians
 2026-05-01_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
+2026-05-02_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-05-02_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-02_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-05-02_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-05-02_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
