@@ -569,3 +569,8 @@
 2026-05-02_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Genoa
 2026-05-02_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
 2026-05-02_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-05-02_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-05-02_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-02_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-02_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Diamondbacks
+2026-05-02_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds

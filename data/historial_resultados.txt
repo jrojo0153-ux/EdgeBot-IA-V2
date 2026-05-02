@@ -700,3 +700,63 @@ Partido: Athletics 5 - 8 Guardians
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y el roster de los Athletics no fueron suficientes para superar a los Guardians, lo que sugiere que la evaluación de la ventaja local y el roster puede no ser lo suficientemente precisa en ciertos casos.
 REGLA: Revisar la ponderación de la ventaja local y el roster en la fórmula de predicción, considerando un factor adicional para la fuerza del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del modelo subestimó la capacidad de reacción y contraataque del FC Cologne, lo que llevó a un empate inesperado.
+REGLA: Si Home Advantage Decay y Elite Roster Home Protection se activan, considerar un ajuste de -5% en la probabilidad de victoria local cuando el equipo visitante tiene un historial de buenos resultados en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad del FC Cologne para anotar goles a pesar de la ventaja local de Union Berlin, lo que sugiere que la importancia de la calidad del roster visitante debe ser reevaluada en partidos con equipos de similar nivel.
+REGLA: Ajustar la fórmula de predicción para incluir un factor de "Roster Visitante Fuerte" que reduzca la probabilidad de victoria local en un 10% cuando el equipo visitante tenga un roster de calidad similar o superior al equipo local.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad de reacción y contraataque del FC Cologne, lo que llevó a un empate inesperado, destacando la importancia de considerar la velocidad de transición y la efectividad defensiva del equipo visitante.
+REGLA: Incorporar un factor de "Velocidad de Contraataque" (VCA) en la fórmula de predicción, donde VCA = (Goles en contraataque del equipo visitante / Total de goles en contraataque) * 0,1, y ajustar la probabilidad de victoria local en un -5% si VCA > 0,2.
+
+--- AUDITORÍA ---
+Partido: Bayern Munich 3 - 3 1. FC Heidenheim 1846
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada a Bayern Munich no se reflejó en el resultado real, lo que sugiere que la ventaja local y la calidad del roster pueden no ser suficientes para garantizar la victoria en partidos con equipos que pueden aprovechar las debilidades del equipo local.
+REGLA: Revisar la variable "Ventaja Local" y ajustar la ponderación de la "Calidad del Roster" en partidos con equipos visitantes que tienen un rendimiento histórico alto en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Bayern Munich 3 - 3 1. FC Heidenheim 1846
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada al Bayern Munich no se tradujo en victoria, lo que sugiere que la ventaja local y la calidad del roster no siempre son suficientes para garantizar el resultado, especialmente en partidos donde el equipo visitante puede aprovechar errores y oportunidades.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" para partidos con equipos visitantes con buen rendimiento en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: TSG Hoffenheim 3 - 3 VfB Stuttgart
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de VfB Stuttgart para anotar goles a pesar de la ventaja local de TSG Hoffenheim, lo que indica una posible debilidad en la evaluación de la defensa del equipo local y la ofensiva del visitante.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" en partidos con equipos visitantes con alta capacidad ofensiva.
+
+--- AUDITORÍA ---
+Partido: TSG Hoffenheim 3 - 3 VfB Stuttgart
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de VfB Stuttgart para anotar goles fuera de casa, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene una tasa de anotación fuera de casa superior a 1.2 goles por partido, ajustar la probabilidad de victoria local en -10%.
+
+--- AUDITORÍA ---
+Partido: Werder Bremen 1 - 3 FC Augsburg
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la subestimación de la capacidad del equipo visitante para contrarrestarla llevaron a un error en la predicción.
+REGLA: Revisar la ponderación de la ventaja local cuando el equipo visitante tiene un rendimiento histórico similar o superior en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Nantes 3 - 0 Marseille
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Nantes y su capacidad ofensiva en casa fueron claves para el resultado, lo que sugiere que la ponderación de la regla "Home Advantage Decay" podría ser ajustada para reflejar mejor la importancia de la ventaja local en partidos contra equipos con roster de alta calidad.
+REGLA: Ajustar la ponderación de "Home Advantage Decay" a 0,8 cuando el equipo local tiene una ventaja ofensiva significativa en casa.
+
+--- AUDITORÍA ---
+Partido: Nantes 3 - 0 Marseille
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Nantes se tradujo en una victoria contundente, lo que sugiere que la regla de Home Advantage Decay funcionó correctamente al reducir el impacto de la calidad del roster de Marseille.
+REGLA: Si el xG esperado es alto y la regla de Home Advantage Decay se activa, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene una ventaja de al menos 0.5 goles en el promedio de xG de los últimos 5 partidos.
