@@ -78,5 +78,10 @@
         "partido_str": "[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Rays y su roster elite sugieren una mayor probabilidad de victoria en casa contra los Giants.\n📌 PICK SUGERIDO: Rays\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-02"
+    },
+    "2026-05-02_[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets": {
+        "partido_str": "[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Angels y su roster elite sugieren una mayor probabilidad de victoria, pero la calidad del equipo visitante, los Mets, puede influir en la efectividad de la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: Angels\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-02"
     }
 }
