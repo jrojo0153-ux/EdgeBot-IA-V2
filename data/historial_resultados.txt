@@ -772,3 +772,15 @@ Partido: Wolverhampton Wanderers 1 - 1 Sunderland
 RESULTADO: PERDIDA
 LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para garantizar la victoria de Wolverhampton Wanderers, lo que sugiere que la probabilidad real (58%) subestimó la capacidad de Sunderland para empatar el partido.
 REGLA: Ajustar la probabilidad real cuando la diferencia de calidad entre los equipos sea menor a 10%, considerando la capacidad de contrarrestar la ventaja local.
+
+--- AUDITORÍA ---
+Partido: Bayer Leverkusen 4 - 1 RB Leipzig
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Bayer Leverkusen y su capacidad ofensiva en casa fueron factores clave para superar a RB Leipzig, lo que sugiere que la ponderación de la variable "Home Advantage" en el modelo debe ser revisada para reflejar mejor la influencia de la ventaja local en partidos contra equipos de alto nivel.
+REGLA: Incrementar el peso de "Home Advantage" en un 15% cuando el equipo local tenga un rendimiento histórico superior al 60% en casa contra equipos de la misma categoría.
+
+--- AUDITORÍA ---
+Partido: Bayer Leverkusen 4 - 1 RB Leipzig
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Bayer Leverkusen y su capacidad ofensiva fueron clave para el resultado, lo que sugiere que la ponderación de la regla "Home Advantage Decay" podría ser ajustada para partidos con equipos con alta capacidad ofensiva.
+REGLA: Si (Home Advantage Decay < 0,3) y (Capacidad Ofensiva Local > 1,5), entonces ponderar "Home Advantage Decay" con un factor de 0,8.
