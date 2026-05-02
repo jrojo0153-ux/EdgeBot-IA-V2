@@ -676,3 +676,27 @@ Partido: Rays 3 - 0 Giants
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
 REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1
+
+--- AUDITORÍA ---
+Partido: Raptors 112 - 110 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue muy estrecha (2 puntos), lo que sugiere que el modelo puede mejorar al considerar factores adicionales que afectan la intensidad y el ritmo del juego en los últimos minutos.
+REGLA: Si la probabilidad de victoria es ≥ 60% y la diferencia de puntos en el último cuarto es ≤ 5 puntos, ajustar la cuota mínima (+EV) en un 5% para reflejar la incertidumbre en los resultados ajustados.
+
+--- AUDITORÍA ---
+Partido: Twins 3 - 7 Blue Jays
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para superar la fuerza ofensiva de los Blue Jays, lo que sugiere que se subestimó la capacidad de anotación del equipo visitante.
+REGLA: Ajustar la ponderación de la variable "Fuerza Ofensiva Visitante" en un 15% para partidos con equipos con alto potencial de anotación.
+
+--- AUDITORÍA ---
+Partido: Padres 2 - 8 White Sox
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real de los equipos, lo que sugiere que se subestimó la fuerza del equipo visitante.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de corrección para la fuerza del equipo visitante (FV = 0,2 * PuntosPromedioVisitante).
+
+--- AUDITORÍA ---
+Partido: Athletics 5 - 8 Guardians
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster de los Athletics no fueron suficientes para superar a los Guardians, lo que sugiere que la evaluación de la ventaja local y el roster puede no ser lo suficientemente precisa en ciertos casos.
+REGLA: Revisar la ponderación de la ventaja local y el roster en la fórmula de predicción, considerando un factor adicional para la fuerza del equipo visitante.

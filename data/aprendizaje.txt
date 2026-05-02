@@ -203,3 +203,9 @@
 - Revisar la ponderación de la regla "Home Advantage Decay" y considerar la incorporación de una regla adicional que evalúe la capacidad defensiva del equipo visitante en partidos fuera de casa.
 - Revisar y ajustar el peso de la ventaja local y el roster elite en la fórmula de predicción, incorporando variables adicionales como la tendencia reciente de los equipos y lesiones clave.
 - Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la probabilidad de victoria es ≥ 60% y la diferencia de puntos en el último cuarto es ≤ 5 puntos, ajustar la cuota mínima (+EV) en un 5% para reflejar la incertidumbre en los resultados ajustados.
+- Ajustar la ponderación de la variable "Fuerza Ofensiva Visitante" en un 15% para partidos con equipos con alto potencial de anotación.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de corrección para la fuerza del equipo visitante (FV = 0,2 * PuntosPromedioVisitante).
+- Revisar la ponderación de la ventaja local y el roster en la fórmula de predicción, considerando un factor adicional para la fuerza del equipo visitante.
