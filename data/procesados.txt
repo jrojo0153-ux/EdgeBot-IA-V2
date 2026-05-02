@@ -556,3 +556,8 @@
 2026-05-02_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
 2026-05-02_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
 2026-05-02_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-05-02_[English Premier League] LOCAL: Brentford vs VISITANTE: West Ham United
+2026-05-02_[English Premier League] LOCAL: Newcastle United vs VISITANTE: Brighton & Hove Albion
+2026-05-02_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Sunderland
+2026-05-02_[English Premier League] LOCAL: Arsenal vs VISITANTE: Fulham
+2026-05-02_[Spanish LALIGA] LOCAL: Villarreal vs VISITANTE: Levante
