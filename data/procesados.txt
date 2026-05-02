@@ -566,3 +566,6 @@
 2026-05-02_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona
 2026-05-02_[Italian Serie A] LOCAL: Udinese vs VISITANTE: Torino
 2026-05-02_[Italian Serie A] LOCAL: Como vs VISITANTE: Napoli
+2026-05-02_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Genoa
+2026-05-02_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-05-02_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens

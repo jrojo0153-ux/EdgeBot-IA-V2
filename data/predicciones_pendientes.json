@@ -113,5 +113,15 @@
         "partido_str": "[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Osasuna se ve afectada por la calidad del roster de Barcelona, lo que reduce su probabilidad de victoria.\n📌 PICK SUGERIDO: Barcelona\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-02"
+    },
+    "2026-05-02_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Genoa": {
+        "partido_str": "[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Genoa",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Ventaja Local\n🧠 ANÁLISIS: La ventaja local de Atalanta y su roster elite sugieren una mayor probabilidad de victoria en casa contra Genoa.\n📌 PICK SUGERIDO: Atalanta\n🎯 PROBABILIDAD REAL: 62%\n💰 CUOTA MÍNIMA (+EV): 1.61\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-02"
+    },
+    "2026-05-02_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens": {
+        "partido_str": "[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Nice y su ataque vertical pueden aprovecharse contra la defensa de Lens, considerando la regla de Transition Speed.\n📌 PICK SUGERIDO: Nice\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-02"
     }
 }
