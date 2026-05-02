@@ -808,3 +808,9 @@ Partido: Nice 1 - 1 Lens
 RESULTADO: PERDIDA
 LECCIÓN: La predicción subestimó la capacidad defensiva de Lens y no consideró adecuadamente la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local de Nice.
 REGLA: Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.
+
+--- AUDITORÍA ---
+Partido: Nationals 1 - 4 Brewers
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster elite de los Nationals no consideró adecuadamente la capacidad ofensiva y la calidad del equipo visitante, lo que llevó a una predicción incorrecta.
+REGLA: Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.

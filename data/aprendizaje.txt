@@ -235,3 +235,6 @@
 - Incorporar un umbral de probabilidad de empate (≥ 20%) para reconsiderar la predicción cuando la ventaja local no sea abrumadora.
 - Si el equipo visitante tiene un rendimiento histórico superior al 50% en partidos fuera de casa, ajustar la probabilidad de victoria del equipo local en un 10%.
 - Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.
