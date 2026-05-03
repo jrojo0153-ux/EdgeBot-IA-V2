@@ -923,3 +923,9 @@ Partido: Pistons 116 - 94 Magic
 RESULTADO: GANADA
 LECCIÓN: La diferencia de puntos entre el marcador real (22 puntos) y la ventaja esperada sugiere que el modelo subestimó la capacidad ofensiva de los Pistons en casa.
 REGLA: Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.
+
+--- AUDITORÍA ---
+Partido: Mariners 1 - 4 Royals
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no se consideró suficientemente, ya que el equipo visitante (Royals) logró una victoria a pesar de la ventaja local de los Mariners, lo que sugiere que el rendimiento histórico del equipo visitante fue más fuerte de lo esperado.
+REGLA: Ajustar la ponderación de la regla Home Advantage Decay para que tenga un impacto mayor en la probabilidad de victoria cuando el equipo visitante tiene un rendimiento histórico superior al 60% en los últimos 10 partidos.

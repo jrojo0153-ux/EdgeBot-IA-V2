@@ -270,3 +270,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la regla Home Advantage Decay para que tenga un impacto mayor en la probabilidad de victoria cuando el equipo visitante tiene un rendimiento histórico superior al 60% en los últimos 10 partidos.
