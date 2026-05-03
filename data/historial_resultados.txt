@@ -917,3 +917,9 @@ Partido: Lyon 4 - 2 Stade Rennais
 RESULTADO: GANADA
 LECCIÓN: La diferencia de goles en el partido (2 goles de diferencia) sugiere que la ventaja local de Lyon y su velocidad de transición fueron factores clave en el resultado, lo que indica que el modelo predictivo subestimó la efectividad de estas variables.
 REGLA: Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.
+
+--- AUDITORÍA ---
+Partido: Pistons 116 - 94 Magic
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el marcador real (22 puntos) y la ventaja esperada sugiere que el modelo subestimó la capacidad ofensiva de los Pistons en casa.
+REGLA: Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.

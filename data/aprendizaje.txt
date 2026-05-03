@@ -267,3 +267,6 @@
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar el peso de la ventaja local en un 10% y considerar la potencia ofensiva del equipo local en la ecuación de predicción.
 - Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.
