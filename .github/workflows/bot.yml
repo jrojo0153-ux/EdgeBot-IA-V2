@@ -27,7 +27,6 @@ jobs:
       - name: Analizar resultados pasados y Entrenar
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        # Este script ahora debe conectarse a Groq, analizar aciertos/errores y guardar el historial
         run: python data/aprendizaje.py
 
       - name: Ejecutar Edge Bot Pro (Nuevas predicciones)
@@ -41,5 +40,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 Aprendizaje: Historial de predicciones ganadoras y perdedoras actualizado"
-          # El asterisco asegura que guarde CUALQUIER archivo modificado en la carpeta data (ej. historial.json, procesados.txt)
-          file_pattern: "data/*" 
+          file_pattern: "data/*"
