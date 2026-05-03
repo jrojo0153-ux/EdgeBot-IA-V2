@@ -612,3 +612,8 @@
 2026-05-03_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
 2026-05-03_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
 2026-05-03_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds
+2026-05-03_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Astros
+2026-05-03_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Brewers
+2026-05-03_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Phillies
+2026-05-03_[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants
+2026-05-03_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Dodgers
