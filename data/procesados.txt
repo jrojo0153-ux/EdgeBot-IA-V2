@@ -591,3 +591,8 @@
 2026-05-03_[English Premier League] LOCAL: AFC Bournemouth vs VISITANTE: Crystal Palace
 2026-05-03_[English Premier League] LOCAL: Manchester United vs VISITANTE: Liverpool
 2026-05-03_[English Premier League] LOCAL: Aston Villa vs VISITANTE: Tottenham Hotspur
+2026-05-03_[Spanish LALIGA] LOCAL: Celta Vigo vs VISITANTE: Elche
+2026-05-03_[Spanish LALIGA] LOCAL: Getafe vs VISITANTE: Rayo Vallecano
+2026-05-03_[Spanish LALIGA] LOCAL: Real Betis vs VISITANTE: Real Oviedo
+2026-05-03_[Spanish LALIGA] LOCAL: Espanyol vs VISITANTE: Real Madrid
+2026-05-03_[Italian Serie A] LOCAL: Bologna vs VISITANTE: Cagliari
