@@ -814,3 +814,15 @@ Partido: Nationals 1 - 4 Brewers
 RESULTADO: PERDIDA
 LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster elite de los Nationals no consideró adecuadamente la capacidad ofensiva y la calidad del equipo visitante, lo que llevó a una predicción incorrecta.
 REGLA: Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.
+
+--- AUDITORÍA ---
+Partido: Celtics 100 - 109 76ers
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para garantizar la victoria de los Celtics, lo que sugiere que la motivación por la clasificación a playoffs de los 76ers fue un factor más determinante en este partido.
+REGLA: Si el equipo visitante tiene una ventaja en la clasificación a playoffs y el equipo local tiene una probabilidad de victoria inferior a 70%, desactivar la regla de Elite Roster Home Protection.
+
+--- AUDITORÍA ---
+Partido: Rays 5 - 1 Giants
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.

@@ -238,3 +238,7 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene una ventaja en la clasificación a playoffs y el equipo local tiene una probabilidad de victoria inferior a 70%, desactivar la regla de Elite Roster Home Protection.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
