@@ -260,3 +260,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.

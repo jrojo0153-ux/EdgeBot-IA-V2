@@ -898,3 +898,9 @@ Partido: Sassuolo 2 - 0 AC Milan
 RESULTADO: PERDIDA
 LECCIÓN: La subestimación de la ventaja local de Sassuolo y la sobreestimación de la calidad del roster de AC Milan llevaron a un error en la predicción, lo que sugiere que la variable "Home Advantage Decay" puede necesitar ajustes para partidos con equipos de alta calidad visitantes.
 REGLA: Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.
+
+--- AUDITORÍA ---
+Partido: SC Freiburg 1 - 1 VfL Wolfsburg
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad defensiva de VfL Wolfsburg, lo que llevó a un empate en lugar de una victoria para SC Freiburg.
+REGLA: Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.
