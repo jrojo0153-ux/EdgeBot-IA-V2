@@ -606,3 +606,4 @@
 2026-05-03_[French Ligue 1] LOCAL: AJ Auxerre vs VISITANTE: Angers
 2026-05-03_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Brest
 2026-05-03_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Toulouse
+2026-05-03_[French Ligue 1] LOCAL: Lyon vs VISITANTE: Stade Rennais
