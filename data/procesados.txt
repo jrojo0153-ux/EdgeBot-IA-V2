@@ -601,3 +601,8 @@
 2026-05-03_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Parma
 2026-05-03_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: Mainz
 2026-05-03_[German Bundesliga] LOCAL: Borussia Mönchengladbach vs VISITANTE: Borussia Dortmund
+2026-05-03_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: VfL Wolfsburg
+2026-05-03_[French Ligue 1] LOCAL: Lille vs VISITANTE: Le Havre AC
+2026-05-03_[French Ligue 1] LOCAL: AJ Auxerre vs VISITANTE: Angers
+2026-05-03_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Brest
+2026-05-03_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Toulouse

@@ -13,5 +13,10 @@
         "partido_str": "[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: AC Milan",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Sassuolo se ve afectada por la calidad del roster de AC Milan, lo que reduce la probabilidad de victoria local.\n📌 PICK SUGERIDO: AC Milan\n🎯 PROBABILIDAD REAL: 55%\n💰 CUOTA MÍNIMA (+EV): 1.82\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-03"
+    },
+    "2026-05-03_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: VfL Wolfsburg": {
+        "partido_str": "[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: VfL Wolfsburg",
+        "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de SC Freiburg se ve afectada por la calidad del roster de VfL Wolfsburg, pero la capacidad ofensiva de Freiburg en casa puede ser clave.\n📌 PICK SUGERIDO: SC Freiburg\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-03"
     }
 }
