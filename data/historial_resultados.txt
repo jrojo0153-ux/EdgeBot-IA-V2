@@ -826,3 +826,63 @@ Partido: Rays 5 - 1 Giants
 RESULTADO: GANADA
 LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
 REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+
+--- AUDITORÍA ---
+Partido: Angels 4 - 3 Mets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Angels fueron factores clave en la victoria, lo que sugiere que la regla de Elite Roster Home Protection fue efectiva en este caso, aunque la diferencia de puntos fue mínima.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+
+--- AUDITORÍA ---
+Partido: Mariners 2 - 3 Royals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que se subestimó la capacidad de los Royals para ganar en casa de los Mariners.
+REGLA: Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un ajuste para partidos contra equipos con buen desempeño en carretera.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria convincente, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria (62% vs. resultado real).
+REGLA: Si la probabilidad de victoria local es ≥ 60% y el equipo local tiene un roster elite, ajustar la probabilidad de victoria en -5% para reflejar la incertidumbre inherente.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos fuertes en casa.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria convincente, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria del equipo local, pero aún así acertó en la predicción.
+REGLA: Si Home Advantage Decay y Elite Roster Home Protection están activados, ajustar la probabilidad de victoria local en un 5% para reflejar la incertidumbre residual.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La estrategia defensiva de Cruz Azul no fue tan efectiva como se esperaba, lo que sugiere que la variable "Low-Block Away Decay" puede no ser tan relevante en partidos con equipos con alta capacidad ofensiva como Cruz Azul.
+REGLA: Revisar la ponderación de la variable "Low-Block Away Decay" cuando el equipo visitante tenga un histórico de más de 1.5 goles por partido en los últimos 5 encuentros.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad ofensiva de Cruz Azul y no consideró suficientemente la habilidad del equipo visitante para anotar goles en condición de visita.
+REGLA: Ajustar la ponderación de la regla "Transition Speed" para equipos visitantes con alto rendimiento ofensivo en condición de visita, considerando un aumento del 15% en la probabilidad de anotar goles.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de Cruz Azul para superar la ventaja local del Atlas, lo que sugiere que la variable "rendimiento histórico variable" puede no ser tan determinante en partidos específicos.
+REGLA: Revisar la ponderación de la variable "rendimiento histórico variable" en la fórmula de predicción, considerando un peso menor para evitar subestimar la capacidad de equipos visitantes con historial irregular.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La apuesta se basó en la ventaja local y la capacidad ofensiva del Atlas, pero no consideró suficientemente la calidad del roster de Cruz Azul y su capacidad para anotar goles en condición de visitante.
+REGLA: Si el equipo visitante tiene un roster de elite y el equipo local tiene una tendencia defensiva débil, ajustar la probabilidad real a favor del visitante en un 10% adicional.
