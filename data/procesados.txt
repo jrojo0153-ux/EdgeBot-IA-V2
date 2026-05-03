@@ -586,3 +586,8 @@
 2026-05-02_[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets
 2026-05-02_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
 2026-05-03_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-03_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Pumas UNAM
+2026-05-03_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Pachuca
+2026-05-03_[English Premier League] LOCAL: AFC Bournemouth vs VISITANTE: Crystal Palace
+2026-05-03_[English Premier League] LOCAL: Manchester United vs VISITANTE: Liverpool
+2026-05-03_[English Premier League] LOCAL: Aston Villa vs VISITANTE: Tottenham Hotspur
