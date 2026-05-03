@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Script de auditoría y aprendizaje del bot EdgeBot-IA-V2"""
+import sys
 import os
+
+# FIX: Agregar la raíz del proyecto al path de búsqueda para corregir ModuleNotFoundError
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from core.audit import AuditManager
 from config.settings import Settings
 from utils.logger import log_info, log_error
