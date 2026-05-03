@@ -263,3 +263,7 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la ventaja local en un 10% y considerar la potencia ofensiva del equipo local en la ecuación de predicción.
+- Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.

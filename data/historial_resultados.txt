@@ -904,3 +904,16 @@ Partido: SC Freiburg 1 - 1 VfL Wolfsburg
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad defensiva de VfL Wolfsburg, lo que llevó a un empate en lugar de una victoria para SC Freiburg.
 REGLA: Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.
+
+
+--- AUDITORÍA ---
+Partido: Cubs 8 - 4 Diamondbacks
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Cubs se tradujeron en una victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada, aunque la diferencia en el marcador fue más amplia de lo esperado, lo que indica una posible subestimación de la capacidad ofensiva de los Cubs.
+REGLA: Ajustar el peso de la ventaja local en un 10% y considerar la potencia ofensiva del equipo local en la ecuación de predicción.
+
+--- AUDITORÍA ---
+Partido: Lyon 4 - 2 Stade Rennais
+RESULTADO: GANADA
+LECCIÓN: La diferencia de goles en el partido (2 goles de diferencia) sugiere que la ventaja local de Lyon y su velocidad de transición fueron factores clave en el resultado, lo que indica que el modelo predictivo subestimó la efectividad de estas variables.
+REGLA: Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.
