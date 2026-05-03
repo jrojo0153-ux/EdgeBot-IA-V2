@@ -254,3 +254,6 @@
 - Ajustar la ponderación de la regla "Transition Speed" para equipos visitantes con alto rendimiento ofensivo en condición de visita, considerando un aumento del 15% en la probabilidad de anotar goles.
 - Revisar la ponderación de la variable "rendimiento histórico variable" en la fórmula de predicción, considerando un peso menor para evitar subestimar la capacidad de equipos visitantes con historial irregular.
 - Si el equipo visitante tiene un roster de elite y el equipo local tiene una tendencia defensiva débil, ajustar la probabilidad real a favor del visitante en un 10% adicional.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%

@@ -886,3 +886,9 @@ Partido: Atlas 2 - 3 Cruz Azul
 RESULTADO: PERDIDA
 LECCIÓN: La apuesta se basó en la ventaja local y la capacidad ofensiva del Atlas, pero no consideró suficientemente la calidad del roster de Cruz Azul y su capacidad para anotar goles en condición de visitante.
 REGLA: Si el equipo visitante tiene un roster de elite y el equipo local tiene una tendencia defensiva débil, ajustar la probabilidad real a favor del visitante en un 10% adicional.
+
+--- AUDITORÍA ---
+Partido: Celta Vigo 3 - 1 Elche
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de ataque vertical de Celta Vigo, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se enfrenta a equipos con defensas adelantadas.
+REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%
