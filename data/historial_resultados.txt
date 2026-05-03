@@ -892,3 +892,9 @@ Partido: Celta Vigo 3 - 1 Elche
 RESULTADO: GANADA
 LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de ataque vertical de Celta Vigo, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se enfrenta a equipos con defensas adelantadas.
 REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%
+
+--- AUDITORÍA ---
+Partido: Sassuolo 2 - 0 AC Milan
+RESULTADO: PERDIDA
+LECCIÓN: La subestimación de la ventaja local de Sassuolo y la sobreestimación de la calidad del roster de AC Milan llevaron a un error en la predicción, lo que sugiere que la variable "Home Advantage Decay" puede necesitar ajustes para partidos con equipos de alta calidad visitantes.
+REGLA: Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.

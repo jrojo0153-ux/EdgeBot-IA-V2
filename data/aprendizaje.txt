@@ -257,3 +257,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.

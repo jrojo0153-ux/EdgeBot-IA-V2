@@ -607,3 +607,8 @@
 2026-05-03_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Brest
 2026-05-03_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Toulouse
 2026-05-03_[French Ligue 1] LOCAL: Lyon vs VISITANTE: Stade Rennais
+2026-05-03_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-05-03_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-05-03_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-03_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-03_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds
