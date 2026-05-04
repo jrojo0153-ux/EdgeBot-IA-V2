@@ -23,5 +23,10 @@
         "partido_str": "[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Yankees y su roster elite sugieren una mayor probabilidad de victoria, pero la capacidad ofensiva de los Orioles debe ser considerada.\n📌 PICK SUGERIDO: Yankees\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-04"
+    },
+    "2026-05-04_[Major League Baseball] LOCAL: Astros vs VISITANTE: Dodgers": {
+        "partido_str": "[Major League Baseball] LOCAL: Astros vs VISITANTE: Dodgers",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Astros y la calidad de su roster sugieren una probabilidad de victoria local, pero la presencia de los Dodgers con un roster de élite activa la regla de Elite Roster Home Protection.\n📌 PICK SUGERIDO: Astros\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-04"
     }
 }
