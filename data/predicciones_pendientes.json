@@ -18,5 +18,10 @@
         "partido_str": "[Major League Baseball] LOCAL: Tigers vs VISITANTE: Red Sox",
         "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Tigers y la calidad de su roster en comparación con los Red Sox sugieren una probabilidad de victoria local, pero la regla de Elite Roster Home Protection debe ser considerada debido a la calidad del roster de los Red Sox.\n📌 PICK SUGERIDO: Tigers\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-04"
+    },
+    "2026-05-04_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles": {
+        "partido_str": "[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de los Yankees y su roster elite sugieren una mayor probabilidad de victoria, pero la capacidad ofensiva de los Orioles debe ser considerada.\n📌 PICK SUGERIDO: Yankees\n🎯 PROBABILIDAD REAL: 58%\n💰 CUOTA MÍNIMA (+EV): 1.72\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-04"
     }
 }
