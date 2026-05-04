@@ -628,3 +628,4 @@
 2026-05-04_[English Premier League] LOCAL: Chelsea vs VISITANTE: Nottingham Forest
 2026-05-04_[English Premier League] LOCAL: Everton vs VISITANTE: Manchester City
 2026-05-04_[Spanish LALIGA] LOCAL: Sevilla vs VISITANTE: Real Sociedad
+2026-05-04_[National Basketball Association] LOCAL: Knicks vs VISITANTE: 76ers
