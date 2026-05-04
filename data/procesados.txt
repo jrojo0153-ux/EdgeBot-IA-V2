@@ -624,3 +624,4 @@
 2026-05-03_[Major League Baseball] LOCAL: Padres vs VISITANTE: White Sox
 2026-05-03_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
 2026-05-03_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Rangers
+2026-05-04_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Pachuca
