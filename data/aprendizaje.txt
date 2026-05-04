@@ -276,3 +276,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Si la probabilidad de empate es mayor a 20% y el equipo visitante tiene una capacidad ofensiva notable, ajustar la probabilidad de victoria local en un 10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.

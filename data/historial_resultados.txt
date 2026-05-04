@@ -935,3 +935,9 @@ Partido: América 3 - 3 Pumas UNAM
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot subestimó la capacidad ofensiva de Pumas UNAM y no consideró adecuadamente la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local de América.
 REGLA: Si la probabilidad de empate es mayor a 20% y el equipo visitante tiene una capacidad ofensiva notable, ajustar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Toluca 0 - 1 Pachuca
+RESULTADO: PERDIDA
+LECCIÓN: La calidad del roster de Pachuca superó la ventaja local de Toluca, lo que indica que la ponderación de la variable "Elite Roster Home Protection" puede ser insuficiente en la ecuación predictiva.
+REGLA: Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.
