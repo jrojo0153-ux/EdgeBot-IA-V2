@@ -631,3 +631,4 @@
 2026-05-04_[National Basketball Association] LOCAL: Knicks vs VISITANTE: 76ers
 2026-05-04_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Timberwolves
 2026-05-04_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Mets
+2026-05-04_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Red Sox

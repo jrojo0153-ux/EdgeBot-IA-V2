@@ -282,3 +282,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la ponderación de la variable "rendimiento histórico en partidos fuera de casa" en la fórmula de predicción, aumentando su peso en un 15% para partidos con equipos con buen desempeño en condición de visitante.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla de Elite Roster Home Protection para incluir un factor de "resiliencia local" que considere la capacidad del equipo local para anotar goles y mantener el resultado.
