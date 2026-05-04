@@ -3,5 +3,10 @@
         "partido_str": "[English Premier League] LOCAL: Chelsea vs VISITANTE: Nottingham Forest",
         "analisis": "🔍 REGLAS ACTIVADAS: Home Advantage Decay, Elite Roster Home Protection, Transition Speed\n🧠 ANÁLISIS: La ventaja local de Chelsea y su roster de élite sugieren una alta probabilidad de victoria, pero la capacidad defensiva de Nottingham Forest y su rendimiento histórico en partidos fuera de casa deben ser considerados.\n📌 PICK SUGERIDO: Chelsea\n🎯 PROBABILIDAD REAL: 72%\n💰 CUOTA MÍNIMA (+EV): 1.39\n⚖️ VEREDICTO: APROBADO",
         "fecha": "2026-05-04"
+    },
+    "2026-05-04_[English Premier League] LOCAL: Everton vs VISITANTE: Manchester City": {
+        "partido_str": "[English Premier League] LOCAL: Everton vs VISITANTE: Manchester City",
+        "analisis": "🔍 REGLAS ACTIVADAS: Elite Roster Home Protection, Home Advantage Decay\n🧠 ANÁLISIS: La ventaja local de Everton se ve afectada por la calidad superior del roster de Manchester City, lo que activa la regla de Elite Roster Home Protection y reduce la probabilidad de victoria local.\n📌 PICK SUGERIDO: Manchester City\n🎯 PROBABILIDAD REAL: 65%\n💰 CUOTA MÍNIMA (+EV): 1.54\n⚖️ VEREDICTO: APROBADO",
+        "fecha": "2026-05-04"
     }
 }
