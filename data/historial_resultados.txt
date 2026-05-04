@@ -941,3 +941,9 @@ Partido: Toluca 0 - 1 Pachuca
 RESULTADO: PERDIDA
 LECCIÓN: La calidad del roster de Pachuca superó la ventaja local de Toluca, lo que indica que la ponderación de la variable "Elite Roster Home Protection" puede ser insuficiente en la ecuación predictiva.
 REGLA: Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.
+
+--- AUDITORÍA ---
+Partido: Chelsea 1 - 3 Nottingham Forest
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada a Chelsea (72%) no se reflejó en el resultado real, lo que sugiere que la capacidad defensiva de Nottingham Forest y su rendimiento histórico en partidos fuera de casa no fueron suficientemente considerados en el análisis.
+REGLA: Revisar la ponderación de la variable "rendimiento histórico en partidos fuera de casa" en la fórmula de predicción, aumentando su peso en un 15% para partidos con equipos con buen desempeño en condición de visitante.

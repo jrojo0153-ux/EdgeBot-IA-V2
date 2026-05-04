@@ -279,3 +279,6 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento histórico en partidos fuera de casa" en la fórmula de predicción, aumentando su peso en un 15% para partidos con equipos con buen desempeño en condición de visitante.
