@@ -3,6 +3,7 @@ from typing import List, Dict
 from utils.logger import log_info, log_error, log_debug
 from utils.data_manager import DataManager
 from utils.api_client import ESPNClient, GroqClient, TelegramClient
+from config.settings import Settings  # ✅ AGREGADO
 
 
 class AuditManager:
