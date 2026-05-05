@@ -971,3 +971,21 @@ Partido: Yankees 12 - 1 Orioles
 RESULTADO: GANADA
 LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja de los Yankees en casa.
 REGLA: Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.
+
+--- AUDITORÍA ---
+Partido: Knicks 137 - 98 76ers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja local de los Knicks y la capacidad defensiva del equipo.
+REGLA: Ajustar el peso de la regla "Home Advantage Decay" para partidos con equipos con gran diferencia de calidad en su roster.
+
+--- AUDITORÍA ---
+Partido: Spurs 102 - 104 Timberwolves
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de los Timberwolves para contrarrestar la ventaja local de los Spurs, lo que sugiere que la variable "calidad del roster visitante" debe ser ponderada con mayor fuerza en el modelo.
+REGLA: Ajustar el peso de la variable "calidad del roster visitante" en un 15% para partidos con equipos con rendimiento similar en carretera.
+
+--- AUDITORÍA ---
+Partido: Astros 3 - 8 Dodgers
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para contrarrestar la ventaja del roster de los Dodgers, lo que sugiere que la ponderación de esta regla debe ser revisada para partidos con equipos de alta calidad.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tenga un roster con una calificación superior a 0,8 en el ranking de la liga.

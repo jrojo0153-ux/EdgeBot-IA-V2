@@ -290,3 +290,8 @@
 - Si la diferencia de calidad del roster entre el equipo visitante y el local es > 10%, entonces ajustar la probabilidad de victoria del equipo local en -8%.
 - Ajustar la ponderación de la regla "Elite Roster Home Protection" para reflejar mejor la capacidad de equipos visitantes con roster de alta calidad para superar la ventaja local.
 - Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Home Advantage Decay" para partidos con equipos con gran diferencia de calidad en su roster.
+- Ajustar el peso de la variable "calidad del roster visitante" en un 15% para partidos con equipos con rendimiento similar en carretera.
+- Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tenga un roster con una calificación superior a 0,8 en el ranking de la liga.
