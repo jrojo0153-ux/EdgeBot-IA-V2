@@ -635,3 +635,4 @@
 2026-05-04_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
 2026-05-04_[Major League Baseball] LOCAL: Astros vs VISITANTE: Dodgers
 2026-05-05_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Osasuna
+2026-05-05_[Italian Serie A] LOCAL: Torino vs VISITANTE: Sassuolo
