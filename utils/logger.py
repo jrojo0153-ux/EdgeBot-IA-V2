@@ -3,7 +3,6 @@ import logging
 import os
 from datetime import datetime
 from typing import Optional
-from config.settings import Settings
 
 
 class BotException(Exception):
@@ -25,7 +24,12 @@ class Logger:
     
     @staticmethod
     def _setup_logger() -> logging.Logger:
-        """Configura el logger con handlers de consola y archivo."""
+        """Configura el logger con handlers de consola y archivo.
+        
+        NOTA: Import local de Settings para evitar circular dependency.
+        """
+        from config.settings import Settings
+        
         Settings.crear_directorios()
         
         logger = logging.getLogger('EdgeBot')
