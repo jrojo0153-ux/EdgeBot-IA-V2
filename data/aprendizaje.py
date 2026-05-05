@@ -4,10 +4,10 @@ import sys
 import os
 
 # Agregar la raíz del proyecto al path de búsqueda
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# ✅ CORRECCIÓN: Import desde raíz (settings.py está en root, no en config/)
-from settings import Settings
+# ✅ CORRECCIÓN: Import desde config (settings.py está en config/, no en root)
+from config.settings import Settings
 from utils.logger import log_info, log_error
 
 # ✅ CORRECCIÓN: Verificar si existe core.audit antes de importar
