@@ -243,15 +243,22 @@ class GroqClient:
         partido_str = sanitize_string(partido_str)
         historial = sanitize_string(historial)[:5000]  # Limitar historial
         
+        # 🔥 PROMPT MAESTRO ACTUALIZADO PARA SEPARAR DEPORTES
         prompt = f"""[ROL Y OBJETIVO]
 Eres un Analista Cuantitativo (EDGE BOT PRO).
 Lee este historial de reglas:
 {historial}
 
+[INSTRUCCIONES CRÍTICAS DE DEPORTE]
+El historial contiene reglas generales de ventaja. DEBES adaptar el análisis a las estadísticas del deporte correspondiente:
+- Si es FÚTBOL (Soccer): Usa xG, PPDA, bloques bajos, transiciones, etc.
+- Si es BÉISBOL (MLB): IGNORA LAS REGLAS DE FÚTBOL. Usa ERA, WHIP, OPS, bullpen, clima y factor del parque.
+- Si es BALONCESTO (NBA): IGNORA LAS REGLAS DE FÚTBOL. Usa Pace, ORtg/DRtg, descanso y lesiones.
+
 Analiza este partido: {partido_str}
 
 [REGLAS VITALES DE CÁLCULO]
-1. NO INVENTES EL EDGE.
+1. NO INVENTES EL EDGE ni uses métricas de otro deporte.
 2. Calcula la PROBABILIDAD REAL (X%).
 3. Calcula la CUOTA MÍNIMA RENTABLE dividiendo 100 entre tu Probabilidad.
 4. Si no hay valor claro, tu Veredicto DEBE ser DESCARTADO. Sé muy estricto.
@@ -260,7 +267,7 @@ Analiza este partido: {partido_str}
 PROHIBIDO escribir párrafos.
 Responde EXACTAMENTE con esta estructura de 6 líneas:
 
-🔍 REGLAS ACTIVADAS: [Nombra las reglas del historial que usaste]
+🔍 REGLAS ACTIVADAS: [Nombra las reglas del historial o "Ninguna, análisis puro de MLB/NBA"]
 🧠 ANÁLISIS: [1 sola oración técnica explicando el pick]
 📌 PICK SUGERIDO: [Dime EXACTAMENTE a qué apostar]
 🎯 PROBABILIDAD REAL: [X%]
