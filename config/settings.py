@@ -1,9 +1,12 @@
 """Configuración centralizada de EdgeBot-IA-V2"""
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from typing import Optional
 
+# 🔥 Zona horaria de México (UTC-6) para que GitHub no se desfase en las noches
+MX_TZ = timezone(timedelta(hours=-6))
+HOY_ESPN = datetime.now(MX_TZ).strftime("%Y%m%d")
 
 class Settings:
     """Configuración global del bot."""
@@ -17,15 +20,16 @@ class Settings:
     GROQ_API_URL: str = "https://api.groq.com/openai/v1/chat/completions"
     TELEGRAM_API_URL: str = ""  # Se setea después de validar token
     
+    # 🔥 Las URLs ahora son dinámicas y solo piden juegos del día actual
     ESPN_URLS: dict = {
-        "nba": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
-        "mlb": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
-        "mex_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard",
-        "eng_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
-        "esp_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",
-        "ita_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",
-        "ger_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard",
-        "fra_soccer": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard"
+        "nba": f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={HOY_ESPN}",
+        "mlb": f"https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates={HOY_ESPN}",
+        "mex_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard?dates={HOY_ESPN}",
+        "eng_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates={HOY_ESPN}",
+        "esp_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates={HOY_ESPN}",
+        "ita_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates={HOY_ESPN}",
+        "ger_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates={HOY_ESPN}",
+        "fra_soccer": f"https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates={HOY_ESPN}"
     }
     
     # Parámetros del bot
