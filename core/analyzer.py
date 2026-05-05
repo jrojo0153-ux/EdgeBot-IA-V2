@@ -115,7 +115,9 @@ class EdgeBotAnalyzer:
                 TelegramClient.enviar_mensaje(mensaje)
                 log_info(f"✅ Pick aprobado y enviado a Telegram")
             else:
-                log_info(f"❌ Pick descartado")
+                # 🔥 Ajuste aquí: Extraemos y limpiamos un resumen del dictamen de la IA para auditar
+                resumen_ia = pick.analisis.replace('\n', ' | ')[:200]
+                log_info(f"❌ Pick descartado | Motivo IA: {resumen_ia}...")
             
             time.sleep(Settings.DELAY_BETWEEN_PICKS)
     
