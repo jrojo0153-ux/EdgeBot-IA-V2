@@ -2,6 +2,7 @@
 import logging
 import os
 from datetime import datetime
+from typing import Optional
 from config.settings import Settings
 
 
@@ -13,22 +14,26 @@ class BotException(Exception):
 class Logger:
     """Gestor centralizado de logs."""
     
-    _logger = None
+    _logger: Optional[logging.Logger] = None
     
     @classmethod
-    def get_logger(cls):
+    def get_logger(cls) -> logging.Logger:
         """Obtiene o crea el logger singleton."""
         if cls._logger is None:
             cls._logger = cls._setup_logger()
         return cls._logger
     
     @staticmethod
-    def _setup_logger():
+    def _setup_logger() -> logging.Logger:
         """Configura el logger con handlers de consola y archivo."""
         Settings.crear_directorios()
         
         logger = logging.getLogger('EdgeBot')
         logger.setLevel(logging.DEBUG)
+        
+        # Evitar duplicar handlers si ya existe
+        if logger.handlers:
+            return logger
         
         # Formato
         formatter = logging.Formatter(
@@ -55,16 +60,16 @@ class Logger:
         return logger
 
 
-def log_info(message):
+def log_info(message: str):
     """Log de información."""
     Logger.get_logger().info(message)
 
 
-def log_error(message):
+def log_error(message: str):
     """Log de error."""
     Logger.get_logger().error(message)
 
 
-def log_debug(message):
+def log_debug(message: str):
     """Log de debug."""
     Logger.get_logger().debug(message)
