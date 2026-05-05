@@ -953,3 +953,21 @@ Partido: Everton 3 - 3 Manchester City
 RESULTADO: PERDIDA
 LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de Everton para anotar goles y mantener el empate, lo que sugiere una subestimación de la ventaja local y una sobreestimación de la calidad del roster de Manchester City.
 REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection para incluir un factor de "resiliencia local" que considere la capacidad del equipo local para anotar goles y mantener el resultado.
+
+--- AUDITORÍA ---
+Partido: Rockies 2 - 4 Mets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de los Rockies fue efectivamente neutralizada por la calidad del roster de los Mets, lo que confirma la efectividad de la regla "Elite Roster Home Protection" en la predicción.
+REGLA: Si la diferencia de calidad del roster entre el equipo visitante y el local es > 10%, entonces ajustar la probabilidad de victoria del equipo local en -8%.
+
+--- AUDITORÍA ---
+Partido: Tigers 4 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La probabilidad real del 58% subestimó la capacidad de los Red Sox para superar la ventaja local de los Tigers, lo que sugiere una varianza en la evaluación de la calidad del roster visitante.
+REGLA: Ajustar la ponderación de la regla "Elite Roster Home Protection" para reflejar mejor la capacidad de equipos visitantes con roster de alta calidad para superar la ventaja local.
+
+--- AUDITORÍA ---
+Partido: Yankees 12 - 1 Orioles
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja de los Yankees en casa.
+REGLA: Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.

@@ -285,3 +285,8 @@
 
 ### NUEVAS REGLAS AUTOMÁTICAS
 - Revisar la ponderación de la regla de Elite Roster Home Protection para incluir un factor de "resiliencia local" que considere la capacidad del equipo local para anotar goles y mantener el resultado.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la diferencia de calidad del roster entre el equipo visitante y el local es > 10%, entonces ajustar la probabilidad de victoria del equipo local en -8%.
+- Ajustar la ponderación de la regla "Elite Roster Home Protection" para reflejar mejor la capacidad de equipos visitantes con roster de alta calidad para superar la ventaja local.
+- Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.
