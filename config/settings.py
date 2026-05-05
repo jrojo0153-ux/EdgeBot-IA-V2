@@ -3,8 +3,8 @@ import os
 import sys
 from datetime import datetime
 from typing import Optional
-from utils.logger import log_error, log_info
 
+# ❌ Se eliminó la importación global de utils.logger de esta sección
 
 class Settings:
     """Configuración global del bot."""
@@ -65,6 +65,9 @@ class Settings:
     @staticmethod
     def validar_configuracion() -> bool:
         """Valida que todas las configuraciones requeridas existan."""
+        # ✅ IMPORTACIÓN LOCAL: Rompe el ciclo de dependencia circular.
+        from utils.logger import log_error, log_info
+        
         errores = []
         
         if not Settings.GROQ_API_KEY:
