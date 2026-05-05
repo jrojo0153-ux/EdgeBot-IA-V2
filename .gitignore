@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# Variables de entorno
+.env
+
+# Datos del bot
+data/*.db
+data/*.txt
+data/*.json
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
