@@ -1,0 +1,494 @@
+name: 🤖 EdgeBot-IA-V2 Automated ML Pipeline
+
+on:
+  # 📅 Programación automática
+  schedule:
+    # Predicciones: Cada 3 horas (6:00, 9:00, 12:00, 15:00, 18:00, 21:00 UTC)
+    - cron: '0 6,9,12,15,18,21 * * *'
+    # Auditoría/Entrenamiento: Diario a las 23:00 UTC (después de partidos)
+    - cron: '0 23 * * *'
+  
+  # 🖐️ Disparadores manuales
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Modo de ejecución'
+        required: true
+        default: 'predictions'
+        type: choice
+        options:
+          - predictions
+          - audit
+          - train
+          - full
+      force_retrain:
+        description: 'Forzar reentrenamiento ML'
+        required: false
+        default:  false
+        type: boolean
+
+  # 🔄 Trigger por push (para testing)
+  push:
+    branches:
+      - main
+    paths:
+      - 'bot.py'
+      - 'aprendizaje.py'
+      - 'core/**'
+      - 'utils/**'
+      - 'config/**'
+      - '.github/workflows/**'
+
+# 🔒 Permisos necesarios
+permissions:
+  contents: read
+  actions: write
+
+# 🛑 Cancelar ejecuciones anteriores si hay nuevas
+concurrency:
+  group: edgebot-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: '3.10'
+  PIP_CACHE_DIR: ~/.cache/pip
+  DATA_PERSISTENCE_BRANCH: 'data-persistence'
+
+jobs:
+  # ============================================================================
+  # JOB 1: CONFIGURACIÓN Y VALIDACIÓN
+  # ============================================================================
+  setup:
+    name: 🔧 Setup & Validation
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.determine-mode.outputs.mode }}
+      force_retrain: ${{ steps.determine-mode.outputs.force_retrain }}
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔍 Determinar modo de ejecución
+        id: determine-mode
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            echo "force_retrain=${{ github.event.inputs.force_retrain }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.schedule }}" == "0 23 * * *" ]]; then
+            echo "mode=audit" >> $GITHUB_OUTPUT
+            echo "force_retrain=false" >> $GITHUB_OUTPUT
+          else
+            echo "mode=predictions" >> $GITHUB_OUTPUT
+            echo "force_retrain=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: ✅ Validar variables de entorno
+        run: |
+          required_vars=("GROQ_API_KEY" "TELEGRAM_BOT_TOKEN" "TELEGRAM_CHAT_ID")
+          missing=()
+          
+          for var in "${required_vars[@]}"; do
+            if [[ -z "${!var}" ]]; then
+              missing+=("$var")
+            fi
+          done
+          
+          if [[ ${#missing[@]} -gt 0 ]]; then
+            echo "❌ Variables faltantes: ${missing[*]}"
+            exit 1
+          fi
+          
+          echo "✅ Todas las variables configuradas"
+
+  # ============================================================================
+  # JOB 2: INSTALACIÓN DE DEPENDENCIAS
+  # ============================================================================
+  install:
+    name: 📦 Install Dependencies
+    runs-on: ubuntu-latest
+    needs: setup
+    timeout-minutes: 10
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      
+      - name: 📥 Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+          # Verificar instalación
+          python -c "import sklearn, pandas, numpy, joblib; print('✅ ML dependencies OK')"
+          python -c "import requests, telegram; print('✅ API dependencies OK')"
+      
+      - name: 💾 Cachear dependencias
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+  # ============================================================================
+  # JOB 3: RESTAURAR DATOS PERSISTENTES (MODELO, DB, TRAINING DATA)
+  # ============================================================================
+  restore-data:
+    name: 💾 Restore Persistent Data
+    runs-on: ubuntu-latest
+    needs: install
+    timeout-minutes: 5
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 📥 Descargar datos persistentes
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout ${{ env.DATA_PERSISTENCE_BRANCH }} -- data/ models/ 2>/dev/null || echo "⚠️ No hay datos previos"
+      
+      - name: 📁 Crear directorios
+        run: |
+          mkdir -p data models logs
+          touch data/aprendizaje.txt
+          echo "✅ Directorios creados"
+      
+      - name: 📊 Verificar estado de datos
+        run: |
+          echo "=== ESTADO DE DATOS ==="
+          ls -la data/ 2>/dev/null || echo "data/ vacío"
+          ls -la models/ 2>/dev/null || echo "models/ vacío"
+          
+          if [[ -f "models/edgebot_model.pkl" ]]; then
+            echo "✅ Modelo ML encontrado"
+          else
+            echo "⚠️ Modelo ML no encontrado (se creará en entrenamiento)"
+          fi
+          
+          if [[ -f "data/edgebot.db" ]]; then
+            echo "✅ Base de datos encontrada"
+          else
+            echo "⚠️ Base de datos no encontrada (se inicializará)"
+          fi
+
+  # ============================================================================
+  # JOB 4: EJECUTAR PREDICCIONES (bot.py)
+  # ============================================================================
+  predictions:
+    name: 🔮 Run Predictions
+    runs-on: ubuntu-latest
+    needs: [setup, restore-data]
+    if: needs.setup.outputs.mode == 'predictions' || needs.setup.outputs.mode == 'full'
+    timeout-minutes: 15
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📥 Instalar dependencias
+        run: pip install -r requirements.txt
+      
+      - name: 📥 Restaurar datos
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout ${{ env.DATA_PERSISTENCE_BRANCH }} -- data/ models/ 2>/dev/null || true
+      
+      - name: 🤖 Ejecutar Bot de Predicciones
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          echo "🚀 Iniciando EdgeBot-IA-V2 - Modo Predicciones"
+          echo "Timestamp: $(date -Iseconds)"
+          python bot.py
+          echo "✅ Predicciones completadas"
+      
+      - name: 💾 Guardar logs de predicciones
+        if: always()
+        run: |
+          mkdir -p logs/predictions
+          cp -r logs/*.log logs/predictions/ 2>/dev/null || true
+          echo "Logs guardados en logs/predictions/"
+
+  # ============================================================================
+  # JOB 5: EJECUTAR AUDITORÍA Y ENTRENAMIENTO (aprendizaje.py)
+  # ============================================================================
+  audit:
+    name: 🎓 Run Audit & Training
+    runs-on: ubuntu-latest
+    needs: [setup, restore-data]
+    if: needs.setup.outputs.mode == 'audit' || needs.setup.outputs.mode == 'full'
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📥 Instalar dependencias
+        run: pip install -r requirements.txt
+      
+      - name: 📥 Restaurar datos
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout ${{ env.DATA_PERSISTENCE_BRANCH }} -- data/ models/ 2>/dev/null || true
+      
+      - name: 🎓 Ejecutar Auditoría y Entrenamiento
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          echo "🚀 Iniciando EdgeBot-IA-V2 - Modo Auditoría/Entrenamiento"
+          echo "Timestamp: $(date -Iseconds)"
+          python aprendizaje.py
+          echo "✅ Auditoría completada"
+      
+      - name: 📊 Mostrar estadísticas ML
+        if: always()
+        run: |
+          echo "=== ESTADÍSTICAS DE ENTRENAMIENTO ==="
+          if [[ -f "data/training_data.csv" ]]; then
+            echo "Muestras en dataset: $(wc -l < data/training_data.csv)"
+          fi
+          if [[ -f "models/edgebot_model.pkl" ]]; then
+            echo "✅ Modelo ML actualizado"
+            ls -lh models/edgebot_model.pkl
+          fi
+      
+      - name: 💾 Guardar logs de auditoría
+        if: always()
+        run: |
+          mkdir -p logs/audit
+          cp -r logs/*.log logs/audit/ 2>/dev/null || true
+
+  # ============================================================================
+  # JOB 6: ENTRENAMIENTO MANUAL FORZADO (entrenamiento.py)
+  # ============================================================================
+  train-manual:
+    name: 🧠 Force ML Training
+    runs-on: ubuntu-latest
+    needs: [setup, restore-data]
+    if: needs.setup.outputs.mode == 'train' || needs.setup.outputs.force_retrain == 'true'
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📥 Instalar dependencias
+        run: pip install -r requirements.txt
+      
+      - name: 📥 Restaurar datos
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout ${{ env.DATA_PERSISTENCE_BRANCH }} -- data/ models/ 2>/dev/null || true
+      
+      - name: 🧠 Ejecutar Entrenamiento Forzado
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          echo "🚀 Iniciando EdgeBot-IA-V2 - Entrenamiento Forzado"
+          python entrenamiento.py
+          echo "✅ Entrenamiento completado"
+      
+      - name: 📊 Reporte de Feature Importance
+        if: always()
+        run: |
+          python -c "
+          import joblib
+          import pandas as pd
+          
+          try:
+              with open('models/edgebot_model.pkl', 'rb') as f:
+                  data = joblib.load(f)
+              model = data['model']
+              features = data.get('feature_names', [])
+              
+              if hasattr(model, 'feature_importances_'):
+                  importance = pd.DataFrame({
+                      'feature': features,
+                      'importance': model.feature_importances_
+                  }).sort_values('importance', ascending=False)
+                  
+                  print('=== TOP 10 CARACTERÍSTICAS ===')
+                  print(importance.head(10).to_string(index=False))
+          except Exception as e:
+              print(f'Error generando reporte: {e}')
+          "
+
+  # ============================================================================
+  # JOB 7: PERSISTIR DATOS (MODELO, DB, TRAINING DATA)
+  # ============================================================================
+  persist-data:
+    name: 💾 Persist Data to Git
+    runs-on: ubuntu-latest
+    needs: [predictions, audit, train-manual]
+    if: always() && (needs.predictions.result == 'success' || needs.audit.result == 'success' || needs.train-manual.result == 'success')
+    timeout-minutes: 10
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: 🔧 Configurar Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      
+      - name: 📥 Descargar rama de datos
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout -B ${{ env.DATA_PERSISTENCE_BRANCH }} origin/${{ env.DATA_PERSISTENCE_BRANCH }} 2>/dev/null || git checkout --orphan ${{ env.DATA_PERSISTENCE_BRANCH }}
+      
+      - name: 📁 Preparar datos para commit
+        run: |
+          git checkout main -- . 2>/dev/null || true
+          
+          # Mantener solo carpetas de datos
+          find . -type f ! -path './data/*' ! -path './models/*' ! -path './logs/*' ! -path './.git/*' -delete 2>/dev/null || true
+          find . -type d -empty ! -path './.git*' -delete 2>/dev/null || true
+          
+          # Crear .gitkeep en carpetas vacías
+          touch data/.gitkeep models/.gitkeep logs/.gitkeep 2>/dev/null || true
+          
+          echo "=== Archivos para persistir ==="
+          find data/ models/ -type f 2>/dev/null | head -20 || echo "No hay archivos"
+      
+      - name: 💾 Commit y Push datos
+        run: |
+          git add -A
+          
+          if git diff --cached --quiet; then
+            echo "⚠️ Sin cambios para commitear"
+            exit 0
+          fi
+          
+          git commit -m "🤖 Auto-persist: Datos ML_actualizados $(date -Iseconds)"
+          git push origin ${{ env.DATA_PERSISTENCE_BRANCH }} --force
+          echo "✅ Datos persistidos exitosamente"
+        env:
+          GIT_ASKPASS: /bin/echo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ============================================================================
+  # JOB 8: REPORTES Y NOTIFICACIONES
+  # ============================================================================
+  report:
+    name: 📊 Generate Reports
+    runs-on: ubuntu-latest
+    needs: [predictions, audit, train-manual, persist-data]
+    if: always()
+    timeout-minutes: 5
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+      
+      - name: 📥 Descargar datos actualizados
+        run: |
+          git fetch origin ${{ env.DATA_PERSISTENCE_BRANCH }} || true
+          git checkout ${{ env.DATA_PERSISTENCE_BRANCH }} -- data/ models/ 2>/dev/null || true
+      
+      - name: 📊 Generar Resumen de Ejecución
+        run: |
+          echo "=== 🤖 EDGEBOT-IA-V2 RESUMEN DE EJECUCIÓN ===" > execution_summary.md
+          echo "" >> execution_summary.md
+          echo "**Fecha:** $(date -Iseconds)" >> execution_summary.md
+          echo "**Workflow:** ${{ github.workflow }}" >> execution_summary.md
+          echo "**Trigger:** ${{ github.event_name }}" >> execution_summary.md
+          echo "**Modo:** ${{ needs.setup.outputs.mode }}" >> execution_summary.md
+          echo "" >> execution_summary.md
+          echo "### Estado de Jobs" >> execution_summary.md
+          echo "- Predictions: ${{ needs.predictions.result }}" >> execution_summary.md
+          echo "- Audit: ${{ needs.audit.result }}" >> execution_summary.md
+          echo "- Train: ${{ needs.train-manual.result }}" >> execution_summary.md
+          echo "- Persist: ${{ needs.persist-data.result }}" >> execution_summary.md
+          echo "" >> execution_summary.md
+          echo "### Métricas ML" >> execution_summary.md
+          
+          if [[ -f "data/training_data.csv" ]]; then
+            samples=$(wc -l < data/training_data.csv)
+            echo "- Muestras Training: $samples" >> execution_summary.md
+          else
+            echo "- Muestras Training: 0" >> execution_summary.md
+          fi
+          
+          if [[ -f "models/edgebot_model.pkl" ]]; then
+            echo "- Modelo ML: ✅ Activo" >> execution_summary.md
+            echo "- Tamaño Modelo: $(ls -lh models/edgebot_model.pkl | awk '{print $5}')" >> execution_summary.md
+          else
+            echo "- Modelo ML: ⚠️ No entrenado" >> execution_summary.md
+          fi
+          
+          cat execution_summary.md
+      
+      - name: 📤 Upload Resumen
+        uses: actions/upload-artifact@v4
+        with:
+          name: edgebot-execution-summary
+          path: execution_summary.md
+          retention-days: 30
+
+  # ============================================================================
+  # JOB 9: NOTIFICACIÓN TELEGRAM (OPCIONAL)
+  # ============================================================================
+  telegram-notify:
+    name: 📱 Telegram Notification
+    runs-on: ubuntu-latest
+    needs: [report]
+    if: always() && github.event_name == 'workflow_dispatch'
+    timeout-minutes: 2
+    
+    steps:
+      - name: 📥 Descargar resumen
+        uses: actions/download-artifact@v4
+        with:
+          name: edgebot-execution-summary
+      
+      - name: 📱 Enviar Notificación Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          summary=$(cat execution_summary.md)
+          message="🤖 *EdgeBot-IA-V2 - Ejecución Completada*
+
+          $summary
+
+          🔗 [Ver Workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="$message" \
+            -d parse_mode="Markdown" \
+            -d disable_web_page_preview="true" || echo "⚠️ Error enviando a Telegram"
