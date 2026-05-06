@@ -1,0 +1,638 @@
+2026-04-11_[Mexican Liga BBVA MX] LOCAL: Querétaro vs VISITANTE: Necaxa
+2026-04-11_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-04-11_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Monterrey
+2026-04-11_[Mexican Liga BBVA MX] LOCAL: Pachuca vs VISITANTE: Santos
+2026-04-11_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Cruz Azul
+2026-04-11_[English Premier League] LOCAL: Arsenal vs VISITANTE: AFC Bournemouth
+2026-04-11_[English Premier League] LOCAL: Brentford vs VISITANTE: Everton
+2026-04-11_[English Premier League] LOCAL: Burnley vs VISITANTE: Brighton & Hove Albion
+2026-04-11_[English Premier League] LOCAL: Liverpool vs VISITANTE: Fulham
+2026-04-11_[Spanish LALIGA] LOCAL: Real Sociedad vs VISITANTE: Alavés
+2026-04-11_[Spanish LALIGA] LOCAL: Elche vs VISITANTE: Valencia
+2026-04-11_[Spanish LALIGA] LOCAL: Barcelona vs VISITANTE: Espanyol
+2026-04-11_[Spanish LALIGA] LOCAL: Sevilla vs VISITANTE: Atlético Madrid
+2026-04-11_[Italian Serie A] LOCAL: AC Milan vs VISITANTE: Udinese
+2026-04-11_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Juventus
+2026-04-11_[National Basketball Association] LOCAL: Celtics vs VISITANTE: Magic
+2026-04-11_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Wizards
+2026-04-11_[National Basketball Association] LOCAL: Pacers vs VISITANTE: Pistons
+2026-04-11_[National Basketball Association] LOCAL: Heat vs VISITANTE: Hawks
+2026-04-11_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hornets
+2026-04-11_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Bucks
+2026-04-11_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Nets
+2026-04-11_[National Basketball Association] LOCAL: Mavericks vs VISITANTE: Bulls
+2026-04-11_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Grizzlies
+2026-04-11_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Pelicans
+2026-04-11_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-11_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Nuggets
+2026-04-11_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Jazz
+2026-04-11_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
+2026-04-11_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Kings
+2026-04-11_[Major League Baseball] LOCAL: Rays vs VISITANTE: Yankees
+2026-04-11_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Nationals
+2026-04-11_[Major League Baseball] LOCAL: Braves vs VISITANTE: Guardians
+2026-04-11_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Giants
+2026-04-11_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Red Sox
+2026-04-11_[Major League Baseball] LOCAL: Padres vs VISITANTE: Rockies
+2026-04-11_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Rangers
+2026-04-11_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
+2026-04-12_[National Basketball Association] LOCAL: Celtics vs VISITANTE: Magic
+2026-04-12_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Wizards
+2026-04-12_[National Basketball Association] LOCAL: Pacers vs VISITANTE: Pistons
+2026-04-12_[National Basketball Association] LOCAL: Heat vs VISITANTE: Hawks
+2026-04-12_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hornets
+2026-04-12_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Bucks
+2026-04-12_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Nets
+2026-04-12_[National Basketball Association] LOCAL: Mavericks vs VISITANTE: Bulls
+2026-04-12_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Grizzlies
+2026-04-12_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Pelicans
+2026-04-12_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-12_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Nuggets
+2026-04-12_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Jazz
+2026-04-12_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
+2026-04-12_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Kings
+2026-04-12_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: Mazatlán FC
+2026-04-12_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Atlético de San Luis
+2026-04-12_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester City
+2026-04-12_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Rayo Vallecano
+2026-04-12_[Spanish LALIGA] LOCAL: Celta Vigo vs VISITANTE: Real Oviedo
+2026-04-12_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Diamondbacks
+2026-04-12_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Giants
+2026-04-12_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Twins
+2026-04-12_[Major League Baseball] LOCAL: Reds vs VISITANTE: Angels
+2026-04-12_[Major League Baseball] LOCAL: Mets vs VISITANTE: Athletics
+2026-04-12_[Major League Baseball] LOCAL: Padres vs VISITANTE: Rockies
+2026-04-12_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
+2026-04-12_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Rangers
+2026-04-12_[Major League Baseball] LOCAL: Braves vs VISITANTE: Guardians
+2026-04-13_[English Premier League] LOCAL: Manchester United vs VISITANTE: Leeds United
+2026-04-13_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Getafe
+2026-04-13_[Italian Serie A] LOCAL: Fiorentina vs VISITANTE: Lazio
+2026-04-13_[National Basketball Association] LOCAL: Hornets vs VISITANTE: Heat
+2026-04-13_[National Basketball Association] LOCAL: Suns vs VISITANTE: Trail Blazers
+2026-04-13_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Astros
+2026-04-13_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Diamondbacks
+2026-04-13_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Cubs
+2026-04-13_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Nationals
+2026-04-13_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
+2026-04-13_[Major League Baseball] LOCAL: Braves vs VISITANTE: Marlins
+2026-04-13_[Major League Baseball] LOCAL: Twins vs VISITANTE: Red Sox
+2026-04-13_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Guardians
+2026-04-13_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Rangers
+2026-04-13_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Mets
+2026-04-14_[National Basketball Association] LOCAL: Hornets vs VISITANTE: Heat
+2026-04-14_[National Basketball Association] LOCAL: Suns vs VISITANTE: Trail Blazers
+2026-04-14_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-14_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-14_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-14_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-14_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-14_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
+2026-04-14_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Diamondbacks
+2026-04-14_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Cubs
+2026-04-14_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Royals
+2026-04-14_[Major League Baseball] LOCAL: Reds vs VISITANTE: Giants
+2026-04-14_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Nationals
+2026-04-14_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
+2026-04-14_[Major League Baseball] LOCAL: Braves vs VISITANTE: Marlins
+2026-04-14_[Major League Baseball] LOCAL: Twins vs VISITANTE: Red Sox
+2026-04-14_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
+2026-04-14_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Blue Jays
+2026-04-14_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Guardians
+2026-04-14_[Major League Baseball] LOCAL: Astros vs VISITANTE: Rockies
+2026-04-14_[Major League Baseball] LOCAL: Padres vs VISITANTE: Mariners
+2026-04-14_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Rangers
+2026-04-14_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Mets
+2026-04-15_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-15_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-15_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-15_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-15_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-15_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-15_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-15_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-15_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-15_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-15_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
+2026-04-15_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Magic
+2026-04-15_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
+2026-04-15_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Cubs
+2026-04-15_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Royals
+2026-04-15_[Major League Baseball] LOCAL: Reds vs VISITANTE: Giants
+2026-04-15_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Nationals
+2026-04-15_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
+2026-04-15_[Major League Baseball] LOCAL: Braves vs VISITANTE: Marlins
+2026-04-15_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
+2026-04-15_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Blue Jays
+2026-04-16_[National Basketball Association] LOCAL: Clippers vs VISITANTE: Warriors
+2026-04-16_[Major League Baseball] LOCAL: Astros vs VISITANTE: Rockies
+2026-04-16_[Major League Baseball] LOCAL: Padres vs VISITANTE: Mariners
+2026-04-16_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Rangers
+2026-04-16_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Mets
+2026-04-16_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-16_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-16_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-16_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-16_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-16_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-16_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-16_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-16_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-16_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: FC Cologne
+2026-04-16_[National Basketball Association] LOCAL: Magic vs VISITANTE: Hornets
+2026-04-16_[National Basketball Association] LOCAL: Suns vs VISITANTE: Warriors
+2026-04-16_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Angels
+2026-04-16_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Blue Jays
+2026-04-16_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Rays
+2026-04-16_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
+2026-04-16_[French Ligue 1] LOCAL: Lens vs VISITANTE: Toulouse
+2026-04-17_[National Basketball Association] LOCAL: Magic vs VISITANTE: Hornets
+2026-04-17_[National Basketball Association] LOCAL: Suns vs VISITANTE: Warriors
+2026-04-17_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Pumas UNAM
+2026-04-17_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Querétaro
+2026-04-17_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-17_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-17_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-17_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-17_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-17_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-17_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-17_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-17_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-17_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: Como
+2026-04-17_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Cagliari
+2026-04-17_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Mets
+2026-04-17_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
+2026-04-17_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Braves
+2026-04-17_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Rays
+2026-04-17_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Giants
+2026-04-17_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
+2026-04-17_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Brewers
+2026-04-17_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
+2026-04-17_[Major League Baseball] LOCAL: Twins vs VISITANTE: Reds
+2026-04-17_[Major League Baseball] LOCAL: Astros vs VISITANTE: Cardinals
+2026-04-17_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
+2026-04-17_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
+2026-04-17_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
+2026-04-17_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
+2026-04-17_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-18_[English Premier League] LOCAL: Brentford vs VISITANTE: Fulham
+2026-04-18_[English Premier League] LOCAL: Leeds United vs VISITANTE: Wolverhampton Wanderers
+2026-04-18_[English Premier League] LOCAL: Newcastle United vs VISITANTE: AFC Bournemouth
+2026-04-18_[English Premier League] LOCAL: Tottenham Hotspur vs VISITANTE: Brighton & Hove Albion
+2026-04-18_[English Premier League] LOCAL: Chelsea vs VISITANTE: Manchester United
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Tijuana
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Necaxa vs VISITANTE: Tigres UANL
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Pachuca
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: Guadalajara vs VISITANTE: Puebla
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: FC Juarez
+2026-04-18_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Toluca
+2026-04-18_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-18_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-18_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-18_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-18_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Lazio
+2026-04-18_[Italian Serie A] LOCAL: AS Roma vs VISITANTE: Atalanta
+2026-04-18_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: RB Leipzig
+2026-04-18_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Marseille
+2026-04-18_[French Ligue 1] LOCAL: Angers vs VISITANTE: Le Havre AC
+2026-04-18_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-18_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-18_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-18_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-18_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
+2026-04-18_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Giants
+2026-04-18_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
+2026-04-18_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
+2026-04-18_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Brewers
+2026-04-18_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Orioles
+2026-04-18_[Major League Baseball] LOCAL: Astros vs VISITANTE: Cardinals
+2026-04-18_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Braves
+2026-04-18_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
+2026-04-18_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
+2026-04-18_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-18_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
+2026-04-19_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-19_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-19_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-19_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-19_[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Atlas
+2026-04-19_[English Premier League] LOCAL: Aston Villa vs VISITANTE: Sunderland
+2026-04-19_[English Premier League] LOCAL: Everton vs VISITANTE: Liverpool
+2026-04-19_[English Premier League] LOCAL: Nottingham Forest vs VISITANTE: Burnley
+2026-04-19_[English Premier League] LOCAL: Manchester City vs VISITANTE: Arsenal
+2026-04-19_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: AC Milan
+2026-04-19_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Genoa
+2026-04-19_[Italian Serie A] LOCAL: Juventus vs VISITANTE: Bologna
+2026-04-19_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: 1. FC Heidenheim 1846
+2026-04-19_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: VfB Stuttgart
+2026-04-19_[German Bundesliga] LOCAL: Borussia Mönchengladbach vs VISITANTE: Mainz
+2026-04-19_[French Ligue 1] LOCAL: Metz vs VISITANTE: Paris FC
+2026-04-19_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Brest
+2026-04-19_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Stade Rennais
+2026-04-19_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lyon
+2026-04-19_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-19_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-19_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-04-19_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-19_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Royals
+2026-04-19_[Major League Baseball] LOCAL: Athletics vs VISITANTE: White Sox
+2026-04-19_[Major League Baseball] LOCAL: Angels vs VISITANTE: Padres
+2026-04-19_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Rangers
+2026-04-19_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Blue Jays
+2026-04-19_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Tigers
+2026-04-19_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Braves
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: FC Juarez
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Querétaro vs VISITANTE: Cruz Azul
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
+2026-04-20_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
+2026-04-20_[English Premier League] LOCAL: Crystal Palace vs VISITANTE: West Ham United
+2026-04-20_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-20_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-20_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-20_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-20_[Italian Serie A] LOCAL: Lecce vs VISITANTE: Fiorentina
+2026-04-20_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-20_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-20_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-20_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Astros
+2026-04-20_[Major League Baseball] LOCAL: Rays vs VISITANTE: Reds
+2026-04-20_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Cardinals
+2026-04-20_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Braves
+2026-04-20_[Major League Baseball] LOCAL: Royals vs VISITANTE: Orioles
+2026-04-20_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
+2026-04-20_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Dodgers
+2026-04-20_[Major League Baseball] LOCAL: Angels vs VISITANTE: Blue Jays
+2026-04-20_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Athletics
+2026-04-20_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Nantes
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Pumas UNAM vs VISITANTE: FC Juarez
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Querétaro vs VISITANTE: Cruz Azul
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: Monterrey vs VISITANTE: Puebla
+2026-04-21_[Mexican Liga BBVA MX] LOCAL: León vs VISITANTE: América
+2026-04-21_[Spanish LALIGA] LOCAL: Athletic Club vs VISITANTE: Osasuna
+2026-04-21_[English Premier League] LOCAL: Brighton & Hove Albion vs VISITANTE: Chelsea
+2026-04-21_[Spanish LALIGA] LOCAL: Mallorca vs VISITANTE: Valencia
+2026-04-21_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Real Betis
+2026-04-21_[Spanish LALIGA] LOCAL: Real Madrid vs VISITANTE: Alavés
+2026-04-21_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-21_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-21_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-21_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-21_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Astros
+2026-04-21_[Major League Baseball] LOCAL: Rays vs VISITANTE: Reds
+2026-04-21_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Brewers
+2026-04-21_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Cardinals
+2026-04-21_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Braves
+2026-04-21_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Yankees
+2026-04-21_[Major League Baseball] LOCAL: Mets vs VISITANTE: Twins
+2026-04-21_[Major League Baseball] LOCAL: Royals vs VISITANTE: Orioles
+2026-04-21_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
+2026-04-21_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Pirates
+2026-04-21_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Padres
+2026-04-21_[Major League Baseball] LOCAL: Angels vs VISITANTE: Blue Jays
+2026-04-22_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-22_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
+2026-04-22_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Nantes
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Tigres UANL
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Atlético de San Luis vs VISITANTE: Santos
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Mazatlán FC vs VISITANTE: Toluca
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Necaxa vs VISITANTE: Guadalajara
+2026-04-22_[Mexican Liga BBVA MX] LOCAL: Tijuana vs VISITANTE: Pachuca
+2026-04-22_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-04-22_[National Basketball Association] LOCAL: Thunder vs VISITANTE: Suns
+2026-04-22_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Cardinals
+2026-04-22_[Major League Baseball] LOCAL: Rays vs VISITANTE: Reds
+2026-04-22_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Astros
+2026-04-22_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Athletics
+2026-04-22_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Brewers
+2026-04-22_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Braves
+2026-04-22_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Yankees
+2026-04-22_[Major League Baseball] LOCAL: Mets vs VISITANTE: Twins
+2026-04-22_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
+2026-04-22_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Pirates
+2026-04-22_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Padres
+2026-04-22_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: White Sox
+2026-04-22_[Major League Baseball] LOCAL: Giants vs VISITANTE: Dodgers
+2026-04-23_[Mexican Liga BBVA MX] LOCAL: Puebla vs VISITANTE: Querétaro
+2026-04-23_[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest
+2026-04-23_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Sevilla
+2026-04-23_[Spanish LALIGA] LOCAL: Rayo Vallecano vs VISITANTE: Espanyol
+2026-04-23_[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Villarreal
+2026-04-23_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-23_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
+2026-04-23_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens
+2026-04-23_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks
+2026-04-23_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-04-23_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-23_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Brewers
+2026-04-23_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Phillies
+2026-04-23_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Yankees
+2026-04-23_[Major League Baseball] LOCAL: Mets vs VISITANTE: Twins
+2026-04-23_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Pirates
+2026-04-24_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-24_[Mexican Liga BBVA MX] LOCAL: Puebla vs VISITANTE: Querétaro
+2026-04-24_[English Premier League] LOCAL: Sunderland vs VISITANTE: Nottingham Forest
+2026-04-24_[Italian Serie A] LOCAL: Napoli vs VISITANTE: Cremonese
+2026-04-24_[German Bundesliga] LOCAL: RB Leipzig vs VISITANTE: 1. FC Union Berlin
+2026-04-24_[Spanish LALIGA] LOCAL: Real Betis vs VISITANTE: Real Madrid
+2026-04-24_[French Ligue 1] LOCAL: Brest vs VISITANTE: Lens
+2026-04-24_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics
+2026-04-24_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-04-24_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Spurs
+2026-04-24_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
+2026-04-24_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Red Sox
+2026-04-24_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians
+2026-04-24_[Major League Baseball] LOCAL: Mets vs VISITANTE: Rockies
+2026-04-24_[Major League Baseball] LOCAL: Rays vs VISITANTE: Twins
+2026-04-24_[Major League Baseball] LOCAL: Braves vs VISITANTE: Phillies
+2026-04-24_[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels
+2026-04-24_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates
+2026-04-24_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals
+2026-04-24_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Athletics
+2026-04-24_[Major League Baseball] LOCAL: Astros vs VISITANTE: Yankees
+2026-04-24_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
+2026-04-24_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Cubs
+2026-04-24_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Pachuca vs VISITANTE: Pumas UNAM
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Mazatlán FC
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: León
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: Guadalajara vs VISITANTE: Tijuana
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: FC Juarez vs VISITANTE: Atlético de San Luis
+2026-04-25_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Atlas
+2026-04-25_[English Premier League] LOCAL: Liverpool vs VISITANTE: Crystal Palace
+2026-04-25_[English Premier League] LOCAL: West Ham United vs VISITANTE: Everton
+2026-04-25_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Tottenham Hotspur
+2026-04-25_[English Premier League] LOCAL: Arsenal vs VISITANTE: Newcastle United
+2026-04-25_[Spanish LALIGA] LOCAL: Valencia vs VISITANTE: Girona
+2026-04-25_[Spanish LALIGA] LOCAL: Atlético Madrid vs VISITANTE: Athletic Club
+2026-04-25_[Italian Serie A] LOCAL: Bologna vs VISITANTE: AS Roma
+2026-04-25_[Italian Serie A] LOCAL: Hellas Verona vs VISITANTE: Lecce
+2026-04-25_[German Bundesliga] LOCAL: Hamburg SV vs VISITANTE: TSG Hoffenheim
+2026-04-25_[National Basketball Association] LOCAL: Suns vs VISITANTE: Thunder
+2026-04-25_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks
+2026-04-25_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-25_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
+2026-04-25_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians
+2026-04-25_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins
+2026-04-25_[Major League Baseball] LOCAL: Rays vs VISITANTE: Twins
+2026-04-25_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals
+2026-04-25_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres
+2026-04-25_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Athletics
+2026-04-25_[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels
+2026-04-25_[Major League Baseball] LOCAL: Astros vs VISITANTE: Yankees
+2026-04-25_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates
+2026-04-25_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
+2026-04-25_[Major League Baseball] LOCAL: Braves vs VISITANTE: Phillies
+2026-04-26_[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford
+2026-04-26_[Mexican Liga BBVA MX] LOCAL: Santos vs VISITANTE: Monterrey
+2026-04-26_[Mexican Liga BBVA MX] LOCAL: Cruz Azul vs VISITANTE: Necaxa
+2026-04-26_[Spanish LALIGA] LOCAL: Rayo Vallecano vs VISITANTE: Real Sociedad
+2026-04-26_[Spanish LALIGA] LOCAL: Real Oviedo vs VISITANTE: Elche
+2026-04-26_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Sevilla
+2026-04-26_[Spanish LALIGA] LOCAL: Villarreal vs VISITANTE: Celta Vigo
+2026-04-26_[Italian Serie A] LOCAL: Fiorentina vs VISITANTE: Sassuolo
+2026-04-26_[Italian Serie A] LOCAL: Genoa vs VISITANTE: Como
+2026-04-26_[Italian Serie A] LOCAL: Torino vs VISITANTE: Internazionale
+2026-04-26_[Italian Serie A] LOCAL: AC Milan vs VISITANTE: Juventus
+2026-04-26_[German Bundesliga] LOCAL: VfB Stuttgart vs VISITANTE: Werder Bremen
+2026-04-26_[German Bundesliga] LOCAL: Borussia Dortmund vs VISITANTE: SC Freiburg
+2026-04-26_[French Ligue 1] LOCAL: Lorient vs VISITANTE: Strasbourg
+2026-04-26_[French Ligue 1] LOCAL: Le Havre AC vs VISITANTE: Metz
+2026-04-26_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Lille
+2026-04-26_[French Ligue 1] LOCAL: Stade Rennais vs VISITANTE: Nantes
+2026-04-26_[French Ligue 1] LOCAL: Marseille vs VISITANTE: Nice
+2026-04-26_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-04-26_[National Basketball Association] LOCAL: Trail Blazers vs VISITANTE: Spurs
+2026-04-26_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics
+2026-04-26_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-04-26_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Red Sox
+2026-04-26_[Major League Baseball] LOCAL: Braves vs VISITANTE: Phillies
+2026-04-26_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Guardians
+2026-04-26_[Major League Baseball] LOCAL: Mets vs VISITANTE: Rockies
+2026-04-26_[Major League Baseball] LOCAL: Reds vs VISITANTE: Tigers
+2026-04-26_[Major League Baseball] LOCAL: Rays vs VISITANTE: Twins
+2026-04-26_[Major League Baseball] LOCAL: Astros vs VISITANTE: Yankees
+2026-04-26_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Pirates
+2026-04-26_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Nationals
+2026-04-26_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Mariners
+2026-04-26_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Athletics
+2026-04-26_[Major League Baseball] LOCAL: Giants vs VISITANTE: Marlins
+2026-04-26_[Major League Baseball] LOCAL: Diamondbacks vs VISITANTE: Padres
+2026-04-26_[Major League Baseball] LOCAL: Royals vs VISITANTE: Angels
+2026-04-26_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Cubs
+2026-04-27_[English Premier League] LOCAL: Manchester United vs VISITANTE: Brentford
+2026-04-27_[Spanish LALIGA] LOCAL: Espanyol vs VISITANTE: Levante
+2026-04-27_[Italian Serie A] LOCAL: Cagliari vs VISITANTE: Atalanta
+2026-04-27_[Italian Serie A] LOCAL: Lazio vs VISITANTE: Udinese
+2026-04-27_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-27_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-27_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
+2026-04-27_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels
+2026-04-27_[Major League Baseball] LOCAL: Twins vs VISITANTE: Mariners
+2026-04-27_[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons
+2026-04-27_[National Basketball Association] LOCAL: Suns vs VISITANTE: Thunder
+2026-04-27_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-27_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Yankees
+2026-04-27_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
+2026-04-27_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
+2026-04-28_[National Basketball Association] LOCAL: Nuggets vs VISITANTE: Timberwolves
+2026-04-28_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-04-28_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-04-28_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-04-28_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-04-28_[National Basketball Association] LOCAL: Knicks vs VISITANTE: Hawks
+2026-04-28_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Trail Blazers
+2026-04-28_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-28_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Astros
+2026-04-28_[Major League Baseball] LOCAL: Reds vs VISITANTE: Rockies
+2026-04-28_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-28_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-28_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
+2026-04-28_[Major League Baseball] LOCAL: Mets vs VISITANTE: Nationals
+2026-04-28_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers
+2026-04-28_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels
+2026-04-28_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Diamondbacks
+2026-04-28_[Major League Baseball] LOCAL: Twins vs VISITANTE: Mariners
+2026-04-28_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Yankees
+2026-04-28_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
+2026-04-28_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
+2026-04-28_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
+2026-04-29_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-04-29_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-04-29_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-04-29_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-04-29_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-04-29_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-04-29_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-04-29_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
+2026-04-29_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
+2026-04-29_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
+2026-04-29_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
+2026-04-29_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
+2026-04-29_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-04-29_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-04-29_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-04-29_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-04-29_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-04-29_[National Basketball Association] LOCAL: Lakers vs VISITANTE: Rockets
+2026-04-29_[Major League Baseball] LOCAL: Guardians vs VISITANTE: Rays
+2026-04-29_[Major League Baseball] LOCAL: White Sox vs VISITANTE: Angels
+2026-04-29_[Major League Baseball] LOCAL: Twins vs VISITANTE: Mariners
+2026-04-29_[Major League Baseball] LOCAL: Rangers vs VISITANTE: Yankees
+2026-04-29_[Major League Baseball] LOCAL: Blue Jays vs VISITANTE: Red Sox
+2026-04-29_[Major League Baseball] LOCAL: Dodgers vs VISITANTE: Marlins
+2026-04-29_[Major League Baseball] LOCAL: Padres vs VISITANTE: Cubs
+2026-04-29_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-29_[Major League Baseball] LOCAL: Reds vs VISITANTE: Rockies
+2026-04-29_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Cardinals
+2026-04-29_[Major League Baseball] LOCAL: Mets vs VISITANTE: Nationals
+2026-04-29_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers
+2026-04-29_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Diamondbacks
+2026-04-29_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
+2026-04-30_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-04-30_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-04-30_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-04-30_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-04-30_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-04-30_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-04-30_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-04-30_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
+2026-04-30_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
+2026-04-30_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
+2026-04-30_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
+2026-04-30_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
+2026-04-30_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-04-30_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-04-30_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-04-30_[National Basketball Association] LOCAL: Hawks vs VISITANTE: Knicks
+2026-04-30_[National Basketball Association] LOCAL: 76ers vs VISITANTE: Celtics
+2026-04-30_[National Basketball Association] LOCAL: Timberwolves vs VISITANTE: Nuggets
+2026-04-30_[Major League Baseball] LOCAL: Braves vs VISITANTE: Tigers
+2026-04-30_[Major League Baseball] LOCAL: Orioles vs VISITANTE: Astros
+2026-04-30_[Major League Baseball] LOCAL: Brewers vs VISITANTE: Diamondbacks
+2026-04-30_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Royals
+2026-04-30_[Major League Baseball] LOCAL: Phillies vs VISITANTE: Giants
+2026-04-30_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-01_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-05-01_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-01_[English Premier League] LOCAL: Leeds United vs VISITANTE: Burnley
+2026-05-01_[Spanish LALIGA] LOCAL: Girona vs VISITANTE: Mallorca
+2026-05-01_[Italian Serie A] LOCAL: Pisa vs VISITANTE: Lecce
+2026-05-01_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-05-01_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-05-01_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
+2026-05-01_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
+2026-05-01_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
+2026-05-01_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
+2026-05-01_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
+2026-05-01_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-05-01_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-05-01_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-05-01_[National Basketball Association] LOCAL: Magic vs VISITANTE: Pistons
+2026-05-01_[National Basketball Association] LOCAL: Raptors vs VISITANTE: Cavaliers
+2026-05-01_[National Basketball Association] LOCAL: Rockets vs VISITANTE: Lakers
+2026-05-01_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Diamondbacks
+2026-05-01_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Rangers
+2026-05-01_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds
+2026-05-01_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Brewers
+2026-05-01_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-01_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Astros
+2026-05-01_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Phillies
+2026-05-01_[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants
+2026-05-01_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-01_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Dodgers
+2026-05-01_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Braves
+2026-05-01_[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets
+2026-05-01_[Major League Baseball] LOCAL: Padres vs VISITANTE: White Sox
+2026-05-01_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Guardians
+2026-05-01_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
+2026-05-02_[Mexican Liga BBVA MX] LOCAL: Tigres UANL vs VISITANTE: Guadalajara
+2026-05-02_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-02_[German Bundesliga] LOCAL: 1. FC Union Berlin vs VISITANTE: FC Cologne
+2026-05-02_[German Bundesliga] LOCAL: Bayern Munich vs VISITANTE: 1. FC Heidenheim 1846
+2026-05-02_[German Bundesliga] LOCAL: Eintracht Frankfurt vs VISITANTE: Hamburg SV
+2026-05-02_[German Bundesliga] LOCAL: TSG Hoffenheim vs VISITANTE: VfB Stuttgart
+2026-05-02_[German Bundesliga] LOCAL: Werder Bremen vs VISITANTE: FC Augsburg
+2026-05-02_[German Bundesliga] LOCAL: Bayer Leverkusen vs VISITANTE: RB Leipzig
+2026-05-02_[French Ligue 1] LOCAL: Nantes vs VISITANTE: Marseille
+2026-05-02_[French Ligue 1] LOCAL: Paris Saint-Germain vs VISITANTE: Lorient
+2026-05-02_[English Premier League] LOCAL: Brentford vs VISITANTE: West Ham United
+2026-05-02_[English Premier League] LOCAL: Newcastle United vs VISITANTE: Brighton & Hove Albion
+2026-05-02_[English Premier League] LOCAL: Wolverhampton Wanderers vs VISITANTE: Sunderland
+2026-05-02_[English Premier League] LOCAL: Arsenal vs VISITANTE: Fulham
+2026-05-02_[Spanish LALIGA] LOCAL: Villarreal vs VISITANTE: Levante
+2026-05-02_[Spanish LALIGA] LOCAL: Valencia vs VISITANTE: Atlético Madrid
+2026-05-02_[Spanish LALIGA] LOCAL: Alavés vs VISITANTE: Athletic Club
+2026-05-02_[Spanish LALIGA] LOCAL: Osasuna vs VISITANTE: Barcelona
+2026-05-02_[Italian Serie A] LOCAL: Udinese vs VISITANTE: Torino
+2026-05-02_[Italian Serie A] LOCAL: Como vs VISITANTE: Napoli
+2026-05-02_[Italian Serie A] LOCAL: Atalanta vs VISITANTE: Genoa
+2026-05-02_[French Ligue 1] LOCAL: Metz vs VISITANTE: AS Monaco
+2026-05-02_[French Ligue 1] LOCAL: Nice vs VISITANTE: Lens
+2026-05-02_[National Basketball Association] LOCAL: Celtics vs VISITANTE: 76ers
+2026-05-02_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-02_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-02_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Diamondbacks
+2026-05-02_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds
+2026-05-02_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Brewers
+2026-05-02_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Guardians
+2026-05-02_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Astros
+2026-05-02_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Phillies
+2026-05-02_[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants
+2026-05-02_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Rangers
+2026-05-02_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Dodgers
+2026-05-02_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Braves
+2026-05-02_[Major League Baseball] LOCAL: Padres vs VISITANTE: White Sox
+2026-05-02_[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets
+2026-05-02_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
+2026-05-03_[Mexican Liga BBVA MX] LOCAL: Atlas vs VISITANTE: Cruz Azul
+2026-05-03_[Mexican Liga BBVA MX] LOCAL: América vs VISITANTE: Pumas UNAM
+2026-05-03_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Pachuca
+2026-05-03_[English Premier League] LOCAL: AFC Bournemouth vs VISITANTE: Crystal Palace
+2026-05-03_[English Premier League] LOCAL: Manchester United vs VISITANTE: Liverpool
+2026-05-03_[English Premier League] LOCAL: Aston Villa vs VISITANTE: Tottenham Hotspur
+2026-05-03_[Spanish LALIGA] LOCAL: Celta Vigo vs VISITANTE: Elche
+2026-05-03_[Spanish LALIGA] LOCAL: Getafe vs VISITANTE: Rayo Vallecano
+2026-05-03_[Spanish LALIGA] LOCAL: Real Betis vs VISITANTE: Real Oviedo
+2026-05-03_[Spanish LALIGA] LOCAL: Espanyol vs VISITANTE: Real Madrid
+2026-05-03_[Italian Serie A] LOCAL: Bologna vs VISITANTE: Cagliari
+2026-05-03_[Italian Serie A] LOCAL: Sassuolo vs VISITANTE: AC Milan
+2026-05-03_[Italian Serie A] LOCAL: Juventus vs VISITANTE: Hellas Verona
+2026-05-03_[Italian Serie A] LOCAL: Internazionale vs VISITANTE: Parma
+2026-05-03_[German Bundesliga] LOCAL: St. Pauli vs VISITANTE: Mainz
+2026-05-03_[German Bundesliga] LOCAL: Borussia Mönchengladbach vs VISITANTE: Borussia Dortmund
+2026-05-03_[German Bundesliga] LOCAL: SC Freiburg vs VISITANTE: VfL Wolfsburg
+2026-05-03_[French Ligue 1] LOCAL: Lille vs VISITANTE: Le Havre AC
+2026-05-03_[French Ligue 1] LOCAL: AJ Auxerre vs VISITANTE: Angers
+2026-05-03_[French Ligue 1] LOCAL: Paris FC vs VISITANTE: Brest
+2026-05-03_[French Ligue 1] LOCAL: Strasbourg vs VISITANTE: Toulouse
+2026-05-03_[French Ligue 1] LOCAL: Lyon vs VISITANTE: Stade Rennais
+2026-05-03_[National Basketball Association] LOCAL: Pistons vs VISITANTE: Magic
+2026-05-03_[National Basketball Association] LOCAL: Cavaliers vs VISITANTE: Raptors
+2026-05-03_[Major League Baseball] LOCAL: Twins vs VISITANTE: Blue Jays
+2026-05-03_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-03_[Major League Baseball] LOCAL: Pirates vs VISITANTE: Reds
+2026-05-03_[Major League Baseball] LOCAL: Red Sox vs VISITANTE: Astros
+2026-05-03_[Major League Baseball] LOCAL: Nationals vs VISITANTE: Brewers
+2026-05-03_[Major League Baseball] LOCAL: Marlins vs VISITANTE: Phillies
+2026-05-03_[Major League Baseball] LOCAL: Rays vs VISITANTE: Giants
+2026-05-03_[Major League Baseball] LOCAL: Cardinals vs VISITANTE: Dodgers
+2026-05-03_[Major League Baseball] LOCAL: Cubs vs VISITANTE: Diamondbacks
+2026-05-03_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Braves
+2026-05-03_[Major League Baseball] LOCAL: Athletics vs VISITANTE: Guardians
+2026-05-03_[Major League Baseball] LOCAL: Angels vs VISITANTE: Mets
+2026-05-03_[Major League Baseball] LOCAL: Padres vs VISITANTE: White Sox
+2026-05-03_[Major League Baseball] LOCAL: Mariners vs VISITANTE: Royals
+2026-05-03_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Rangers
+2026-05-04_[Mexican Liga BBVA MX] LOCAL: Toluca vs VISITANTE: Pachuca
+2026-05-04_[English Premier League] LOCAL: Chelsea vs VISITANTE: Nottingham Forest
+2026-05-04_[English Premier League] LOCAL: Everton vs VISITANTE: Manchester City
+2026-05-04_[Spanish LALIGA] LOCAL: Sevilla vs VISITANTE: Real Sociedad
+2026-05-04_[National Basketball Association] LOCAL: Knicks vs VISITANTE: 76ers
+2026-05-04_[National Basketball Association] LOCAL: Spurs vs VISITANTE: Timberwolves
+2026-05-04_[Major League Baseball] LOCAL: Rockies vs VISITANTE: Mets
+2026-05-04_[Major League Baseball] LOCAL: Tigers vs VISITANTE: Red Sox
+2026-05-04_[Major League Baseball] LOCAL: Yankees vs VISITANTE: Orioles
+2026-05-04_[Major League Baseball] LOCAL: Astros vs VISITANTE: Dodgers
+2026-05-05_[Spanish LALIGA] LOCAL: Levante vs VISITANTE: Osasuna
+2026-05-05_[Italian Serie A] LOCAL: Torino vs VISITANTE: Sassuolo

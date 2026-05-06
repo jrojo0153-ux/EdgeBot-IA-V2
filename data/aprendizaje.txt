@@ -1,0 +1,297 @@
+[HISTORIAL RECIENTE PARA APRENDIZAJE Y CALIBRACIÓN]
+
+### REGLAS BASE (CHAMPIONS Y CONCACAF)
+- [Away Elite Defense]: Reducir penalización a visitantes si son Top 5 europeo en PPDA.
+- [Home Advantage Decay]: En eliminatorias con alto xG (>3.0), el factor cancha pierde 15% de peso.
+- [Transition Speed]: Ignorar penalización al local si tiene ataque vertical vs defensa adelantada.
+- [Low-Block Away Decay]: Reducir xG del visitante 20% ante bloques bajos. Favorecer el Under.
+- [Extreme Altitude]: Multiplicar xGA del visitante por 1.35 en la 2da mitad en altitud.
+
+### NUEVAS REGLAS TRAS AUDITORÍA DEL 10 DE ABRIL (CRÍTICAS)
+
+### Evento A: Twente 4 - 0 Volendam / Besiktas 2 - 1 Antalyaspor (Fútbol Doméstico)
+- Lección Extraída: Colapso crítico del bot al recomendar visitantes "underdogs" en ligas con alta disparidad económica. La diferencia de xG es estructural, no varianza.
+- Regla a Aplicar [Anti-Underdog Trap]: PROHIBIDO recomendar victorias directas de visitantes con cuotas altas en ligas domésticas dispares (Holanda, Turquía, Japón) contra equipos del Top 4 histórico. La varianza no compensa la falta de calidad.
+
+### Evento B: Boston Celtics 114 - 110 Pelicans / LA Dodgers 6 - 2 Rangers (NBA/MLB)
+- Lección Extraída: Falsos positivos al intentar apostar contra los #1 de la liga en su propio estadio buscando "valor".
+- Regla a Aplicar [Elite Roster Home Protection]: El Edge calculado debe ser penalizado severamente si el pick sugiere apostar en contra de equipos de Súper Élite (ej. Celtics, Dodgers, Real Madrid) jugando en casa. Su profundidad de plantilla absorbe la varianza negativa.
+
+### Evento C: Washington Wizards 105 - 118 Miami Heat (NBA)
+- Lección Extraída: Apostar por un equipo local eliminado (Wizards) contra uno peleando por posición de playoffs (Heat) en el mes de abril es un error matemático.
+- Regla a Aplicar [Playoff Seeding Motivation]: En el último mes de temporada regular, multiplicar el ORtg/DRtg de los equipos que pelean por entrar a playoffs por 1.15 cuando enfrentan a equipos ya eliminados (Tanking).
+
+### Evento D: Éxito masivo en NBA (77% Win Rate)
+- Lección Extraída: El modelo es altamente preciso leyendo el "Pace" y el factor local en partidos igualados de baloncesto.
+- Regla a Aplicar: Mantener la confianza algorítmica en locales de NBA cuando la cuota está equilibrada y no hay disparidad de motivación.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento reciente" en el cálculo de probabilidad para partidos con equipos con diferencias mínimas en la clasificación.
+- Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 10% cuando el equipo local tiene una ventaja de más de 5 puntos en su casa.
+- Incrementar el peso de la variable "Ventaja Local" en un 15% cuando el diferencial de puntos por partido entre los equipos sea menor a 5.
+- Si el equipo local tiene un roster elite y juega en casa, asignar un peso adicional de 0,2 a la probabilidad de victoria del equipo local.
+- Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la regla de Home Advantage Decay para considerar también el rendimiento histórico del equipo visitante en partidos fuera de casa.
+- Ajustar el peso de la variable "Ventaja de Localía" en un 15% para partidos en los que el equipo local tiene un rendimiento histórico similar al del equipo visitante.
+- Si Home Advantage Decay > 0,5 y el equipo local tiene una media de goles anotados en casa mayor a 2, aumentar la probabilidad de victoria local en un 10%.
+- Si [Home Advantage Decay] < 0,2 y [Transition Speed] > 1,5, entonces incrementar la probabilidad de victoria del equipo local en un 10%.
+- Si (Home Advantage Decay) y (Transition Speed > 0,7) y (Ataque Vertical > 0,6), entonces incrementar probabilidad de victoria local en un 10%.
+- Si (Home_Team_Atack_Vertical == True) y (Visitante_Defensa_Adelantada == True), entonces incrementar_probabilidad_local(5%).
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene una profundidad de plantilla superior y es considerado Súper Élite, aumentar la probabilidad de victoria en un 10% si el equipo local no tiene una ventaja significativa en su condición de local.
+- Si la probabilidad real es ≥ 55% y la cuota mínima es ≥ 1.70, considerar la apuesta como válida para partidos con equipos con alta motivación por posiciones de playoffs.
+- Revisar la efectividad del pitcher visitante en juegos anteriores y ajustar la probabilidad de victoria local en un 10% si el pitcher visitante tiene un rendimiento superior al promedio.
+- Revisar la efectividad del equipo visitante en partidos anteriores y considerar la influencia de factores externos como el clima y el estado del campo en la predicción.
+- Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria Local += 0.05.
+- Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.05.
+- Revisar la efectividad de los lanzadores y el rendimiento reciente de los equipos antes de aplicar la regla de "Elite Roster Home Protection" y ajustar la probabilidad real en consecuencia.
+- Si la probabilidad real es ≤ 60% y la ventaja local es ≤ 2 carreras, ajustar la cuota mínima (+EV) a 1.80 para reflejar la incertidumbre adicional.
+- Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un factor de "Desempeño Reciente del Equipo Visitante" para mejorar la precisión de las predicciones.
+- Ajustar la ponderación de la ventaja local en un 10% y considerar la fuerza del equipo visitante en un 15% en partidos futuros.
+- Revisar la ponderación de la ventaja local y considerar un ajuste del 10% hacia abajo en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento reciente superior al promedio.
+- Revisar la ponderación de la ventaja local y la profundidad de plantilla en el modelo, incorporando un factor de ajuste para el rendimiento actual de los equipos y las lesiones de jugadores clave.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Home Advantage Decay > 0,5) y (Elite Roster Home Protection = True), entonces PROBABILIDAD REAL >= 60%.
+- Si (Home Advantage Decay) y (Ataque Vertical > 0,5), entonces incrementar Probabilidad Real en 5%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Calidad Plantilla Local > 0,7), entonces Probabilidad Victoria Local += 0,1.
+- Si (VentajaLocal > 0,5) y (AtaqueVertical > 0,7), entonces ponderar menos la regla de Home Advantage Decay en la predicción.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tiene un desempeño ofensivo superior en la temporada.
+- Si la probabilidad de victoria local es > 55% y el equipo local tiene una ventaja de roster, ajustar la cuota mínima (+EV) a 1.75 para reflejar la incertidumbre residual.
+- Si (Ventaja Local > 0,5) y (Calidad Equipo Local > 0,7) y (Penalización Apostar Contra Equipo Élite > 0,3), entonces Predicción = Equipo Local.
+- Si el equipo visitante tiene un porcentaje de posesión del balón inferior a 40% y utiliza una estrategia de low-block, ajustar la probabilidad de victoria local en -10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+- Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de una variable adicional que evalúe la efectividad del equipo visitante en partidos fuera de casa.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la regla "Elite Roster Home Protection" con un factor de corrección de 0,8 cuando el equipo visitante tenga un rendimiento superior en los últimos 5 partidos.
+- Si (Ventaja Local = True) y (Motivación Playoff > 0,5), entonces Probabilidad de Victoria Local += 0,1.
+- Revisar la ponderación de la ventaja local y la calidad del equipo visitante en la fórmula de predicción, asignando un peso mínimo del 30% a la calidad del equipo visitante en partidos con equipos de similar nivel.
+- Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+- Ajustar la ponderación de la regla de Elite Roster Home Protection para reflejar una mayor influencia en la probabilidad de victoria cuando la ventaja local es significativa.
+- Revisar la ponderación de la regla "Ventaja Local" y considerar la inclusión de una regla adicional que evalúe la capacidad ofensiva del equipo visitante, como "Potencia Ofensiva Visitante", para mejorar la precisión de las predicciones.
+- Revisar la ponderación de la regla "Elite Roster Home Protection" y ajustarla para considerar la fuerza del equipo visitante en partidos con equipos con rendimiento similar.
+- Si la ventaja local y la calidad del roster son significativas, ajustar la probabilidad de victoria local en +3% para reflejar el impacto de la ventaja en casa.
+- Revisar la ponderación de la variable "Fuerza Ofensiva del Equipo Visitante" en la fórmula de predicción, considerando un aumento del 15% en su peso relativo.
+- Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene una defensa sólida y capacidad de contraataque efectivo.
+- Si Home Advantage Decay y Elite Roster Home Protection están activadas, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene un histórico de más de 2 goles por partido en casa.
+- Si Home Advantage Decay < 0,5 y Transition Speed > 1,5, entonces incrementar la probabilidad de victoria local en un 10%.
+- Incorporar un umbral de probabilidad para empates (p. ej., > 20%) y ajustar la predicción según sea necesario para evitar sobrevalorar la ventaja local.
+- Si Home Advantage Decay y Low-Block Away Decay están activadas, considerar un ajuste en la predicción de Under/Over según la potencia ofensiva del equipo local.
+- Ajustar el peso de la defensa visitante en la fórmula de predicción, considerando un factor de al menos 0,2 para partidos con equipos con defensas sólidas como el Atlas.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la probabilidad de Under 2.5 es mayor a 55% y el equipo local tiene una ventaja decayendo, considerar la opción Under 2.5 con cuota mínima (+EV) mayor a 1.70.
+- Ajustar la fórmula de Home Advantage Decay para incluir un factor de "Empate Probable" cuando el equipo visitante tenga un roster de calidad similar o superior al del equipo local.
+- Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene un rendimiento histórico superior al 60% en partidos fuera de casa.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla de Elite Roster Home Protection y Home Advantage Decay cuando la diferencia de habilidades entre los equipos sea menor a 10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incrementar el peso de la regla "Home Advantage Decay" en un 15% cuando el equipo local tenga una diferencia de 10 o más puestos en la tabla de clasificación con respecto al visitante.
+- Incorporar un factor de "Goles Esperados del Visitante" (GEV) en la fórmula de predicción para partidos con equipos con alta capacidad ofensiva en condición de visitante.
+- Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la diferencia de puntos en un partido es menor a 5, ajustar la probabilidad de victoria del equipo local en un 10% hacia abajo.
+- Ajustar la probabilidad de victoria local con un factor de corrección del 10% cuando el equipo visitante tenga un rendimiento histórico superior al del equipo local.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+- Si (Ventaja Local > 0,5) y (Rendimiento Histórico en Casa > 0,6), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento reciente" en el modelo, aumentando su peso a 0,3 para reflejar mejor la influencia de los resultados recientes en la predicción.
+- Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Calidad Roster Local > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Elite Roster Home Protection" cuando el equipo visitante tiene una ventaja significativa en la clasificación de playoffs.
+- Si la ventaja local y la calidad del roster superan un umbral de 0,5 en la escala de evaluación, aumentar la probabilidad real en un 5% para partidos con marcadores esperados ajustados.
+- Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar la probabilidad de victoria local en un 10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Home Advantage Decay > 0,5) y (Transition Speed > 1,2), entonces PROBABILIDAD REAL >= 55% para el equipo local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la probabilidad de victoria en casa por un factor de 0.05 cuando el equipo visitante tenga un rendimiento histórico de más de 30% de victorias en condición de visitante.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la efectividad del pitcheo visitante y el desempeño del bullpen local antes de aplicar la regla de Elite Roster Home Protection.
+- Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento histórico superior en la liga.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 5) y (Calidad Roster Local > 0.7), entonces Probabilidad de Victoria Local += 0.1.
+- Revisar la ponderación de la regla "Home Advantage Decay" y ajustarla para considerar la fuerza ofensiva del equipo visitante en partidos con equipos con alto potencial anotador.
+- Si la probabilidad real es mayor a 60% y la cuota mínima es mayor a 1.60, considerar un margen de victoria de al menos 10 puntos para el equipo local.
+- Si (VentajaLocal > 5) y (AtaqueVertical > 0.6) y (DefensaAdelantadaOponente > 0.4), entonces ProbabilidadVictoriaLocal += 0.1.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "motivación por posiciones de playoffs" cuando el equipo visitante también tiene una alta motivación y un rendimiento reciente sólido.
+- Si (Ventaja Local > 0,5) y (Ataque Local > Defensa Visitante), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0.1.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+- Si (Ventaja Local > 0,5) y (Diferencia de Roster > 10%), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Aumentar el peso de la variable "Ventaja Local" en un 15% cuando se enfrentan equipos con diferencias significativas en porcentaje de victorias en casa.
+- Revisar la ponderación de la ventaja local y considerar la fuerza relativa de los equipos visitantes en la fórmula de predicción, ajustando la probabilidad de victoria según la diferencia de habilidades entre los equipos.
+- Revisar la ponderación de la ventaja local y la comparación de roster en la fórmula de predicción, considerando también factores como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla de Elite Roster Home Protection y considerar la inclusión de un factor de tendencia reciente del equipo visitante en la fórmula de predicción.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la ventaja local en un 15% para partidos con equipos con roster de similar calidad.
+- Incorporar un factor de empate (E) en la fórmula de predicción, como: P(Ganar) + P(Perder) + P(Empate) = 1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la ventaja local en un 10% cuando el equipo local tiene una diferencia de victorias en la temporada regular mayor a 5 juegos respecto al equipo visitante.
+- Si (VentajaLocal > 0.5) y (MotivaciónPlayoffs > 0.3), entonces IncrementarProbabilidadLocal(0.1)
+- Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de factores adicionales como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+- Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la fórmula de probabilidad de victoria local para que refleje una mayor influencia de la ventaja local cuando el equipo local tiene un roster elite.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la regla de Elite Roster Home Protection para incluir un factor de corrección por la fuerza ofensiva del equipo visitante (FV > 120 puntos en los últimos 3 partidos).
+- Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la variable "velocidad de transición" en un 10% para partidos en casa con equipos con alto rendimiento ofensivo.
+- Si (Home Advantage Decay < 0,2) y (Transition Speed > 1,5), entonces incrementar la probabilidad de victoria local en un 10%.
+- Revisar la ponderación de la variable "Transition Speed" y considerar la inclusión de una variable adicional que evalúe la solidez defensiva del equipo visitante.
+- Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla "Home Advantage Decay" y considerar la incorporación de una regla adicional que evalúe la capacidad defensiva del equipo visitante en partidos fuera de casa.
+- Revisar y ajustar el peso de la ventaja local y el roster elite en la fórmula de predicción, incorporando variables adicionales como la tendencia reciente de los equipos y lesiones clave.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la probabilidad de victoria es ≥ 60% y la diferencia de puntos en el último cuarto es ≤ 5 puntos, ajustar la cuota mínima (+EV) en un 5% para reflejar la incertidumbre en los resultados ajustados.
+- Ajustar la ponderación de la variable "Fuerza Ofensiva Visitante" en un 15% para partidos con equipos con alto potencial de anotación.
+- Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de corrección para la fuerza del equipo visitante (FV = 0,2 * PuntosPromedioVisitante).
+- Revisar la ponderación de la ventaja local y el roster en la fórmula de predicción, considerando un factor adicional para la fuerza del equipo visitante.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si Home Advantage Decay y Elite Roster Home Protection se activan, considerar un ajuste de -5% en la probabilidad de victoria local cuando el equipo visitante tiene un historial de buenos resultados en partidos fuera de casa.
+- Ajustar la fórmula de predicción para incluir un factor de "Roster Visitante Fuerte" que reduzca la probabilidad de victoria local en un 10% cuando el equipo visitante tenga un roster de calidad similar o superior al equipo local.
+- Incorporar un factor de "Velocidad de Contraataque" (VCA) en la fórmula de predicción, donde VCA = (Goles en contraataque del equipo visitante / Total de goles en contraataque) * 0,1, y ajustar la probabilidad de victoria local en un -5% si VCA > 0,2.
+- Revisar la variable "Ventaja Local" y ajustar la ponderación de la "Calidad del Roster" en partidos con equipos visitantes que tienen un rendimiento histórico alto en partidos fuera de casa.
+- Revisar la ponderación de la regla "Home Advantage Decay" para partidos con equipos visitantes con buen rendimiento en condición de visitante.
+- Revisar la ponderación de la variable "Ventaja Local" en partidos con equipos visitantes con alta capacidad ofensiva.
+- Si el equipo visitante tiene una tasa de anotación fuera de casa superior a 1.2 goles por partido, ajustar la probabilidad de victoria local en -10%.
+- Revisar la ponderación de la ventaja local cuando el equipo visitante tiene un rendimiento histórico similar o superior en partidos fuera de casa.
+- Ajustar la ponderación de "Home Advantage Decay" a 0,8 cuando el equipo local tiene una ventaja ofensiva significativa en casa.
+- Si el xG esperado es alto y la regla de Home Advantage Decay se activa, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene una ventaja de al menos 0.5 goles en el promedio de xG de los últimos 5 partidos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Elite Roster Home Protection" a 0,8 cuando el equipo local tiene una ventaja de transición superior a 10%.
+- Ajustar la probabilidad real cuando la diferencia de calidad entre los equipos sea menor a 10%, considerando la capacidad de contrarrestar la ventaja local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incrementar el peso de "Home Advantage" en un 15% cuando el equipo local tenga un rendimiento histórico superior al 60% en casa contra equipos de la misma categoría.
+- Si (Home Advantage Decay < 0,3) y (Capacidad Ofensiva Local > 1,5), entonces ponderar "Home Advantage Decay" con un factor de 0,8.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene un roster de elite, ajustar la probabilidad de victoria local en un 15% hacia abajo.
+- Incorporar un umbral de probabilidad de empate (≥ 20%) para reconsiderar la predicción cuando la ventaja local no sea abrumadora.
+- Si el equipo visitante tiene un rendimiento histórico superior al 50% en partidos fuera de casa, ajustar la probabilidad de victoria del equipo local en un 10%.
+- Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si el equipo visitante tiene una ventaja en la clasificación a playoffs y el equipo local tiene una probabilidad de victoria inferior a 70%, desactivar la regla de Elite Roster Home Protection.
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+- Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un ajuste para partidos contra equipos con buen desempeño en carretera.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+- Si la probabilidad de victoria local es ≥ 60% y el equipo local tiene un roster elite, ajustar la probabilidad de victoria en -5% para reflejar la incertidumbre inherente.
+- Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+- Si Home Advantage Decay y Elite Roster Home Protection están activados, ajustar la probabilidad de victoria local en un 5% para reflejar la incertidumbre residual.
+- Revisar la ponderación de la variable "Low-Block Away Decay" cuando el equipo visitante tenga un histórico de más de 1.5 goles por partido en los últimos 5 encuentros.
+- Ajustar la ponderación de la regla "Transition Speed" para equipos visitantes con alto rendimiento ofensivo en condición de visita, considerando un aumento del 15% en la probabilidad de anotar goles.
+- Revisar la ponderación de la variable "rendimiento histórico variable" en la fórmula de predicción, considerando un peso menor para evitar subestimar la capacidad de equipos visitantes con historial irregular.
+- Si el equipo visitante tiene un roster de elite y el equipo local tiene una tendencia defensiva débil, ajustar la probabilidad real a favor del visitante en un 10% adicional.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la ventaja local en un 10% y considerar la potencia ofensiva del equipo local en la ecuación de predicción.
+- Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar la ponderación de la regla Home Advantage Decay para que tenga un impacto mayor en la probabilidad de victoria cuando el equipo visitante tiene un rendimiento histórico superior al 60% en los últimos 10 partidos.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la probabilidad de empate es mayor a 20% y el equipo visitante tiene una capacidad ofensiva notable, ajustar la probabilidad de victoria local en un 10%.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la variable "rendimiento histórico en partidos fuera de casa" en la fórmula de predicción, aumentando su peso en un 15% para partidos con equipos con buen desempeño en condición de visitante.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Revisar la ponderación de la regla de Elite Roster Home Protection para incluir un factor de "resiliencia local" que considere la capacidad del equipo local para anotar goles y mantener el resultado.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Si la diferencia de calidad del roster entre el equipo visitante y el local es > 10%, entonces ajustar la probabilidad de victoria del equipo local en -8%.
+- Ajustar la ponderación de la regla "Elite Roster Home Protection" para reflejar mejor la capacidad de equipos visitantes con roster de alta calidad para superar la ventaja local.
+- Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.
+
+### NUEVAS REGLAS AUTOMÁTICAS
+- Ajustar el peso de la regla "Home Advantage Decay" para partidos con equipos con gran diferencia de calidad en su roster.
+- Ajustar el peso de la variable "calidad del roster visitante" en un 15% para partidos con equipos con rendimiento similar en carretera.
+- Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tenga un roster con una calificación superior a 0,8 en el ranking de la liga.

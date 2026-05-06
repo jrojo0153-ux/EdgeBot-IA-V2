@@ -1,0 +1,991 @@
+
+--- AUDITORÍA ---
+Partido: Hawks 109 - 108 Knicks
+RESULTADO: PERDIDA
+LECCIÓN: Aunque el modelo consideró la motivación por playoffs y la profundidad de plantilla, no logró capturar la variabilidad en el rendimiento de los equipos, lo que llevó a una predicción incorrecta a pesar de la alta probabilidad asignada.
+REGLA: Revisar la ponderación de la variable "rendimiento reciente" en el cálculo de probabilidad para partidos con equipos con diferencias mínimas en la clasificación.
+
+--- AUDITORÍA ---
+Partido: Raptors 126 - 104 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el equipo local y visitante fue mayor a la esperada, lo que sugiere que el modelo subestimó la ventaja de los Raptors en su casa.
+REGLA: Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 10% cuando el equipo local tiene una ventaja de más de 5 puntos en su casa.
+
+--- AUDITORÍA ---
+Partido: Timberwolves 113 - 96 Nuggets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la motivación de los Timberwolves fueron factores clave en el resultado, lo que sugiere que la ponderación de la ventaja local en el modelo debe ser mayor cuando se enfrentan equipos con similares habilidades.
+REGLA: Incrementar el peso de la variable "Ventaja Local" en un 15% cuando el diferencial de puntos por partido entre los equipos sea menor a 5.
+
+--- AUDITORÍA ---
+Partido: Timberwolves 113 - 96 Nuggets
+RESULTADO: PERDIDA
+LECCIÓN: La motivación por playoffs y la profundidad de plantilla no fueron suficientes para superar a los Timberwolves en su casa, lo que sugiere que la regla "Elite Roster Home Protection" puede tener más peso que la motivación por playoffs en algunos casos.
+REGLA: Si el equipo local tiene un roster elite y juega en casa, asignar un peso adicional de 0,2 a la probabilidad de victoria del equipo local.
+
+--- AUDITORÍA ---
+Partido: Red Sox 2 - 4 Yankees
+RESULTADO: GANADA
+LECCIÓN: La evaluación de la profundidad de plantilla y la condición de equipo de Súper Élite fue efectiva en este caso, lo que sugiere que la ventaja de los Yankees fue correctamente identificada.
+REGLA: Si el equipo visitante es de Súper Élite y tiene una profundidad de plantilla superior, asignar un 10% adicional a la probabilidad de victoria.
+
+--- AUDITORÍA ---
+Partido: Sunderland 0 - 5 Nottingham Forest
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia de xG no fue significativa, pero la regla de Home Advantage Decay no se aplicó efectivamente, lo que llevó a una subestimación del rendimiento del equipo visitante.
+REGLA: Revisar la regla de Home Advantage Decay para considerar también el rendimiento histórico del equipo visitante en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Real Betis 1 - 1 Real Madrid
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja del equipo visitante (Real Madrid) en este caso no se tradujo en una victoria, lo que sugiere que la importancia de la ventaja de localía y la capacidad de respuesta del equipo local (Real Betis) puede ser subestimada en el modelo actual.
+REGLA: Ajustar el peso de la variable "Ventaja de Localía" en un 15% para partidos en los que el equipo local tiene un rendimiento histórico similar al del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Napoli 4 - 0 Cremonese
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Napoli y la efectividad de su ataque frente a la defensa de Cremonese se reflejaron en el marcador final, lo que sugiere que el modelo predictivo subestimó la capacidad ofensiva de Napoli.
+REGLA: Si Home Advantage Decay > 0,5 y el equipo local tiene una media de goles anotados en casa mayor a 2, aumentar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Napoli 4 - 0 Cremonese
+RESULTADO: GANADA
+LECCIÓN: La disparidad de calidad entre los equipos y el ataque vertical del Napoli fueron factores clave para la victoria, lo que sugiere que la evaluación del bot sobre la ventaja del equipo local fue precisa.
+REGLA: Si [Home Advantage Decay] < 0,2 y [Transition Speed] > 1,5, entonces incrementar la probabilidad de victoria del equipo local en un 10%.
+
+--- AUDITORÍA ---
+Partido: RB Leipzig 3 - 1 1. FC Union Berlin
+RESULTADO: GANADA
+LECCIÓN: La efectividad del ataque vertical del RB Leipzig y la debilidad de la defensa adelantada del 1. FC Union Berlin se confirmaron, lo que sugiere que la penalización al local no fue un factor determinante en este partido.
+REGLA: Si (Home Advantage Decay) y (Transition Speed > 0,7) y (Ataque Vertical > 0,6), entonces incrementar probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: RB Leipzig 3 - 1 1. FC Union Berlin
+RESULTADO: GANADA
+LECCIÓN: La estrategia de ataque vertical del RB Leipzig se aprovechó efectivamente de la defensa adelantada del 1. FC Union Berlin, lo que validó la predicción del modelo y demostró que la regla de "Home Advantage Decay" no fue un factor determinante en este partido.
+REGLA: Si (Home_Team_Atack_Vertical == True) y (Visitante_Defensa_Adelantada == True), entonces incrementar_probabilidad_local(5%).
+
+--- AUDITORÍA ---
+Partido: 76ers 100 - 108 Celtics
+RESULTADO: GANADA
+LECCIÓN: La ventaja de la profundidad de plantilla y la condición de Súper Élite en casa de los Celtics se tradujo en una victoria, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente al considerar estos factores.
+REGLA: Si el equipo visitante tiene una profundidad de plantilla superior y es considerado Súper Élite, aumentar la probabilidad de victoria en un 10% si el equipo local no tiene una ventaja significativa en su condición de local.
+
+--- AUDITORÍA ---
+Partido: Rockets 108 - 112 Lakers
+RESULTADO: GANADA
+LECCIÓN: La predicción del modelo se basó en la motivación de los Lakers por posiciones de playoffs y su profundidad de plantilla, lo que resultó en una probabilidad real del 58%, lo suficientemente alta como para justificar la apuesta a una cuota mínima de 1.72.
+REGLA: Si la probabilidad real es ≥ 55% y la cuota mínima es ≥ 1.70, considerar la apuesta como válida para partidos con equipos con alta motivación por posiciones de playoffs.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 6 - 8 Guardians
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar a los Guardians, lo que sugiere que otros factores como el rendimiento del pitcher visitante o la estrategia de juego influyeron significativamente en el resultado.
+REGLA: Revisar la efectividad del pitcher visitante en juegos anteriores y ajustar la probabilidad de victoria local en un 10% si el pitcher visitante tiene un rendimiento superior al promedio.
+
+--- AUDITORÍA ---
+Partido: Mets 3 - 4 Rockies
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para garantizar la victoria de los Mets, lo que sugiere que otros factores como el rendimiento del equipo visitante y las condiciones del partido pueden influir significativamente en el resultado.
+REGLA: Revisar la efectividad del equipo visitante en partidos anteriores y considerar la influencia de factores externos como el clima y el estado del campo en la predicción.
+
+--- AUDITORÍA ---
+Partido: Rays 6 - 2 Twins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Rays se tradujeron en una victoria, lo que sugiere que la evaluación del modelo sobre la importancia de estos factores fue precisa.
+REGLA: Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria Local += 0.05.
+
+--- AUDITORÍA ---
+Partido: Braves 5 - 3 Phillies
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Braves fueron factores clave en la victoria, lo que sugiere que la evaluación del modelo sobre la importancia de la ventaja local y la calidad del equipo fue precisa.
+REGLA: Si (Ventaja Local = True) y (Profundidad de Plantilla > 0.7), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.05.
+
+--- AUDITORÍA ---
+Partido: Brewers 0 - 6 Pirates
+RESULTADO: PERDIDA
+LECCIÓN: La apuesta se basó en la ventaja local y la profundidad de plantilla de los Brewers, pero no consideró otros factores como el rendimiento reciente de los equipos, lesiones clave o la efectividad de los lanzadores, lo que llevó a una subestimación de las capacidades de los Pirates.
+REGLA: Revisar la efectividad de los lanzadores y el rendimiento reciente de los equipos antes de aplicar la regla de "Elite Roster Home Protection" y ajustar la probabilidad real en consecuencia.
+
+--- AUDITORÍA ---
+Partido: White Sox 5 - 4 Nationals
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los White Sox fueron factores clave en la victoria, aunque el margen fue más ajustado de lo esperado, lo que sugiere que la probabilidad real podría haber sido sobreestimada.
+REGLA: Si la probabilidad real es ≤ 60% y la ventaja local es ≤ 2 carreras, ajustar la cuota mínima (+EV) a 1.80 para reflejar la incertidumbre adicional.
+
+--- AUDITORÍA ---
+Partido: Rangers 1 - 8 Athletics
+RESULTADO: PERDIDA
+LECCIÓN: La evaluación subestimó la capacidad ofensiva de los Athletics y no consideró adecuadamente la posibilidad de un desempeño excepcional del equipo visitante, lo que resultó en una derrota significativa.
+REGLA: Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un factor de "Desempeño Reciente del Equipo Visitante" para mejorar la precisión de las predicciones.
+
+--- AUDITORÍA ---
+Partido: Cardinals 2 - 3 Mariners
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar a los Mariners, lo que sugiere que la evaluación de la fuerza del equipo visitante fue subestimada.
+REGLA: Ajustar la ponderación de la ventaja local en un 10% y considerar la fuerza del equipo visitante en un 15% en partidos futuros.
+
+--- AUDITORÍA ---
+Partido: Dodgers 4 - 6 Cubs
+RESULTADO: PERDIDA
+LECCIÓN: La sobreconfianza en la ventaja local y la profundidad de plantilla de los Dodgers no se tradujo en una victoria, lo que sugiere que otros factores como el rendimiento del equipo visitante y las condiciones del partido pueden influir significativamente en el resultado.
+REGLA: Revisar la ponderación de la ventaja local y considerar un ajuste del 10% hacia abajo en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento reciente superior al promedio.
+
+--- AUDITORÍA ---
+Partido: Giants 4 - 9 Marlins
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la profundidad de plantilla de los Giants no se tradujo en una victoria, lo que sugiere que otros factores como el rendimiento actual de los equipos y las lesiones de jugadores clave no fueron adecuadamente considerados.
+REGLA: Revisar la ponderación de la ventaja local y la profundidad de plantilla en el modelo, incorporando un factor de ajuste para el rendimiento actual de los equipos y las lesiones de jugadores clave.
+
+--- AUDITORÍA ---
+Partido: Liverpool 3 - 1 Crystal Palace
+RESULTADO: GANADA
+LECCIÓN: La ventaja de localía y la calidad del equipo de Liverpool se reflejaron en el marcador final, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente al considerar factores como la motivación y la calidad de los equipos.
+REGLA: Si (Home Advantage Decay > 0,5) y (Elite Roster Home Protection = True), entonces PROBABILIDAD REAL >= 60%.
+
+--- AUDITORÍA ---
+Partido: West Ham United 2 - 1 Everton
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de West Ham United para aprovechar la defensa adelantada de Everton, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se combina con un ataque vertical efectivo.
+REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,5), entonces incrementar Probabilidad Real en 5%.
+
+--- AUDITORÍA ---
+Partido: Arsenal 1 - 0 Newcastle United
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad de la plantilla de Arsenal fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo funcionó correctamente al considerar estos factores.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Plantilla Local > 0,7), entonces Probabilidad Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: Valencia 2 - 1 Girona
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Valencia y su ataque vertical efectivo contra la defensa adelantada de Girona se tradujeron en una victoria, lo que sugiere que la regla de Home Advantage Decay puede ser menos relevante cuando el equipo local tiene una clara superioridad en ataque.
+REGLA: Si (VentajaLocal > 0,5) y (AtaqueVertical > 0,7), entonces ponderar menos la regla de Home Advantage Decay en la predicción.
+
+--- AUDITORÍA ---
+Partido: Cardinals 9 - 11 Mariners
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar la efectividad del equipo visitante, lo que sugiere que se subestimó la capacidad ofensiva de los Mariners.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tiene un desempeño ofensivo superior en la temporada.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 5 - 3 Guardians
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Blue Jays fueron factores clave en la victoria, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria (58% vs. resultado real).
+REGLA: Si la probabilidad de victoria local es > 55% y el equipo local tiene una ventaja de roster, ajustar la cuota mínima (+EV) a 1.75 para reflejar la incertidumbre residual.
+
+--- AUDITORÍA ---
+Partido: Atlético Madrid 3 - 2 Athletic Club
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Atlético Madrid y la regla de Elite Roster Home Protection fueron factores clave en la predicción correcta, lo que sugiere que la calidad del equipo local y la penalización por apostar en contra de un equipo de élite en su propio estadio son variables importantes a considerar.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Equipo Local > 0,7) y (Penalización Apostar Contra Equipo Élite > 0,3), entonces Predicción = Equipo Local.
+
+--- AUDITORÍA ---
+Partido: Hellas Verona 0 - 0 Lecce
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró adecuadamente la capacidad defensiva de Lecce y la efectividad de su estrategia de low-block, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene un porcentaje de posesión del balón inferior a 40% y utiliza una estrategia de low-block, ajustar la probabilidad de victoria local en -10%.
+
+--- AUDITORÍA ---
+Partido: Giants 6 - 2 Marlins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Giants se reflejaron en el resultado, lo que sugiere que el modelo predictivo tiene una buena capacidad para identificar factores clave que influyen en el resultado de los partidos.
+REGLA: Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Rays 6 - 1 Twins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Rays se reflejaron en el marcador real, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente en este caso, con una probabilidad real del 58% que se tradujo en una victoria.
+REGLA: Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 3 - 6 Nationals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la profundidad de plantilla no fueron suficientes para superar la efectividad del equipo visitante, lo que sugiere que se subestimó la capacidad del equipo contrario.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de una variable adicional que evalúe la efectividad del equipo visitante en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Hawks 98 - 114 Knicks
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la motivación por posiciones de playoffs no fueron suficientes para superar la diferencia en rendimiento real entre los equipos, lo que sugiere que se subestimó la fuerza del equipo visitante.
+REGLA: Ajustar la ponderación de la regla "Elite Roster Home Protection" con un factor de corrección de 0,8 cuando el equipo visitante tenga un rendimiento superior en los últimos 5 partidos.
+
+--- AUDITORÍA ---
+Partido: Timberwolves 112 - 96 Nuggets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la motivación por posiciones de playoffs del equipo local fueron factores clave en la victoria, lo que sugiere que el modelo puede confiar en estas variables para futuras predicciones.
+REGLA: Si (Ventaja Local = True) y (Motivación Playoff > 0,5), entonces Probabilidad de Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: Diamondbacks 4 - 6 Padres
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la profundidad de plantilla de los Diamondbacks llevó a una predicción incorrecta, lo que sugiere que la calidad del equipo visitante y su rendimiento reciente deben ser considerados con más peso en el análisis.
+REGLA: Revisar la ponderación de la ventaja local y la calidad del equipo visitante en la fórmula de predicción, asignando un peso mínimo del 30% a la calidad del equipo visitante en partidos con equipos de similar nivel.
+
+--- AUDITORÍA ---
+Partido: Rangers 4 - 3 Athletics
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la profundidad de plantilla de los Rangers fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada, aunque el margen de victoria fue estrecho.
+REGLA: Si (Ventaja Local > 0,5) y (Profundidad de Plantilla > 0,7), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: Royals 12 - 1 Angels
+RESULTADO: GANADA
+LECCIÓN: La gran diferencia en el marcador real (12-1) sugiere que la ventaja local de los Royals y la regla de Elite Roster Home Protection fueron factores decisivos, lo que indica que el modelo subestimó la magnitud de la victoria de los Royals.
+REGLA: Ajustar la ponderación de la regla de Elite Roster Home Protection para reflejar una mayor influencia en la probabilidad de victoria cuando la ventaja local es significativa.
+
+--- AUDITORÍA ---
+Partido: Astros 3 - 8 Yankees
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad ofensiva de los Yankees y no consideró adecuadamente la variabilidad en el rendimiento de los equipos, lo que resultó en una derrota para los Astros a pesar de su ventaja local y profundidad de plantilla.
+REGLA: Revisar la ponderación de la regla "Ventaja Local" y considerar la inclusión de una regla adicional que evalúe la capacidad ofensiva del equipo visitante, como "Potencia Ofensiva Visitante", para mejorar la precisión de las predicciones.
+
+--- AUDITORÍA ---
+Partido: Brewers 3 - 6 Pirates
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que se subestimó la capacidad del equipo visitante o se sobreestimó la ventaja local.
+REGLA: Revisar la ponderación de la regla "Elite Roster Home Protection" y ajustarla para considerar la fuerza del equipo visitante en partidos con equipos con rendimiento similar.
+
+--- AUDITORÍA ---
+Partido: Reds 9 - 2 Tigers
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Reds se reflejaron en el marcador final, lo que sugiere que el modelo predictivo sobrestimó la probabilidad de victoria de los Reds en solo 2 puntos porcentuales (58% vs 81% efectivo).
+REGLA: Si la ventaja local y la calidad del roster son significativas, ajustar la probabilidad de victoria local en +3% para reflejar el impacto de la ventaja en casa.
+
+--- AUDITORÍA ---
+Partido: Braves 5 - 8 Phillies
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la fuerza ofensiva de los Phillies, lo que sugiere que se subestimó la capacidad de anotación del equipo visitante.
+REGLA: Revisar la ponderación de la variable "Fuerza Ofensiva del Equipo Visitante" en la fórmula de predicción, considerando un aumento del 15% en su peso relativo.
+
+--- AUDITORÍA ---
+Partido: Pachuca 0 - 2 Pumas UNAM
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la ventaja de Pumas UNAM, lo que sugiere que la importancia de la defensa visitante y la capacidad de contraataque pueden ser factores clave en partidos con equipos de similar nivel.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene una defensa sólida y capacidad de contraataque efectivo.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 5 - 1 Mazatlán FC
+RESULTADO: GANADA
+LECCIÓN: La diferencia de goles fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja local de Tigres UANL y su capacidad para anotar goles.
+REGLA: Si Home Advantage Decay y Elite Roster Home Protection están activadas, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene un histórico de más de 2 goles por partido en casa.
+
+--- AUDITORÍA ---
+Partido: Toluca 4 - 1 León
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Toluca se tradujo en una victoria convincente, lo que sugiere que la motivación y la calidad del equipo local pueden superar la calidad del equipo visitante en ciertas circunstancias.
+REGLA: Si Home Advantage Decay < 0,5 y Transition Speed > 1,5, entonces incrementar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Guadalajara 0 - 0 Tijuana
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró la posibilidad de un empate, lo que puede ser un resultado común en partidos con equipos con habilidades similares, como Guadalajara y Tijuana.
+REGLA: Incorporar un umbral de probabilidad para empates (p. ej., > 20%) y ajustar la predicción según sea necesario para evitar sobrevalorar la ventaja local.
+
+--- AUDITORÍA ---
+Partido: FC Juarez 2 - 1 Atlético de San Luis
+RESULTADO: PERDIDA
+LECCIÓN: La predicción de Under 2.5 no se cumplió debido a que el total de goles en el partido fue 3, lo que superó la expectativa del modelo.
+REGLA: Si Home Advantage Decay y Low-Block Away Decay están activadas, considerar un ajuste en la predicción de Under/Over según la potencia ofensiva del equipo local.
+
+--- AUDITORÍA ---
+Partido: América 0 - 1 Atlas
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el ataque vertical del América no fueron suficientes para superar la defensa del Atlas, lo que sugiere que la importancia de la defensa visitante fue subestimada en el análisis.
+REGLA: Ajustar el peso de la defensa visitante en la fórmula de predicción, considerando un factor de al menos 0,2 para partidos con equipos con defensas sólidas como el Atlas.
+
+--- AUDITORÍA ---
+Partido: Fiorentina 0 - 0 Sassuolo
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot se basó en la ventaja local y el rendimiento histórico de la Fiorentina, pero no consideró la capacidad defensiva del Sassuolo, lo que resultó en un empate inesperado.
+REGLA: Incorporar un factor de "eficacia defensiva del visitante" en el cálculo de probabilidad, especialmente en partidos con equipos con buenos registros defensivos.
+
+--- AUDITORÍA ---
+Partido: Genoa 0 - 2 Como
+RESULTADO: GANADA
+LECCIÓN: La predicción de Under 2.5 se cumplió debido a la sólida defensa de Como y la incapacidad de Genoa para aprovechar su ventaja local, lo que resultó en un marcador final de 0-2.
+REGLA: Si la probabilidad de Under 2.5 es mayor a 55% y el equipo local tiene una ventaja decayendo, considerar la opción Under 2.5 con cuota mínima (+EV) mayor a 1.70.
+
+--- AUDITORÍA ---
+Partido: VfB Stuttgart 1 - 1 Werder Bremen
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot se basó en la ventaja local de VfB Stuttgart, pero no consideró suficientemente la capacidad de Werder Bremen para empatar el partido, lo que indica una subestimación de la fuerza del equipo visitante.
+REGLA: Ajustar la fórmula de Home Advantage Decay para incluir un factor de "Empate Probable" cuando el equipo visitante tenga un roster de calidad similar o superior al del equipo local.
+
+--- AUDITORÍA ---
+Partido: Lorient 2 - 3 Strasbourg
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la efectividad del ataque de Strasbourg, lo que sugiere que la evaluación de la ventaja local debe considerar también la calidad del equipo visitante.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tiene un rendimiento histórico superior al 60% en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Real Oviedo 1 - 2 Elche
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la capacidad ofensiva de Real Oviedo llevó a una predicción incorrecta, lo que sugiere que la influencia de la regla de Elite Roster Home Protection y Home Advantage Decay puede ser menor de lo esperado en partidos con equipos con habilidades similares.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y Home Advantage Decay cuando la diferencia de habilidades entre los equipos sea menor a 10%.
+
+--- AUDITORÍA ---
+Partido: Borussia Dortmund 4 - 0 SC Freiburg
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la ventaja local y la velocidad de transición en el ataque de Borussia Dortmund superó las expectativas, lo que sugiere que el modelo subestimó la diferencia de habilidades entre los equipos.
+REGLA: Incrementar el peso de la regla "Home Advantage Decay" en un 15% cuando el equipo local tenga una diferencia de 10 o más puestos en la tabla de clasificación con respecto al visitante.
+
+--- AUDITORÍA ---
+Partido: Le Havre AC 4 - 4 Metz
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró adecuadamente la capacidad de Metz para anotar goles a pesar de la ventaja local de Le Havre AC, lo que resultó en un empate inesperado.
+REGLA: Incorporar un factor de "Goles Esperados del Visitante" (GEV) en la fórmula de predicción para partidos con equipos con alta capacidad ofensiva en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: Stade Rennais 2 - 1 Nantes
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la capacidad ofensiva de Stade Rennais fueron claves para su victoria, lo que sugiere que el modelo predictivo sobrestimó ligeramente la defensa de Nantes.
+REGLA: Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar probabilidad de victoria local en 5%.
+
+--- AUDITORÍA ---
+Partido: Raptors 93 - 89 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue menor de lo esperado, lo que sugiere que la ventaja local y la motivación por posiciones de playoffs pueden no ser tan determinantes en partidos con equipos de similar nivel.
+REGLA: Si la diferencia de puntos en un partido es menor a 5, ajustar la probabilidad de victoria del equipo local en un 10% hacia abajo.
+
+--- AUDITORÍA ---
+Partido: Orioles 3 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster de los Orioles no fue suficiente para contrarrestar el rendimiento histórico superior de los Red Sox, lo que indica una posible subestimación de la fuerza del equipo visitante.
+REGLA: Ajustar la probabilidad de victoria local con un factor de corrección del 10% cuando el equipo visitante tenga un rendimiento histórico superior al del equipo local.
+
+--- AUDITORÍA ---
+Partido: Braves 6 - 2 Phillies
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Braves se tradujeron en una victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada, aunque la probabilidad real del 58% indica una certeza moderada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 4 - 2 Guardians
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Blue Jays fueron factores clave en la victoria, lo que sugiere que el modelo predictivo tiene una buena capacidad para identificar equipos con ventajas significativas en casa.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Mets 1 - 3 Rockies
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar a los Rockies, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como el rendimiento reciente y las estadísticas de los equipos.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de ajuste para el rendimiento reciente de los equipos (por ejemplo, últimos 10 partidos).
+
+--- AUDITORÍA ---
+Partido: Astros 7 - 4 Yankees
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Astros fueron factores clave en su victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: Brewers 5 - 0 Pirates
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite del equipo local fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 1 - 2 Nationals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar a los Nationals, lo que sugiere que la evaluación de la probabilidad real (58%) fue excesivamente optimista y no consideró adecuadamente la fuerza del equipo visitante.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+
+--- AUDITORÍA ---
+Partido: Villarreal 2 - 1 Celta Vigo
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el rendimiento histórico de Villarreal en casa fueron factores clave en la victoria, lo que sugiere que el modelo predictivo funcionó correctamente al considerar estas variables.
+REGLA: Si (Ventaja Local > 0,5) y (Rendimiento Histórico en Casa > 0,6), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Marseille 1 - 1 Nice
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad defensiva de Nice y no consideró suficientemente la posibilidad de un empate, lo que llevó a una pérdida a pesar de la ventaja local de Marseille.
+REGLA: Si la probabilidad de victoria local es < 65% y la cuota mínima es > 1.70, considerar la posibilidad de un empate y ajustar la predicción en consecuencia.
+
+--- AUDITORÍA ---
+Partido: Trail Blazers 93 - 114 Spurs
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia en el rendimiento real entre los equipos fue mayor de lo esperado, lo que sugiere que la evaluación de la calidad de los equipos y su rendimiento reciente no fue lo suficientemente precisa.
+REGLA: Revisar la ponderación de la variable "rendimiento reciente" en el modelo, aumentando su peso a 0,3 para reflejar mejor la influencia de los resultados recientes en la predicción.
+
+--- AUDITORÍA ---
+Partido: Giants 6 - 3 Marlins
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de roster fueron factores clave en la predicción correcta, lo que sugiere que el modelo puede confiar en la importancia de la ventaja local en partidos con equipos equilibrados.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia de Roster < 10%), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,05.
+
+--- AUDITORÍA ---
+Partido: Diamondbacks 12 - 7 Padres
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Diamondbacks se reflejaron en el resultado final, lo que sugiere que la ponderación de estas variables en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Calidad Roster Local > 0,7), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: 76ers 96 - 128 Celtics
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja de los Celtics en este partido.
+REGLA: Ajustar el peso de la regla "Elite Roster Home Protection" cuando el equipo visitante tiene una ventaja significativa en la clasificación de playoffs.
+
+--- AUDITORÍA ---
+Partido: Royals 11 - 9 Angels
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Royals fueron factores clave en la victoria, lo que sugiere que la probabilidad real del 58% fue una estimación razonable, aunque el marcador final fue más ajustado de lo esperado.
+REGLA: Si la ventaja local y la calidad del roster superan un umbral de 0,5 en la escala de evaluación, aumentar la probabilidad real en un 5% para partidos con marcadores esperados ajustados.
+
+--- AUDITORÍA ---
+Partido: Santos 3 - 0 Monterrey
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la ventaja local y la velocidad de transición en el ataque de Santos se reflejó en el marcador final, lo que sugiere que el modelo cuantitativo capturó correctamente las dinámicas del partido.
+REGLA: Si Home Advantage Decay > 0,5 y Transition Speed > 1,2, entonces incrementar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Cruz Azul 4 - 1 Necaxa
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay y Transition Speed en partidos con equipos con diferencias significativas en su rendimiento histórico y actual, como Cruz Azul y Necaxa, puede ser un indicador sólido para predecir resultados.
+REGLA: Si (Home Advantage Decay > 0,5) y (Transition Speed > 1,2), entonces PROBABILIDAD REAL >= 55% para el equipo local.
+
+--- AUDITORÍA ---
+Partido: Manchester United 2 - 1 Brentford
+RESULTADO: GANADA
+LECCIÓN: La diferencia de solo un gol en el marcador real (2-1) sugiere que, aunque la predicción fue correcta, la ventaja de Manchester United no fue tan abrumadora como se esperaba, lo que indica una posible subestimación de la capacidad de respuesta del equipo visitante.
+REGLA: Ajustar la probabilidad de victoria en casa por un factor de 0.05 cuando el equipo visitante tenga un rendimiento histórico de más de 30% de victorias en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: Manchester United 2 - 1 Brentford
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Manchester United fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo funcionó correctamente al considerar estos factores.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Lazio 3 - 3 Udinese
+RESULTADO: PERDIDA
+LECCIÓN: La predicción no consideró la capacidad de Udinese para anotar goles a pesar de la ventaja local de Lazio, lo que llevó a un empate inesperado.
+REGLA: Incorporar un factor de "resiliencia del visitante" en el análisis, considerando la capacidad de anotación del equipo visitante en partidos anteriores.
+
+--- AUDITORÍA ---
+Partido: Espanyol 0 - 0 Levante
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de Levante para lograr un empate, lo que sugiere una subestimación de la resistencia del equipo visitante.
+REGLA: Ajustar la probabilidad de empate en partidos con equipos visitantes con un rendimiento histórico de resistencia en partidos fuera de casa mayor al 30%.
+
+--- AUDITORÍA ---
+Partido: Guardians 2 - 3 Rays
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y el roster competitivo de los Guardians no se tradujo en una victoria, lo que sugiere que otros factores como la efectividad del pitcheo visitante o la debilidad en el bullpen local pueden haber influido en el resultado.
+REGLA: Revisar la efectividad del pitcheo visitante y el desempeño del bullpen local antes de aplicar la regla de Elite Roster Home Protection.
+
+--- AUDITORÍA ---
+Partido: Pirates 2 - 4 Cardinals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para superar a los Cardinals, lo que sugiere que se subestimó la capacidad del equipo visitante.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar un ajuste descendente del 10% en la probabilidad de victoria cuando el equipo visitante tenga un rendimiento histórico superior en la liga.
+
+--- AUDITORÍA ---
+Partido: Blue Jays 0 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real del partido, lo que sugiere que otros factores como la forma actual de los equipos, lesiones clave o estrategias de juego pueden tener un impacto significativo en el resultado.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando la inclusión de variables adicionales como la tendencia reciente de los equipos y la disponibilidad de jugadores clave.
+
+--- AUDITORÍA ---
+Partido: Magic 94 - 88 Pistons
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la calidad del roster de los Magic fueron factores clave en la victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con rosters fuertes jugando en casa.
+REGLA: Si (Ventaja Local > 5) y (Calidad Roster Local > 0.7), entonces Probabilidad de Victoria Local += 0.1.
+
+--- AUDITORÍA ---
+Partido: Suns 122 - 131 Thunder
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad ofensiva de los Thunder y no consideró adecuadamente la posibilidad de que el equipo visitante superara la ventaja local de los Suns.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" y ajustarla para considerar la fuerza ofensiva del equipo visitante en partidos con equipos con alto potencial anotador.
+
+--- AUDITORÍA ---
+Partido: Nuggets 125 - 113 Timberwolves
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el equipo local y el visitante fue de 12 puntos, lo que sugiere que el modelo predictivo subestimó la ventaja de los Nuggets, pero aún así logró predecir el resultado correcto.
+REGLA: Si la probabilidad real es mayor a 60% y la cuota mínima es mayor a 1.60, considerar un margen de victoria de al menos 10 puntos para el equipo local.
+
+--- AUDITORÍA ---
+Partido: Nuggets 125 - 113 Timberwolves
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de estilo de juego de los equipos permitieron una predicción precisa, lo que sugiere que la consideración de factores como la defensa adelantada y la velocidad de transición puede ser crucial en partidos con equipos de habilidades similares.
+REGLA: Si (VentajaLocal > 5) y (AtaqueVertical > 0.6) y (DefensaAdelantadaOponente > 0.4), entonces ProbabilidadVictoriaLocal += 0.1.
+
+--- AUDITORÍA ---
+Partido: Dodgers 5 - 4 Marlins
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que la probabilidad real puede haber sido sobreestimada.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con buen desempeño en carretera.
+
+--- AUDITORÍA ---
+Partido: Celtics 97 - 113 76ers
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la fuerza y el rendimiento de los 76ers, lo que sugiere que la motivación por posiciones de playoffs y la ventaja local no siempre son suficientes para garantizar la victoria.
+REGLA: Revisar la ponderación de la variable "motivación por posiciones de playoffs" cuando el equipo visitante también tiene una alta motivación y un rendimiento reciente sólido.
+
+--- AUDITORÍA ---
+Partido: Reds 7 - 2 Rockies
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el análisis de ataque y defensa de los equipos fueron factores clave en la predicción correcta, lo que sugiere que el modelo puede confiar en la importancia de la ventaja local en partidos de béisbol.
+REGLA: Si (Ventaja Local > 0,5) y (Ataque Local > Defensa Visitante), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Phillies 7 - 0 Giants
+RESULTADO: GANADA
+LECCIÓN: La precisión del modelo se vio favorecida por la ventaja local y el roster elite de los Phillies, lo que sugiere que la ponderación de estos factores en el análisis fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0.1.
+
+--- AUDITORÍA ---
+Partido: Braves 5 - 2 Tigers
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Braves se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con diferencias significativas en su calidad.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria Local += 0,1.
+
+--- AUDITORÍA ---
+Partido: White Sox 5 - 2 Angels
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los White Sox se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos con diferencias significativas en su plantilla.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia de Roster > 10%), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Knicks 126 - 97 Hawks
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja local de los Knicks y su capacidad para explotar las debilidades defensivas de los Hawks.
+REGLA: Aumentar el peso de la variable "Ventaja Local" en un 15% cuando se enfrentan equipos con diferencias significativas en porcentaje de victorias en casa.
+
+--- AUDITORÍA ---
+Partido: Padres 3 - 8 Cubs
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la regla de Elite Roster Home Protection no consideró adecuadamente la fuerza del equipo visitante, lo que llevó a una predicción incorrecta.
+REGLA: Revisar la ponderación de la ventaja local y considerar la fuerza relativa de los equipos visitantes en la fórmula de predicción, ajustando la probabilidad de victoria según la diferencia de habilidades entre los equipos.
+
+--- AUDITORÍA ---
+Partido: Athletics 1 - 4 Royals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster de los Athletics no fueron suficientes para superar a los Royals, lo que sugiere que la evaluación de la ventaja local y la comparación de roster puede no ser lo suficientemente precisa en ciertos casos.
+REGLA: Revisar la ponderación de la ventaja local y la comparación de roster en la fórmula de predicción, considerando también factores como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+--- AUDITORÍA ---
+Partido: Twins 3 - 5 Mariners
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para superar la ventaja de los Mariners, lo que sugiere que la evaluación de la ventaja local y la calidad del roster debe considerar factores adicionales como la tendencia reciente y la efectividad del equipo visitante.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection y considerar la inclusión de un factor de tendencia reciente del equipo visitante en la fórmula de predicción.
+
+--- AUDITORÍA ---
+Partido: Rangers 3 - 0 Yankees
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local de los Rangers fue subestimada, lo que sugiere que la calidad del roster visitante no siempre supera la ventaja de jugar en casa.
+REGLA: Ajustar el peso de la ventaja local en un 15% para partidos con equipos con roster de similar calidad.
+
+--- AUDITORÍA ---
+Partido: Phillies 0 - 0 Giants
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del modelo no consideró la posibilidad de un empate, lo que sugiere una falta de diversidad en los escenarios de resultado.
+REGLA: Incorporar un factor de empate (E) en la fórmula de predicción, como: P(Ganar) + P(Perder) + P(Empate) = 1.
+
+--- AUDITORÍA ---
+Partido: Pistons 116 - 109 Magic
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre los equipos fue de 7, lo que sugiere que la ventaja local y la motivación por posiciones de playoffs tuvieron un impacto significativo en el resultado, aunque la probabilidad real del 58% indica que el modelo podría haber subestimado la capacidad del equipo local.
+REGLA: Ajustar la ponderación de la ventaja local en un 10% cuando el equipo local tiene una diferencia de victorias en la temporada regular mayor a 5 juegos respecto al equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Cavaliers 125 - 120 Raptors
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la motivación por posiciones de playoffs influyeron positivamente en el resultado, lo que sugiere que el modelo cuantitativo capturó adecuadamente los factores clave que afectan el desempeño de los equipos en partidos importantes.
+REGLA: Si (VentajaLocal > 0.5) y (MotivaciónPlayoffs > 0.3), entonces IncrementarProbabilidadLocal(0.1)
+
+--- AUDITORÍA ---
+Partido: Reds 2 - 13 Rockies
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó significativamente el rendimiento de los Rockies, lo que sugiere que la ventaja local y la fuerza del roster no fueron suficientes para garantizar la victoria de los Reds.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" y considerar la inclusión de factores adicionales como el rendimiento reciente de los equipos y las estadísticas de enfrentamientos directos.
+
+--- AUDITORÍA ---
+Partido: Brewers 2 - 6 Diamondbacks
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para contrarrestar la fuerza del equipo visitante, lo que sugiere que se subestimó la capacidad de los Diamondbacks.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con alto rendimiento en la carretera.
+
+--- AUDITORÍA ---
+Partido: Athletics 5 - 2 Royals
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la diferencia en la calidad del roster entre los Athletics y los Royals se reflejó en el resultado final, lo que sugiere que el modelo predictivo cuantitativo funcionó correctamente en este caso, con una probabilidad real del 58% que se tradujo en una victoria para el equipo local.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Brewers 13 - 1 Diamondbacks
+RESULTADO: GANADA
+LECCIÓN: La gran diferencia en el marcador real (13-1) sugiere que el modelo subestimó la ventaja local de los Brewers, lo que indica una posible mejora en la calibración de la probabilidad de victoria.
+REGLA: Ajustar la fórmula de probabilidad de victoria local para que refleje una mayor influencia de la ventaja local cuando el equipo local tiene un roster elite.
+
+--- AUDITORÍA ---
+Partido: Athletics 6 - 3 Royals
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y la diferencia en la calidad del roster entre los Athletics y los Royals se reflejó en el resultado final, lo que sugiere que el modelo predictivo funcionó correctamente al considerar estos factores.
+REGLA: Si (Ventaja Local > 0,5) y (Diferencia Roster > 0,2), entonces Probabilidad de Victoria Local = Probabilidad de Victoria Local + 0,1.
+
+--- AUDITORÍA ---
+Partido: Hawks 89 - 140 Knicks
+RESULTADO: PERDIDA
+LECCIÓN: La diferencia de puntos en el marcador real (51 puntos) sugiere que la ventaja local y el roster elite de los Hawks no fueron suficientes para contrarrestar la fuerza ofensiva de los Knicks, lo que indica una posible subestimación de la capacidad del equipo visitante.
+REGLA: Revisar la regla de Elite Roster Home Protection para incluir un factor de corrección por la fuerza ofensiva del equipo visitante (FV > 120 puntos en los últimos 3 partidos).
+
+--- AUDITORÍA ---
+Partido: 76ers 106 - 93 Celtics
+RESULTADO: PERDIDA
+LECCIÓN: La motivación de los Celtics por posiciones de playoffs no fue suficiente para superar la ventaja local de los 76ers, lo que sugiere que la importancia de la ventaja local puede ser mayor de lo estimado en este modelo.
+REGLA: Ajustar el peso de la ventaja local en un 15% para partidos de temporada regular en la NBA.
+
+--- AUDITORÍA ---
+Partido: Leeds United 3 - 1 Burnley
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Leeds United y su velocidad de transición fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo sobrestimó la capacidad defensiva de Burnley.
+REGLA: Ajustar el peso de la variable "velocidad de transición" en un 10% para partidos en casa con equipos con alto rendimiento ofensivo.
+
+--- AUDITORÍA ---
+Partido: Leeds United 3 - 1 Burnley
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Leeds United y su velocidad de transición fueron factores clave en la victoria, lo que sugiere que el modelo cuantitativo fue efectivo en este caso, ya que la probabilidad real de 58% se tradujo en una victoria.
+REGLA: Si (Home Advantage Decay < 0,2) y (Transition Speed > 1,5), entonces incrementar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Girona 0 - 1 Mallorca
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de Mallorca para contrarrestar la ventaja local de Girona, lo que sugiere que la variable "Elite Roster Home Protection" puede no ser tan efectiva contra equipos con una buena estrategia defensiva.
+REGLA: Revisar la ponderación de la variable "Transition Speed" y considerar la inclusión de una variable adicional que evalúe la solidez defensiva del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: Girona 0 - 1 Mallorca
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster de Girona llevó a una predicción incorrecta, lo que sugiere que se debe considerar más a fondo la capacidad de contrarrestar de los equipos visitantes como Mallorca.
+REGLA: Revisar la ponderación de la ventaja local en partidos con equipos visitantes con roster de alta calidad, aplicando un factor de corrección del 10% en la probabilidad de victoria del equipo local.
+
+--- AUDITORÍA ---
+Partido: Magic 79 - 93 Pistons
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad defensiva de los Pistons y no consideró adecuadamente la tendencia de los Magic en partidos con equipos con fuerte defensa, lo que llevó a un error en la evaluación de la probabilidad de victoria.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" y considerar la incorporación de una regla adicional que evalúe la capacidad defensiva del equipo visitante en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Nationals 1 - 6 Brewers
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real del partido, lo que sugiere que otros factores como la forma actual de los equipos, lesiones clave o estrategias de juego no fueron adecuadamente considerados en el modelo.
+REGLA: Revisar y ajustar el peso de la ventaja local y el roster elite en la fórmula de predicción, incorporando variables adicionales como la tendencia reciente de los equipos y lesiones clave.
+
+--- AUDITORÍA ---
+Partido: Rays 3 - 0 Giants
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria += 0.1
+
+--- AUDITORÍA ---
+Partido: Raptors 112 - 110 Cavaliers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue muy estrecha (2 puntos), lo que sugiere que el modelo puede mejorar al considerar factores adicionales que afectan la intensidad y el ritmo del juego en los últimos minutos.
+REGLA: Si la probabilidad de victoria es ≥ 60% y la diferencia de puntos en el último cuarto es ≤ 5 puntos, ajustar la cuota mínima (+EV) en un 5% para reflejar la incertidumbre en los resultados ajustados.
+
+--- AUDITORÍA ---
+Partido: Twins 3 - 7 Blue Jays
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para superar la fuerza ofensiva de los Blue Jays, lo que sugiere que se subestimó la capacidad de anotación del equipo visitante.
+REGLA: Ajustar la ponderación de la variable "Fuerza Ofensiva Visitante" en un 15% para partidos con equipos con alto potencial de anotación.
+
+--- AUDITORÍA ---
+Partido: Padres 2 - 8 White Sox
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para superar la diferencia en el rendimiento real de los equipos, lo que sugiere que se subestimó la fuerza del equipo visitante.
+REGLA: Revisar la ponderación de la ventaja local y el roster elite en la fórmula de predicción, considerando un factor de corrección para la fuerza del equipo visitante (FV = 0,2 * PuntosPromedioVisitante).
+
+--- AUDITORÍA ---
+Partido: Athletics 5 - 8 Guardians
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster de los Athletics no fueron suficientes para superar a los Guardians, lo que sugiere que la evaluación de la ventaja local y el roster puede no ser lo suficientemente precisa en ciertos casos.
+REGLA: Revisar la ponderación de la ventaja local y el roster en la fórmula de predicción, considerando un factor adicional para la fuerza del equipo visitante.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del modelo subestimó la capacidad de reacción y contraataque del FC Cologne, lo que llevó a un empate inesperado.
+REGLA: Si Home Advantage Decay y Elite Roster Home Protection se activan, considerar un ajuste de -5% en la probabilidad de victoria local cuando el equipo visitante tiene un historial de buenos resultados en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad del FC Cologne para anotar goles a pesar de la ventaja local de Union Berlin, lo que sugiere que la importancia de la calidad del roster visitante debe ser reevaluada en partidos con equipos de similar nivel.
+REGLA: Ajustar la fórmula de predicción para incluir un factor de "Roster Visitante Fuerte" que reduzca la probabilidad de victoria local en un 10% cuando el equipo visitante tenga un roster de calidad similar o superior al equipo local.
+
+--- AUDITORÍA ---
+Partido: 1. FC Union Berlin 2 - 2 FC Cologne
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad de reacción y contraataque del FC Cologne, lo que llevó a un empate inesperado, destacando la importancia de considerar la velocidad de transición y la efectividad defensiva del equipo visitante.
+REGLA: Incorporar un factor de "Velocidad de Contraataque" (VCA) en la fórmula de predicción, donde VCA = (Goles en contraataque del equipo visitante / Total de goles en contraataque) * 0,1, y ajustar la probabilidad de victoria local en un -5% si VCA > 0,2.
+
+--- AUDITORÍA ---
+Partido: Bayern Munich 3 - 3 1. FC Heidenheim 1846
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada a Bayern Munich no se reflejó en el resultado real, lo que sugiere que la ventaja local y la calidad del roster pueden no ser suficientes para garantizar la victoria en partidos con equipos que pueden aprovechar las debilidades del equipo local.
+REGLA: Revisar la variable "Ventaja Local" y ajustar la ponderación de la "Calidad del Roster" en partidos con equipos visitantes que tienen un rendimiento histórico alto en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Bayern Munich 3 - 3 1. FC Heidenheim 1846
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada al Bayern Munich no se tradujo en victoria, lo que sugiere que la ventaja local y la calidad del roster no siempre son suficientes para garantizar el resultado, especialmente en partidos donde el equipo visitante puede aprovechar errores y oportunidades.
+REGLA: Revisar la ponderación de la regla "Home Advantage Decay" para partidos con equipos visitantes con buen rendimiento en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: TSG Hoffenheim 3 - 3 VfB Stuttgart
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de VfB Stuttgart para anotar goles a pesar de la ventaja local de TSG Hoffenheim, lo que indica una posible debilidad en la evaluación de la defensa del equipo local y la ofensiva del visitante.
+REGLA: Revisar la ponderación de la variable "Ventaja Local" en partidos con equipos visitantes con alta capacidad ofensiva.
+
+--- AUDITORÍA ---
+Partido: TSG Hoffenheim 3 - 3 VfB Stuttgart
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de VfB Stuttgart para anotar goles fuera de casa, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene una tasa de anotación fuera de casa superior a 1.2 goles por partido, ajustar la probabilidad de victoria local en -10%.
+
+--- AUDITORÍA ---
+Partido: Werder Bremen 1 - 3 FC Augsburg
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la subestimación de la capacidad del equipo visitante para contrarrestarla llevaron a un error en la predicción.
+REGLA: Revisar la ponderación de la ventaja local cuando el equipo visitante tiene un rendimiento histórico similar o superior en partidos fuera de casa.
+
+--- AUDITORÍA ---
+Partido: Nantes 3 - 0 Marseille
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Nantes y su capacidad ofensiva en casa fueron claves para el resultado, lo que sugiere que la ponderación de la regla "Home Advantage Decay" podría ser ajustada para reflejar mejor la importancia de la ventaja local en partidos contra equipos con roster de alta calidad.
+REGLA: Ajustar la ponderación de "Home Advantage Decay" a 0,8 cuando el equipo local tiene una ventaja ofensiva significativa en casa.
+
+--- AUDITORÍA ---
+Partido: Nantes 3 - 0 Marseille
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Nantes se tradujo en una victoria contundente, lo que sugiere que la regla de Home Advantage Decay funcionó correctamente al reducir el impacto de la calidad del roster de Marseille.
+REGLA: Si el xG esperado es alto y la regla de Home Advantage Decay se activa, aumentar la probabilidad de victoria local en un 10% si el equipo local tiene una ventaja de al menos 0.5 goles en el promedio de xG de los últimos 5 partidos.
+
+--- AUDITORÍA ---
+Partido: Brentford 3 - 0 West Ham United
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Brentford y su velocidad de transición fueron factores clave para su victoria, lo que sugiere que el modelo cuantitativo sobrestimó la calidad del roster de West Ham United.
+REGLA: Ajustar el peso de la regla "Elite Roster Home Protection" a 0,8 cuando el equipo local tiene una ventaja de transición superior a 10%.
+
+--- AUDITORÍA ---
+Partido: Wolverhampton Wanderers 1 - 1 Sunderland
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y la calidad del roster no fueron suficientes para garantizar la victoria de Wolverhampton Wanderers, lo que sugiere que la probabilidad real (58%) subestimó la capacidad de Sunderland para empatar el partido.
+REGLA: Ajustar la probabilidad real cuando la diferencia de calidad entre los equipos sea menor a 10%, considerando la capacidad de contrarrestar la ventaja local.
+
+--- AUDITORÍA ---
+Partido: Bayer Leverkusen 4 - 1 RB Leipzig
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Bayer Leverkusen y su capacidad ofensiva en casa fueron factores clave para superar a RB Leipzig, lo que sugiere que la ponderación de la variable "Home Advantage" en el modelo debe ser revisada para reflejar mejor la influencia de la ventaja local en partidos contra equipos de alto nivel.
+REGLA: Incrementar el peso de "Home Advantage" en un 15% cuando el equipo local tenga un rendimiento histórico superior al 60% en casa contra equipos de la misma categoría.
+
+--- AUDITORÍA ---
+Partido: Bayer Leverkusen 4 - 1 RB Leipzig
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Bayer Leverkusen y su capacidad ofensiva fueron clave para el resultado, lo que sugiere que la ponderación de la regla "Home Advantage Decay" podría ser ajustada para partidos con equipos con alta capacidad ofensiva.
+REGLA: Si (Home Advantage Decay < 0,3) y (Capacidad Ofensiva Local > 1,5), entonces ponderar "Home Advantage Decay" con un factor de 0,8.
+
+--- AUDITORÍA ---
+Partido: Osasuna 1 - 2 Barcelona
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de Osasuna fue superada por la calidad del roster de Barcelona, lo que confirma la efectividad de la regla "Elite Roster Home Protection" en la predicción.
+REGLA: Si el equipo visitante tiene un roster de elite, ajustar la probabilidad de victoria local en un 15% hacia abajo.
+
+--- AUDITORÍA ---
+Partido: Atalanta 0 - 0 Genoa
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local y el roster elite de Atalanta.
+REGLA: Incorporar un umbral de probabilidad de empate (≥ 20%) para reconsiderar la predicción cuando la ventaja local no sea abrumadora.
+
+--- AUDITORÍA ---
+Partido: Nice 1 - 1 Lens
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no fue suficiente para contrarrestar la calidad del equipo visitante, lo que llevó a un empate inesperado.
+REGLA: Si el equipo visitante tiene un rendimiento histórico superior al 50% en partidos fuera de casa, ajustar la probabilidad de victoria del equipo local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Nice 1 - 1 Lens
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad defensiva de Lens y no consideró adecuadamente la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local de Nice.
+REGLA: Si la probabilidad de victoria local es < 60% y la diferencia de puntos en la tabla es < 5, considerar empate como resultado probable.
+
+--- AUDITORÍA ---
+Partido: Nationals 1 - 4 Brewers
+RESULTADO: PERDIDA
+LECCIÓN: La sobrevaloración de la ventaja local y la calidad del roster elite de los Nationals no consideró adecuadamente la capacidad ofensiva y la calidad del equipo visitante, lo que llevó a una predicción incorrecta.
+REGLA: Ajustar la ponderación de la ventaja local en un 15% y considerar la capacidad ofensiva del equipo visitante con un peso mínimo del 20% en la fórmula de predicción.
+
+--- AUDITORÍA ---
+Partido: Celtics 100 - 109 76ers
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para garantizar la victoria de los Celtics, lo que sugiere que la motivación por la clasificación a playoffs de los 76ers fue un factor más determinante en este partido.
+REGLA: Si el equipo visitante tiene una ventaja en la clasificación a playoffs y el equipo local tiene una probabilidad de victoria inferior a 70%, desactivar la regla de Elite Roster Home Protection.
+
+--- AUDITORÍA ---
+Partido: Rays 5 - 1 Giants
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Rays fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+
+--- AUDITORÍA ---
+Partido: Angels 4 - 3 Mets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Angels fueron factores clave en la victoria, lo que sugiere que la regla de Elite Roster Home Protection fue efectiva en este caso, aunque la diferencia de puntos fue mínima.
+REGLA: Si (Ventaja Local > 0.5) y (Roster Elite = True), entonces Probabilidad de Victoria = Probabilidad de Victoria + 0.1.
+
+--- AUDITORÍA ---
+Partido: Mariners 2 - 3 Royals
+RESULTADO: PERDIDA
+LECCIÓN: La ventaja local y el roster elite no fueron suficientes para garantizar la victoria, lo que sugiere que se subestimó la capacidad de los Royals para ganar en casa de los Mariners.
+REGLA: Revisar la ponderación de la regla "Elite Roster Home Protection" y considerar un ajuste para partidos contra equipos con buen desempeño en carretera.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL fueron factores clave en la victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa += 0,1.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria convincente, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria (62% vs. resultado real).
+REGLA: Si la probabilidad de victoria local es ≥ 60% y el equipo local tiene un roster elite, ajustar la probabilidad de victoria en -5% para reflejar la incertidumbre inherente.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria, lo que sugiere que la regla de Elite Roster Home Protection es efectiva en partidos con equipos fuertes en casa.
+REGLA: Si (Ventaja Local > 0,5) y (Roster Elite = True), entonces Probabilidad de Victoria en Casa = Probabilidad de Victoria en Casa + 0,1.
+
+--- AUDITORÍA ---
+Partido: Tigres UANL 3 - 1 Guadalajara
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de Tigres UANL se tradujeron en una victoria convincente, lo que sugiere que el modelo predictivo sobrestimó ligeramente la probabilidad de victoria del equipo local, pero aún así acertó en la predicción.
+REGLA: Si Home Advantage Decay y Elite Roster Home Protection están activados, ajustar la probabilidad de victoria local en un 5% para reflejar la incertidumbre residual.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La estrategia defensiva de Cruz Azul no fue tan efectiva como se esperaba, lo que sugiere que la variable "Low-Block Away Decay" puede no ser tan relevante en partidos con equipos con alta capacidad ofensiva como Cruz Azul.
+REGLA: Revisar la ponderación de la variable "Low-Block Away Decay" cuando el equipo visitante tenga un histórico de más de 1.5 goles por partido en los últimos 5 encuentros.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad ofensiva de Cruz Azul y no consideró suficientemente la habilidad del equipo visitante para anotar goles en condición de visita.
+REGLA: Ajustar la ponderación de la regla "Transition Speed" para equipos visitantes con alto rendimiento ofensivo en condición de visita, considerando un aumento del 15% en la probabilidad de anotar goles.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de Cruz Azul para superar la ventaja local del Atlas, lo que sugiere que la variable "rendimiento histórico variable" puede no ser tan determinante en partidos específicos.
+REGLA: Revisar la ponderación de la variable "rendimiento histórico variable" en la fórmula de predicción, considerando un peso menor para evitar subestimar la capacidad de equipos visitantes con historial irregular.
+
+--- AUDITORÍA ---
+Partido: Atlas 2 - 3 Cruz Azul
+RESULTADO: PERDIDA
+LECCIÓN: La apuesta se basó en la ventaja local y la capacidad ofensiva del Atlas, pero no consideró suficientemente la calidad del roster de Cruz Azul y su capacidad para anotar goles en condición de visitante.
+REGLA: Si el equipo visitante tiene un roster de elite y el equipo local tiene una tendencia defensiva débil, ajustar la probabilidad real a favor del visitante en un 10% adicional.
+
+--- AUDITORÍA ---
+Partido: Celta Vigo 3 - 1 Elche
+RESULTADO: GANADA
+LECCIÓN: La efectividad de la regla de Home Advantage Decay se vio compensada por la capacidad de ataque vertical de Celta Vigo, lo que sugiere que la ventaja local puede ser más resiliente de lo esperado cuando se enfrenta a equipos con defensas adelantadas.
+REGLA: Si (Home Advantage Decay) y (Ataque Vertical > 0,7), entonces ajustar Probabilidad Real += 5%
+
+--- AUDITORÍA ---
+Partido: Sassuolo 2 - 0 AC Milan
+RESULTADO: PERDIDA
+LECCIÓN: La subestimación de la ventaja local de Sassuolo y la sobreestimación de la calidad del roster de AC Milan llevaron a un error en la predicción, lo que sugiere que la variable "Home Advantage Decay" puede necesitar ajustes para partidos con equipos de alta calidad visitantes.
+REGLA: Ajustar la fórmula de "Home Advantage Decay" para incluir un factor de corrección basado en la diferencia de calidad entre los equipos locales y visitantes.
+
+--- AUDITORÍA ---
+Partido: SC Freiburg 1 - 1 VfL Wolfsburg
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad defensiva de VfL Wolfsburg, lo que llevó a un empate en lugar de una victoria para SC Freiburg.
+REGLA: Si la ventaja local es < 10% y el equipo visitante tiene un roster de élite, ajustar la probabilidad de victoria local en -5%.
+
+
+--- AUDITORÍA ---
+Partido: Cubs 8 - 4 Diamondbacks
+RESULTADO: GANADA
+LECCIÓN: La ventaja local y el roster elite de los Cubs se tradujeron en una victoria, lo que sugiere que la ponderación de estos factores en el modelo fue adecuada, aunque la diferencia en el marcador fue más amplia de lo esperado, lo que indica una posible subestimación de la capacidad ofensiva de los Cubs.
+REGLA: Ajustar el peso de la ventaja local en un 10% y considerar la potencia ofensiva del equipo local en la ecuación de predicción.
+
+--- AUDITORÍA ---
+Partido: Lyon 4 - 2 Stade Rennais
+RESULTADO: GANADA
+LECCIÓN: La diferencia de goles en el partido (2 goles de diferencia) sugiere que la ventaja local de Lyon y su velocidad de transición fueron factores clave en el resultado, lo que indica que el modelo predictivo subestimó la efectividad de estas variables.
+REGLA: Incrementar el peso de la variable "velocidad de transición" en un 15% cuando se enfrentan equipos con roster de élite en partidos de local.
+
+--- AUDITORÍA ---
+Partido: Pistons 116 - 94 Magic
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos entre el marcador real (22 puntos) y la ventaja esperada sugiere que el modelo subestimó la capacidad ofensiva de los Pistons en casa.
+REGLA: Incrementar el peso de la variable "Home Advantage Decay" en un 15% cuando el equipo local tenga una ventaja ofensiva significativa en casa.
+
+--- AUDITORÍA ---
+Partido: Mariners 1 - 4 Royals
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Home Advantage Decay no se consideró suficientemente, ya que el equipo visitante (Royals) logró una victoria a pesar de la ventaja local de los Mariners, lo que sugiere que el rendimiento histórico del equipo visitante fue más fuerte de lo esperado.
+REGLA: Ajustar la ponderación de la regla Home Advantage Decay para que tenga un impacto mayor en la probabilidad de victoria cuando el equipo visitante tiene un rendimiento histórico superior al 60% en los últimos 10 partidos.
+
+--- AUDITORÍA ---
+Partido: América 3 - 3 Pumas UNAM
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot subestimó la capacidad ofensiva de Pumas UNAM y no consideró adecuadamente la posibilidad de un empate, lo que resultó en una pérdida a pesar de la ventaja local de América.
+REGLA: Si la probabilidad de empate es mayor a 20% y el equipo visitante tiene una capacidad ofensiva notable, ajustar la probabilidad de victoria local en un 10%.
+
+--- AUDITORÍA ---
+Partido: Toluca 0 - 1 Pachuca
+RESULTADO: PERDIDA
+LECCIÓN: La calidad del roster de Pachuca superó la ventaja local de Toluca, lo que indica que la ponderación de la variable "Elite Roster Home Protection" puede ser insuficiente en la ecuación predictiva.
+REGLA: Ajustar el peso de "Elite Roster Home Protection" con un factor de 1,2 para partidos con equipos visitantes de alto nivel.
+
+--- AUDITORÍA ---
+Partido: Chelsea 1 - 3 Nottingham Forest
+RESULTADO: PERDIDA
+LECCIÓN: La alta probabilidad asignada a Chelsea (72%) no se reflejó en el resultado real, lo que sugiere que la capacidad defensiva de Nottingham Forest y su rendimiento histórico en partidos fuera de casa no fueron suficientemente considerados en el análisis.
+REGLA: Revisar la ponderación de la variable "rendimiento histórico en partidos fuera de casa" en la fórmula de predicción, aumentando su peso en un 15% para partidos con equipos con buen desempeño en condición de visitante.
+
+--- AUDITORÍA ---
+Partido: Everton 3 - 3 Manchester City
+RESULTADO: PERDIDA
+LECCIÓN: La predicción del bot no consideró adecuadamente la capacidad de Everton para anotar goles y mantener el empate, lo que sugiere una subestimación de la ventaja local y una sobreestimación de la calidad del roster de Manchester City.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection para incluir un factor de "resiliencia local" que considere la capacidad del equipo local para anotar goles y mantener el resultado.
+
+--- AUDITORÍA ---
+Partido: Rockies 2 - 4 Mets
+RESULTADO: GANADA
+LECCIÓN: La ventaja local de los Rockies fue efectivamente neutralizada por la calidad del roster de los Mets, lo que confirma la efectividad de la regla "Elite Roster Home Protection" en la predicción.
+REGLA: Si la diferencia de calidad del roster entre el equipo visitante y el local es > 10%, entonces ajustar la probabilidad de victoria del equipo local en -8%.
+
+--- AUDITORÍA ---
+Partido: Tigers 4 - 5 Red Sox
+RESULTADO: PERDIDA
+LECCIÓN: La probabilidad real del 58% subestimó la capacidad de los Red Sox para superar la ventaja local de los Tigers, lo que sugiere una varianza en la evaluación de la calidad del roster visitante.
+REGLA: Ajustar la ponderación de la regla "Elite Roster Home Protection" para reflejar mejor la capacidad de equipos visitantes con roster de alta calidad para superar la ventaja local.
+
+--- AUDITORÍA ---
+Partido: Yankees 12 - 1 Orioles
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja de los Yankees en casa.
+REGLA: Incrementar la ponderación de la regla "Elite Roster Home Protection" en un 15% cuando el equipo local tiene una ventaja significativa en su roster.
+
+--- AUDITORÍA ---
+Partido: Knicks 137 - 98 76ers
+RESULTADO: GANADA
+LECCIÓN: La diferencia de puntos fue mayor de lo esperado, lo que sugiere que el modelo subestimó la ventaja local de los Knicks y la capacidad defensiva del equipo.
+REGLA: Ajustar el peso de la regla "Home Advantage Decay" para partidos con equipos con gran diferencia de calidad en su roster.
+
+--- AUDITORÍA ---
+Partido: Spurs 102 - 104 Timberwolves
+RESULTADO: PERDIDA
+LECCIÓN: La predicción subestimó la capacidad de los Timberwolves para contrarrestar la ventaja local de los Spurs, lo que sugiere que la variable "calidad del roster visitante" debe ser ponderada con mayor fuerza en el modelo.
+REGLA: Ajustar el peso de la variable "calidad del roster visitante" en un 15% para partidos con equipos con rendimiento similar en carretera.
+
+--- AUDITORÍA ---
+Partido: Astros 3 - 8 Dodgers
+RESULTADO: PERDIDA
+LECCIÓN: La regla de Elite Roster Home Protection no fue suficiente para contrarrestar la ventaja del roster de los Dodgers, lo que sugiere que la ponderación de esta regla debe ser revisada para partidos con equipos de alta calidad.
+REGLA: Revisar la ponderación de la regla de Elite Roster Home Protection cuando el equipo visitante tenga un roster con una calificación superior a 0,8 en el ranking de la liga.
