@@ -41,8 +41,9 @@ on:
 
 # 🔒 Permisos necesarios
 permissions:
-  contents: read
+  contents: write # <-- CAMBIAR DE 'read' A 'write'
   actions: write
+
 
 # 🛑 Cancelar ejecuciones anteriores si hay nuevas
 concurrency:
