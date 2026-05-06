@@ -1,4 +1,4 @@
-"""Motor de análisis principal de EdgeBot-IA-V2 con type hints y mejoras"""
+"""Motor de análisis principal de EdgeBot-IA-V2 con ML"""
 from datetime import datetime
 from dataclasses import dataclass
 from typing import List, Tuple, Optional
@@ -6,6 +6,8 @@ from utils.logger import log_info, log_error, log_debug
 from utils.data_manager import DataManager
 from utils.api_client import ESPNClient, GroqClient, TelegramClient
 from config.settings import Settings
+from core.ml_model import MLModel
+from utils.feature_extractor import FeatureExtractor
 import time
 
 
@@ -16,10 +18,13 @@ class AnalysisPick:
     partido_str: str
     analisis: str
     aprobado: bool
+    ml_probabilidad: float = 0.5
+    ml_confianza: float = 0.5
+    fuente_decision: str = "IA"
 
 
 class EdgeBotAnalyzer:
-    """Motor principal de análisis del bot."""
+    """Motor principal de análisis del bot con ML."""
     
     def __init__(self):
         """Inicializa el analyzer con validación de configuración."""
@@ -29,7 +34,12 @@ class EdgeBotAnalyzer:
         DataManager.inicializar_db()
         self.procesados = DataManager.cargar_procesados()
         self.historial = DataManager.leer_aprendizaje()
-        log_info("EdgeBotAnalyzer inicializado")
+        
+        # 🆕 Inicializar modelo ML
+        self.ml_model = MLModel()
+        self.ml_model.cargar_modelo()
+        
+        log_info("EdgeBotAnalyzer inicializado con ML")
     
     def obtener_partidos_nuevos(self) -> List[Tuple[str, str]]:
         """Obtiene partidos nuevos sin procesar."""
@@ -47,30 +57,54 @@ class EdgeBotAnalyzer:
         return partidos_nuevos[:Settings.MAX_PICKS_PER_RUN]
     
     def analizar_partido(self, partido_id: str, partido_str: str) -> Optional[AnalysisPick]:
-        """Analiza un partido con IA."""
+        """Analiza un partido con IA + ML."""
         log_info(f"Analizando: {partido_str}")
         
         try:
+            # Análisis con IA
             analisis = GroqClient.analizar_partido(self.historial, partido_str)
             
             if not analisis:
                 log_error(f"No se pudo analizar: {partido_str}")
-                # Actualizar métricas de error
                 metricas = DataManager.obtener_metricas()
                 DataManager.actualizar_metricas(
                     errores_api=metricas.get("errores_api", 0) + 1
                 )
                 return None
             
-            aprobado = "APROBADO" in analisis.upper()
+            # 🆕 Extraer características para ML
+            features = FeatureExtractor.crear_vector_caracteristicas(
+                partido_str=partido_str,
+                historial=self.historial,
+                analisis=analisis
+            )
+            
+            # 🆕 Predicción ML
+            ml_prob, ml_conf, ml_recomendacion = self.ml_model.predecir(features)
+            
+            # Decisión combinada (IA + ML)
+            aprobado_ia = "APROBADO" in analisis.upper()
+            aprobado_ml = ml_recomendacion == "APROBADO_ML"
+            
+            # Si ML está entrenado, dar peso 60% a ML, 40% a IA
+            if self.ml_model.is_trained:
+                aprobado = aprobado_ml or (aprobado_ia and ml_conf > 0.6)
+                fuente = "ML_IA_HYBRID"
+            else:
+                aprobado = aprobado_ia
+                fuente = "IA_PURE"
+            
             pick = AnalysisPick(
                 partido_id=partido_id,
                 partido_str=partido_str,
                 analisis=analisis,
-                aprobado=aprobado
+                aprobado=aprobado,
+                ml_probabilidad=ml_prob,
+                ml_confianza=ml_conf,
+                fuente_decision=fuente
             )
             
-            log_debug(f"Pick {'APROBADO' if aprobado else 'DESCARTADO'}: {partido_str}")
+            log_debug(f"Pick {'APROBADO' if aprobado else 'DESCARTADO'} | ML: {ml_prob:.2%} | Fuente: {fuente}")
             return pick
             
         except Exception as e:
@@ -95,39 +129,51 @@ class EdgeBotAnalyzer:
             DataManager.guardar_procesado(pick.partido_id)
             
             if pick.aprobado:
-                # Guardar para auditoría futura
+                # Guardar para auditoría futura con datos ML
                 DataManager.guardar_prediccion_pendiente(
                     pick.partido_id,
                     pick.partido_str,
-                    pick.analisis
+                    pick.analisis,
+                    pick.ml_probabilidad,
+                    pick.ml_confianza
                 )
                 
-                # Enviar a Telegram
-                mensaje = f"""🤖 𝗘𝗗𝗚𝗘 𝗕𝗢𝗧 𝗣𝗥𝗢 (Alerta de Valor)
+                # Enviar a Telegram con info ML
+                mensaje = f"""🤖 𝗘𝗗𝗚𝗘 𝗕𝗢𝗧 𝗣𝗥𝗢 (𝗠𝗟 𝗘𝗡𝗛𝗔𝗡𝗖𝗘𝗗)
 ━━━━━━━━━━━━━━━━━━━━
 ⚽ 𝗣𝗔𝗥𝗧𝗜𝗗𝗢:
 {pick.partido_str}
 
 {pick.analisis}
+
+🧠 𝗠𝗟 𝗔𝗡𝗔𝗟𝗬𝗧𝗜𝗖𝗦:
+• Probabilidad: {pick.ml_probabilidad:.1%}
+• Confianza: {pick.ml_confianza:.1%}
+• Fuente: {pick.fuente_decision}
 ━━━━━━━━━━━━━━━━━━━━
 📊 ROI Actual: {DataManager.calcular_roi():.2f}%"""
                 
                 TelegramClient.enviar_mensaje(mensaje)
                 log_info(f"✅ Pick aprobado y enviado a Telegram")
             else:
-                # 🔥 Ajuste aquí: Extraemos y limpiamos un resumen del dictamen de la IA para auditar
                 resumen_ia = pick.analisis.replace('\n', ' | ')[:200]
-                log_info(f"❌ Pick descartado | Motivo IA: {resumen_ia}...")
+                log_info(f"❌ Pick descartado | ML: {pick.ml_probabilidad:.1%} | Motivo: {resumen_ia}...")
             
             time.sleep(Settings.DELAY_BETWEEN_PICKS)
     
     def ejecutar(self):
         """Ejecuta el ciclo completo del bot."""
         log_info("=" * 50)
-        log_info("Iniciando Edge Bot Pro (Escaneo Horario)")
+        log_info("Iniciando Edge Bot Pro ML (Escaneo Horario)")
         log_info("=" * 50)
         
         try:
+            # Mostrar estado del modelo ML
+            if self.ml_model.is_trained:
+                log_info(f"✅ Modelo ML cargado y activo")
+            else:
+                log_info(f"⚠️ Modelo ML no entrenado, usando IA pura")
+            
             partidos = self.obtener_partidos_nuevos()
             
             if not partidos:
@@ -151,7 +197,8 @@ class EdgeBotAnalyzer:
             metricas = DataManager.obtener_metricas()
             log_info(f"📊 MÉTRICAS: Totales={metricas.get('picks_totales', 0)} | "
                     f"Aprobados={metricas.get('picks_aprobados', 0)} | "
-                    f"ROI={DataManager.calcular_roi():.2f}%")
+                    f"ROI={DataManager.calcular_roi():.2f}% | "
+                    f"ML Activo={self.ml_model.is_trained}")
             
         except Exception as e:
             log_error(f"Error crítico en ejecución: {e}")
