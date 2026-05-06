@@ -1,12 +1,13 @@
-"""Gestor centralizado de datos para EdgeBot-IA-V2 con SQLite"""
+"""Gestor centralizado de datos para EdgeBot-IA-V2 con SQLite y ML"""
 import os
 import json
 import sqlite3
+import csv
 from datetime import datetime
 from typing import List, Dict, Optional, Any
 from contextlib import contextmanager
 from config.settings import Settings
-from .logger import log_debug, log_error, log_info
+from utils.logger import log_debug, log_error, log_info
 
 
 class DataManager:
@@ -43,11 +44,13 @@ class DataManager:
             """)
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS predicciones (
-                    partido_id TEXT PRIMARY KEY,
+                    party_id TEXT PRIMARY KEY,
                     partido_str TEXT,
                     analisis TEXT,
                     fecha DATE,
-                    estado TEXT DEFAULT 'pendiente'
+                    estado TEXT DEFAULT 'pendiente',
+                    ml_probabilidad REAL,
+                    ml_confianza REAL
                 )
             """)
             conn.execute("""
@@ -56,6 +59,7 @@ class DataManager:
                     partido_str TEXT,
                     marcador TEXT,
                     auditoria TEXT,
+                    ml_features TEXT,
                     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
             """)
@@ -68,18 +72,23 @@ class DataManager:
                     apuestas_ganadas INTEGER DEFAULT 0,
                     apuestas_perdidas INTEGER DEFAULT 0,
                     errores_api INTEGER DEFAULT 0,
+                    ml_accuracy REAL DEFAULT 0.0,
+                    ml_precision REAL DEFAULT 0.0,
                     ultima_ejecucion TIMESTAMP
                 )
             """)
-            # Insertar fila inicial si no existe
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS entrenamiento_ml (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    features TEXT,
+                    label INTEGER,
+                    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
             conn.execute("""
                 INSERT OR IGNORE INTO metricas (id) VALUES (1)
             """)
         log_info("✅ Base de datos inicializada")
-    
-    # ========================================================================
-    # MÉTODOS PARA PROCESADOS
-    # ========================================================================
     
     @staticmethod
     def cargar_procesados() -> List[str]:
@@ -105,24 +114,22 @@ class DataManager:
         except Exception as e:
             log_error(f"Error al guardar procesado: {e}")
     
-    # ========================================================================
-    # MÉTODOS PARA PREDICCIONES
-    # ========================================================================
-    
     @staticmethod
     def cargar_predicciones_pendientes() -> Dict[str, dict]:
         """Carga las predicciones pendientes de auditoría."""
         try:
             with DataManager.get_db_connection() as conn:
                 cursor = conn.execute(
-                    "SELECT partido_id, partido_str, analisis, fecha FROM predicciones WHERE estado = 'pendiente'"
+                    "SELECT partido_id, partido_str, analisis, fecha, ml_probabilidad, ml_confianza FROM predicciones WHERE estado = 'pendiente'"
                 )
                 pendientes = {}
                 for row in cursor.fetchall():
                     pendientes[row["partido_id"]] = {
                         "partido_str": row["partido_str"],
                         "analisis": row["analisis"],
-                        "fecha": row["fecha"]
+                        "fecha": row["fecha"],
+                        "ml_probabilidad": row["ml_probabilidad"],
+                        "ml_confianza": row["ml_confianza"]
                     }
                 return pendientes
         except Exception as e:
@@ -130,31 +137,21 @@ class DataManager:
             return {}
     
     @staticmethod
-    def guardar_prediccion_pendiente(partido_id: str, partido_str: str, analisis: str):
+    def guardar_prediccion_pendiente(partido_id: str, partido_str: str, analisis: str, 
+                                     ml_prob: float = None, ml_conf: float = None):
         """Guarda una predicción para auditoría futura."""
         try:
             with DataManager.get_db_connection() as conn:
                 conn.execute(
                     """INSERT OR REPLACE INTO predicciones 
-                       (partido_id, partido_str, analisis, fecha, estado) 
-                       VALUES (?, ?, ?, ?, 'pendiente')""",
-                    (partido_id, partido_str, analisis, datetime.today().strftime('%Y-%m-%d'))
+                       (partido_id, partido_str, analisis, fecha, estado, ml_probabilidad, ml_confianza) 
+                       VALUES (?, ?, ?, ?, 'pendiente', ?, ?)""",
+                    (partido_id, partido_str, analisis, datetime.today().strftime('%Y-%m-%d'), 
+                     ml_prob, ml_conf)
                 )
             log_debug(f"Predicción pendiente guardada: {partido_id}")
         except Exception as e:
             log_error(f"Error al guardar predicción pendiente: {e}")
-    
-    @staticmethod
-    def actualizar_prediccion_estado(partido_id: str, estado: str):
-        """Actualiza el estado de una predicción."""
-        try:
-            with DataManager.get_db_connection() as conn:
-                conn.execute(
-                    "UPDATE predicciones SET estado = ? WHERE partido_id = ?",
-                    (estado, partido_id)
-                )
-        except Exception as e:
-            log_error(f"Error al actualizar estado de predicción: {e}")
     
     @staticmethod
     def eliminar_prediccion(partido_id: str):
@@ -164,10 +161,6 @@ class DataManager:
                 conn.execute("DELETE FROM predicciones WHERE partido_id = ?", (partido_id,))
         except Exception as e:
             log_error(f"Error al eliminar predicción: {e}")
-    
-    # ========================================================================
-    # MÉTODOS PARA HISTORIAL
-    # ========================================================================
     
     @staticmethod
     def leer_aprendizaje() -> str:
@@ -209,27 +202,32 @@ class DataManager:
             log_error(f"Error al agregar reglas: {e}")
     
     @staticmethod
-    def agregar_historial_resultado(partido_str: str, marcador: str, auditoria: str):
+    def agregar_historial_resultado(partido_str: str, marcador: str, auditoria: str, 
+                                    ml_features: Dict = None):
         """Agrega un resultado auditado al historial en DB."""
         try:
             with DataManager.get_db_connection() as conn:
                 conn.execute(
-                    "INSERT INTO historial (partido_str, marcador, auditoria) VALUES (?, ?, ?)",
-                    (partido_str, marcador, auditoria)
+                    "INSERT INTO historial (partido_str, marcador, auditoria, ml_features) VALUES (?, ?, ?, ?)",
+                    (partido_str, marcador, auditoria, json.dumps(ml_features) if ml_features else None)
                 )
-            
-            # También mantener archivo legacy
-            ruta = Settings.FILES["historial"]
-            with open(ruta, "a", encoding="utf-8") as f:
-                f.write(f"\n--- AUDITORÍA ---\nPartido: {marcador}\n{auditoria}")
             
             log_debug(f"Historial actualizado")
         except Exception as e:
             log_error(f"Error al agregar al historial: {e}")
     
-    # ========================================================================
-    # MÉTODOS PARA MÉTRICAS
-    # ========================================================================
+    @staticmethod
+    def guardar_muestra_ml(features: Dict, label: int):
+        """Guarda una muestra para entrenamiento ML."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                conn.execute(
+                    "INSERT INTO entrenamiento_ml (features, label) VALUES (?, ?)",
+                    (json.dumps(features), label)
+                )
+            log_debug(f"Muestra ML guardada: label={label}")
+        except Exception as e:
+            log_error(f"Error al guardar muestra ML: {e}")
     
     @staticmethod
     def obtener_metricas() -> Dict[str, Any]:
@@ -248,7 +246,8 @@ class DataManager:
     @staticmethod
     def actualizar_metricas(picks_totales: int = None, picks_aprobados: int = None,
                            picks_descartados: int = None, apuestas_ganadas: int = None,
-                           apuestas_perdidas: int = None, errores_api: int = None):
+                           apuestas_perdidas: int = None, errores_api: int = None,
+                           ml_accuracy: float = None, ml_precision: float = None):
         """Actualiza las métricas del bot."""
         try:
             with DataManager.get_db_connection() as conn:
@@ -273,11 +272,17 @@ class DataManager:
                 if errores_api is not None:
                     updates.append("errores_api = ?")
                     values.append(errores_api)
+                if ml_accuracy is not None:
+                    updates.append("ml_accuracy = ?")
+                    values.append(ml_accuracy)
+                if ml_precision is not None:
+                    updates.append("ml_precision = ?")
+                    values.append(ml_precision)
                 
                 updates.append("ultima_ejecucion = ?")
                 values.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                 
-                values.append(1)  # id = 1
+                values.append(1)
                 
                 query = f"UPDATE metricas SET {', '.join(updates)} WHERE id = ?"
                 conn.execute(query, values)
