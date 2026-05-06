@@ -265,8 +265,9 @@ jobs:
         run: |
           echo "🚀 Iniciando EdgeBot-IA-V2 - Modo Auditoría/Entrenamiento"
           echo "Timestamp: $(date -Iseconds)"
-          python aprendizaje.py
+          python data/aprendizaje.py # <-- Carpeta agregada
           echo "✅ Auditoría completada"
+
       
       - name: 📊 Mostrar estadísticas ML
         if: always()
