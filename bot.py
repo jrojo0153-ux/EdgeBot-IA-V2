@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Script principal del bot EdgeBot-IA-V2"""
+"""Script principal del bot EdgeBot-IA-V2 con ML"""
 from core.analyzer import EdgeBotAnalyzer
 from config.settings import Settings
 from utils.logger import log_info, log_error
@@ -10,15 +10,12 @@ import sys
 def main():
     """Ejecuta el bot principal con validación de configuración."""
     try:
-        # Validar configuración antes de iniciar
         if not Settings.inicializar():
             log_error("❌ Configuración inválida. El bot no puede iniciar.")
             sys.exit(1)
         
-        # Inicializar base de datos
         DataManager.inicializar_db()
         
-        # Ejecutar analyzer
         analyzer = EdgeBotAnalyzer()
         analyzer.ejecutar()
         
