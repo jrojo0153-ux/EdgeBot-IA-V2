@@ -1,277 +1,299 @@
-"""Modelo de Machine Learning para EdgeBot-IA-V2"""
+"""Gestor centralizado de datos para EdgeBot-IA-V2 con SQLite y ML"""
 import os
-import pickle
-import pandas as pd
-import numpy as np
+import json
+import sqlite3
+import csv
 from datetime import datetime
-from typing import Dict, List, Tuple, Optional, Any
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-import joblib
-from utils.logger import log_info, log_error, log_debug
+from typing import List, Dict, Optional, Any
+from contextlib import contextmanager
 from config.settings import Settings
-from utils.feature_extractor import FeatureExtractor
-from utils.data_manager import DataManager
+from utils.logger import log_debug, log_error, log_info
 
 
-class MLModel:
-    """Modelo de ML que aprende de predicciones diarias."""
+class DataManager:
+    """Gestiona todos los archivos y base de datos del bot."""
     
-    def __init__(self):
-        """Inicializa el modelo de ML."""
-        self.model = None
-        self.scaler = StandardScaler()
-        self.model_path = Settings.ML_MODEL_PATH
-        self.training_data_path = Settings.ML_TRAINING_DATA_PATH
-        self.is_trained = False
-        
-        # Feature names para consistencia
-        self.feature_names = [
-            "partido_hash",
-            "es_basketball",
-            "es_futbol",
-            "es_baseball",
-            "home_advantage",
-            "hora_normalizada",
-            "dia_semana",
-            "reglas_activas_count",
-            "tiene_reglas_defensa",
-            "tiene_reglas_ataque",
-            "tiene_reglas_localia",
-            "historial_size",
-            "probabilidad_ia",
-            "cuota_minima",
-            "veredicto_aprobado",
-            "veredicto_descartado",
-            "analisis_length",
-            "tecnicos_mencionados"
-        ]
-        
-    def cargar_datos_entrenamiento(self) -> Optional[pd.DataFrame]:
-        """Carga datos de entrenamiento desde CSV."""
-        try:
-            if os.path.exists(self.training_data_path):
-                df = pd.read_csv(self.training_data_path)
-                log_info(f"✅ Cargados {len(df)} registros de entrenamiento")
-                return df
-            else:
-                log_info("⚠️ No existe archivo de entrenamiento, creando nuevo")
-                return pd.DataFrame()
-        except Exception as e:
-            log_error(f"Error cargando datos de entrenamiento: {e}")
-            return pd.DataFrame()
+    DB_PATH: str = Settings.DB_PATH
     
-    def guardar_datos_entrenamiento(self, df: pd.DataFrame):
-        """Guarda datos de entrenamiento en CSV."""
+    @staticmethod
+    @contextmanager
+    def get_db_connection():
+        """Context manager para conexiones SQLite."""
+        Settings.crear_directorios()
+        conn = sqlite3.connect(DataManager.DB_PATH)
+        conn.row_factory = sqlite3.Row
         try:
-            Settings.crear_directorios()
-            df.to_csv(self.training_data_path, index=False)
-            log_info(f"✅ Guardados {len(df)} registros en {self.training_data_path}")
+            yield conn
+            conn.commit()
         except Exception as e:
-            log_error(f"Error guardando datos de entrenamiento: {e}")
+            conn.rollback()
+            log_error(f"Error DB: {e}")
+            raise
+        finally:
+            conn.close()
     
-    def agregar_muestra_entrenamiento(self, features: Dict[str, Any], resultado: str):
-        """Agrega una nueva muestra al dataset de entrenamiento."""
-        try:
-            df = self.cargar_datos_entrenamiento()
-            
-            # Crear nueva fila
-            nueva_fila = {}
-            for feature in self.feature_names:
-                nueva_fila[feature] = features.get(feature, 0.0)
-            
-            # Label
-            nueva_fila["label"] = 1.0 if "GANADA" in resultado.upper() else 0.0
-            nueva_fila["timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            
-            # Agregar al DataFrame
-            df = pd.concat([df, pd.DataFrame([nueva_fila])], ignore_index=True)
-            
-            # Guardar
-            self.guardar_datos_entrenamiento(df)
-            
-            log_info(f"✅ Muestra agregada. Total: {len(df)} registros")
-            
-            # Verificar si necesita reentrenamiento
-            if len(df) >= Settings.ML_MIN_SAMPLES_FOR_TRAINING:
-                muestras_desde_ultimo = len(df) % Settings.ML_RETRAIN_THRESHOLD
-                if muestras_desde_ultimo == 0:
-                    log_info("🔄 Umbral de reentrenamiento alcanzado")
-                    return True
-            
-            return False
-            
-        except Exception as e:
-            log_error(f"Error agregando muestra: {e}")
-            return False
+    @staticmethod
+    def inicializar_db():
+        """Crea las tablas necesarias en SQLite."""
+        with DataManager.get_db_connection() as conn:
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS procesados (
+                    partido_id TEXT PRIMARY KEY,
+                    fecha_procesamiento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS predicciones (
+                    party_id TEXT PRIMARY KEY,
+                    partido_str TEXT,
+                    analisis TEXT,
+                    fecha DATE,
+                    estado TEXT DEFAULT 'pendiente',
+                    ml_probabilidad REAL,
+                    ml_confianza REAL
+                )
+            """)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS historial (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    partido_str TEXT,
+                    marcador TEXT,
+                    auditoria TEXT,
+                    ml_features TEXT,
+                    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS metricas (
+                    id INTEGER PRIMARY KEY CHECK (id = 1),
+                    picks_totales INTEGER DEFAULT 0,
+                    picks_aprobados INTEGER DEFAULT 0,
+                    picks_descartados INTEGER DEFAULT 0,
+                    apuestas_ganadas INTEGER DEFAULT 0,
+                    apuestas_perdidas INTEGER DEFAULT 0,
+                    errores_api INTEGER DEFAULT 0,
+                    ml_accuracy REAL DEFAULT 0.0,
+                    ml_precision REAL DEFAULT 0.0,
+                    ultima_ejecucion TIMESTAMP
+                )
+            """)
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS entrenamiento_ml (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    features TEXT,
+                    label INTEGER,
+                    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            conn.execute("""
+                INSERT OR IGNORE INTO metricas (id) VALUES (1)
+            """)
+        log_info("✅ Base de datos inicializada")
     
-    def entrenar_modelo(self) -> bool:
-        """Entrena o reentrena el modelo de ML."""
+    @staticmethod
+    def cargar_procesados() -> List[str]:
+        """Carga la lista de partidos ya procesados."""
         try:
-            log_info("=" * 50)
-            log_info("Iniciando entrenamiento de modelo ML")
-            log_info("=" * 50)
-            
-            df = self.cargar_datos_entrenamiento()
-            
-            if len(df) < Settings.ML_MIN_SAMPLES_FOR_TRAINING:
-                log_info(f"⚠️ Insuficientes muestras ({len(df)} < {Settings.ML_MIN_SAMPLES_FOR_TRAINING})")
-                return False
-            
-            # Preparar datos
-            X = df[self.feature_names].values
-            y = df["label"].values
-            
-            # Normalizar características
-            X_scaled = self.scaler.fit_transform(X)
-            
-            # Split train/test
-            X_train, X_test, y_train, y_test = train_test_split(
-                X_scaled, y, test_size=0.2, random_state=42, stratify=y if len(set(y)) > 1 else None
-            )
-            
-            # Crear modelo (Random Forest con Gradient Boosting ensemble)
-            self.model = GradientBoostingClassifier(
-                n_estimators=100,
-                max_depth=5,
-                learning_rate=0.1,
-                random_state=42,
-                min_samples_split=5,
-                min_samples_leaf=2
-            )
-            
-            # Entrenar
-            log_info("Entrenando modelo...")
-            self.model.fit(X_train, y_train)
-            
-            # Validar
-            y_pred = self.model.predict(X_test)
-            
-            if len(set(y_test)) > 1:
-                accuracy = accuracy_score(y_test, y_pred)
-                precision = precision_score(y_test, y_pred, zero_division=0)
-                recall = recall_score(y_test, y_pred, zero_division=0)
-                f1 = f1_score(y_test, y_pred, zero_division=0)
-                
-                log_info(f"📊 MÉTRICAS DE VALIDACIÓN:")
-                log_info(f"   Accuracy:  {accuracy:.2%}")
-                log_info(f"   Precision: {precision:.2%}")
-                log_info(f"   Recall:    {recall:.2%}")
-                log_info(f"   F1-Score:  {f1:.2%}")
-                
-                # Cross-validation
-                cv_scores = cross_val_score(self.model, X_scaled, y, cv=5)
-                log_info(f"   CV Score:  {cv_scores.mean():.2%} (+/- {cv_scores.std() * 2:.2%})")
-            else:
-                log_info("⚠️ Datos desbalanceados, métricas limitadas")
-            
-            # Guardar modelo
-            self.guardar_modelo()
-            self.is_trained = True
-            
-            log_info("✅ Modelo entrenado y guardado exitosamente")
-            log_info("=" * 50)
-            
-            return True
-            
+            with DataManager.get_db_connection() as conn:
+                cursor = conn.execute("SELECT partido_id FROM procesados ORDER BY fecha_procesamiento DESC")
+                return [row["partido_id"] for row in cursor.fetchall()]
         except Exception as e:
-            log_error(f"Error entrenando modelo: {e}")
-            import traceback
-            log_error(traceback.format_exc())
-            return False
+            log_error(f"Error al cargar procesados: {e}")
+            return []
     
-    def guardar_modelo(self):
-        """Guarda el modelo en disco."""
+    @staticmethod
+    def guardar_procesado(partido_id: str):
+        """Marca un partido como procesado."""
         try:
-            Settings.crear_directorios()
-            
-            model_data = {
-                'model': self.model,
-                'scaler': self.scaler,
-                'feature_names': self.feature_names,
-                'trained_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            }
-            
-            with open(self.model_path, 'wb') as f:
-                joblib.dump(model_data, f)
-            
-            log_info(f"✅ Modelo guardado en {self.model_path}")
-            
+            with DataManager.get_db_connection() as conn:
+                conn.execute(
+                    "INSERT OR REPLACE INTO procesados (partido_id) VALUES (?)",
+                    (partido_id,)
+                )
+            log_debug(f"Procesado guardado: {partido_id}")
         except Exception as e:
-            log_error(f"Error guardando modelo: {e}")
+            log_error(f"Error al guardar procesado: {e}")
     
-    def cargar_modelo(self) -> bool:
-        """Carga el modelo desde disco."""
+    @staticmethod
+    def cargar_predicciones_pendientes() -> Dict[str, dict]:
+        """Carga las predicciones pendientes de auditoría."""
         try:
-            if os.path.exists(self.model_path):
-                with open(self.model_path, 'rb') as f:
-                    model_data = joblib.load(f)
-                
-                self.model = model_data['model']
-                self.scaler = model_data['scaler']
-                self.feature_names = model_data.get('feature_names', self.feature_names)
-                self.is_trained = True
-                
-                log_info(f"✅ Modelo cargado desde {self.model_path}")
-                return True
-            else:
-                log_info("⚠️ No existe modelo guardado, se usará IA pura")
-                return False
-                
+            with DataManager.get_db_connection() as conn:
+                cursor = conn.execute(
+                    "SELECT partido_id, partido_str, analisis, fecha, ml_probabilidad, ml_confianza FROM predicciones WHERE estado = 'pendiente'"
+                )
+                pendientes = {}
+                for row in cursor.fetchall():
+                    pendientes[row["partido_id"]] = {
+                        "partido_str": row["partido_str"],
+                        "analisis": row["analisis"],
+                        "fecha": row["fecha"],
+                        "ml_probabilidad": row["ml_probabilidad"],
+                        "ml_confianza": row["ml_confianza"]
+                    }
+                return pendientes
         except Exception as e:
-            log_error(f"Error cargando modelo: {e}")
-            return False
-    
-    def predecir(self, features: Dict[str, Any]) -> Tuple[float, float, str]:
-        """
-        Predice resultado usando el modelo ML.
-        Returns: (probabilidad_ganada, confianza, recomendacion)
-        """
-        try:
-            if not self.is_trained or self.model is None:
-                # Fallback a probabilidad de IA
-                prob_ia = features.get("probabilidad_ia", 0.5)
-                return prob_ia, 0.5, "IA_PURE"
-            
-            # Convertir features a array
-            X = np.array([FeatureExtractor.convertir_a_array_ml(features)])
-            X_scaled = self.scaler.transform(X)
-            
-            # Predecir probabilidad
-            prob_ganada = self.model.predict_proba(X_scaled)[0][1]
-            confianza = max(prob_ganada, 1 - prob_ganada)
-            
-            # Determinar recomendación
-            if prob_ganada >= Settings.ML_CONFIDENCE_THRESHOLD:
-                recomendacion = "APROBADO_ML"
-            elif prob_ganada <= (1 - Settings.ML_CONFIDENCE_THRESHOLD):
-                recomendacion = "DESCARTADO_ML"
-            else:
-                recomendacion = "INCERTO_ML"
-            
-            log_debug(f"Predicción ML: {prob_ganada:.2%} | Confianza: {confianza:.2%} | {recomendacion}")
-            
-            return prob_ganada, confianza, recomendacion
-            
-        except Exception as e:
-            log_error(f"Error en predicción ML: {e}")
-            return 0.5, 0.5, "ERROR_ML"
-    
-    def obtener_importancia_caracteristicas(self) -> Dict[str, float]:
-        """Obtiene importancia de cada característica."""
-        try:
-            if self.model is None or not self.is_trained:
-                return {}
-            
-            importances = self.model.feature_importances_
-            
-            return {
-                name: float(importance) 
-                for name, importance in zip(self.feature_names, importances)
-            }
-            
-        except Exception as e:
-            log_error(f"Error obteniendo importancia: {e}")
+            log_error(f"Error al cargar predicciones pendientes: {e}")
             return {}
+    
+    @staticmethod
+    def guardar_prediccion_pendiente(partido_id: str, partido_str: str, analisis: str, 
+                                     ml_prob: float = None, ml_conf: float = None):
+        """Guarda una predicción para auditoría futura."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                conn.execute(
+                    """INSERT OR REPLACE INTO predicciones 
+                       (partido_id, partido_str, analisis, fecha, estado, ml_probabilidad, ml_confianza) 
+                       VALUES (?, ?, ?, ?, 'pendiente', ?, ?)""",
+                    (partido_id, partido_str, analisis, datetime.today().strftime('%Y-%m-%d'), 
+                     ml_prob, ml_conf)
+                )
+            log_debug(f"Predicción pendiente guardada: {partido_id}")
+        except Exception as e:
+            log_error(f"Error al guardar predicción pendiente: {e}")
+    
+    @staticmethod
+    def eliminar_prediccion(partido_id: str):
+        """Elimina una predicción después de auditar."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                conn.execute("DELETE FROM predicciones WHERE partido_id = ?", (partido_id,))
+        except Exception as e:
+            log_error(f"Error al eliminar predicción: {e}")
+    
+    @staticmethod
+    def leer_aprendizaje() -> str:
+        """Lee el archivo de reglas de aprendizaje."""
+        try:
+            ruta = Settings.FILES["aprendizaje"]
+            if os.path.exists(ruta):
+                with open(ruta, "r", encoding="utf-8") as f:
+                    return f.read()
+            return "No hay datos históricos previos."
+        except Exception as e:
+            log_error(f"Error al leer aprendizaje: {e}")
+            return "Error al cargar aprendizaje."
+    
+    @staticmethod
+    def guardar_aprendizaje(contenido: str):
+        """Guarda el archivo de reglas de aprendizaje."""
+        try:
+            Settings.crear_directorios()
+            ruta = Settings.FILES["aprendizaje"]
+            with open(ruta, "w", encoding="utf-8") as f:
+                f.write(contenido)
+            log_debug(f"Aprendizaje guardado en {ruta}")
+        except Exception as e:
+            log_error(f"Error al guardar aprendizaje: {e}")
+    
+    @staticmethod
+    def agregar_a_aprendizaje(nuevas_reglas: List[str]):
+        """Agrega nuevas reglas al archivo de aprendizaje."""
+        try:
+            Settings.crear_directorios()
+            ruta = Settings.FILES["aprendizaje"]
+            with open(ruta, "a", encoding="utf-8") as f:
+                f.write(f"\n### NUEVAS REGLAS AUTOMÁTICAS - {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
+                for regla in nuevas_reglas:
+                    f.write(f"- {regla}\n")
+            log_debug(f"Se agregaron {len(nuevas_reglas)} nuevas reglas")
+        except Exception as e:
+            log_error(f"Error al agregar reglas: {e}")
+    
+    @staticmethod
+    def agregar_historial_resultado(partido_str: str, marcador: str, auditoria: str, 
+                                    ml_features: Dict = None):
+        """Agrega un resultado auditado al historial en DB."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                conn.execute(
+                    "INSERT INTO historial (partido_str, marcador, auditoria, ml_features) VALUES (?, ?, ?, ?)",
+                    (partido_str, marcador, auditoria, json.dumps(ml_features) if ml_features else None)
+                )
+            
+            log_debug(f"Historial actualizado")
+        except Exception as e:
+            log_error(f"Error al agregar al historial: {e}")
+    
+    @staticmethod
+    def guardar_muestra_ml(features: Dict, label: int):
+        """Guarda una muestra para entrenamiento ML."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                conn.execute(
+                    "INSERT INTO entrenamiento_ml (features, label) VALUES (?, ?)",
+                    (json.dumps(features), label)
+                )
+            log_debug(f"Muestra ML guardada: label={label}")
+        except Exception as e:
+            log_error(f"Error al guardar muestra ML: {e}")
+    
+    @staticmethod
+    def obtener_metricas() -> Dict[str, Any]:
+        """Obtiene las métricas actuales del bot."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                cursor = conn.execute("SELECT * FROM metricas WHERE id = 1")
+                row = cursor.fetchone()
+                if row:
+                    return dict(row)
+                return {}
+        except Exception as e:
+            log_error(f"Error al obtener métricas: {e}")
+            return {}
+    
+    @staticmethod
+    def actualizar_metricas(picks_totales: int = None, picks_aprobados: int = None,
+                           picks_descartados: int = None, apuestas_ganadas: int = None,
+                           apuestas_perdidas: int = None, errores_api: int = None,
+                           ml_accuracy: float = None, ml_precision: float = None):
+        """Actualiza las métricas del bot."""
+        try:
+            with DataManager.get_db_connection() as conn:
+                updates = []
+                values = []
+                
+                if picks_totales is not None:
+                    updates.append("picks_totales = ?")
+                    values.append(picks_totales)
+                if picks_aprobados is not None:
+                    updates.append("picks_aprobados = ?")
+                    values.append(picks_aprobados)
+                if picks_descartados is not None:
+                    updates.append("picks_descartados = ?")
+                    values.append(picks_descartados)
+                if apuestas_ganadas is not None:
+                    updates.append("apuestas_ganadas = ?")
+                    values.append(apuestas_ganadas)
+                if apuestas_perdidas is not None:
+                    updates.append("apuestas_perdidas = ?")
+                    values.append(apuestas_perdidas)
+                if errores_api is not None:
+                    updates.append("errores_api = ?")
+                    values.append(errores_api)
+                if ml_accuracy is not None:
+                    updates.append("ml_accuracy = ?")
+                    values.append(ml_accuracy)
+                if ml_precision is not None:
+                    updates.append("ml_precision = ?")
+                    values.append(ml_precision)
+                
+                updates.append("ultima_ejecucion = ?")
+                values.append(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+                
+                values.append(1)
+                
+                query = f"UPDATE metricas SET {', '.join(updates)} WHERE id = ?"
+                conn.execute(query, values)
+        except Exception as e:
+            log_error(f"Error al actualizar métricas: {e}")
+    
+    @staticmethod
+    def calcular_roi() -> float:
+        """Calcula el ROI aproximado del bot."""
+        metricas = DataManager.obtener_metricas()
+        total = metricas.get("apuestas_ganadas", 0) + metricas.get("apuestas_perdidas", 0)
+        if total == 0:
+            return 0.0
+        return ((metricas.get("apuestas_ganadas", 0) - metricas.get("apuestas_perdidas", 0)) / total) * 100
